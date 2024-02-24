@@ -1,0 +1,231 @@
+#cart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $Gray;
+  .cart__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 1250px;
+    height: fit-content;
+    .cart__left {
+      border-radius: 5px;
+      width: 830px;
+      background-color: $White;
+      .cart__default {
+        display: flex;
+        flex-direction: column;
+        height: 327px;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        img {
+          width: 110px;
+        }
+        > p:nth-child(2) {
+          font-size: 1.75rem;
+          font-weight: 1000;
+          color: $Dark-Gray;
+        }
+        p:nth-child(3) {
+          font-size: 21px;
+          font-weight: 300;
+          color: $Dark-Gray;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 220px;
+          gap: 10px;
+          height: 40px;
+          border-radius: 5px;
+          border: 1px solid transparent;
+          cursor: pointer;
+          background-color: $Green;
+          color: $White;
+          transition: 0.4s;
+          text-decoration: none;
+          p {
+            color: $White;
+            font-size: 16px;
+          }
+        }
+        button:hover {
+          box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+            rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+            rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+            rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+            rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+            rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+      }
+      .cart__fill {
+        display: flex;
+        flex-direction: column;
+        .cart__top {
+          width: 99.5%;
+          display: flex;
+          border-bottom: 1px solid $Light-Gray3;
+          height: 46px;
+          justify-content: center;
+          p {
+            font-weight: 700;
+            color: $Dark-Gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 135px;
+          }
+        }
+        .cart__bottom {
+          display: flex;
+          flex-direction: column;
+          max-height: 500px;
+          overflow-y: scroll;
+          .cart__row {
+            border-bottom: 1px solid $Light-Gray3;
+            padding: 10px 0;
+            width: 100%;
+            display: flex;
+            height: 132px;
+            justify-content: center;
+            align-items: center;
+            p {
+              text-align: center;
+              width: 135px;
+            }
+            a {
+              width: 135px;
+              display: flex;
+              justify-content: center;
+              img {
+                border-radius: 10px;
+                width: 100px;
+                height: 100px;
+              }
+            }
+
+            div {
+              width: 135px;
+              display: flex;
+              justify-content: center;
+              img {
+                border-radius: 10px;
+                width: 100px;
+                height: 100px;
+              }
+              > button {
+                background-color: transparent;
+                cursor: pointer;
+                width: 28px;
+                height: 28px;
+                border-radius: 5px;
+                border: 1px solid $Red;
+                transition: 0.4s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i {
+                  color: $Red;
+                }
+              }
+              button:hover {
+                background-color: $Red;
+                box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+                  rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+                  rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+                  rgba(0, 0, 0, 0.06) 0px 2px 1px,
+                  rgba(0, 0, 0, 0.09) 0px 4px 2px,
+                  rgba(0, 0, 0, 0.09) 0px 8px 4px,
+                  rgba(0, 0, 0, 0.09) 0px 16px 8px,
+                  rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                i {
+                  color: $White;
+                }
+              }
+            }
+          }
+          .cart__row:last-child {
+            border: none;
+          }
+        }
+        .cart__bottom::-webkit-scrollbar {
+          width: 5px;
+          height: 10px;
+        }
+        .cart__bottom::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background-color: $Black;
+        }
+      }
+    }
+    .cart__right {
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .cart__price-container {
+        border-radius: 5px;
+        height: 163.9px;
+        background-color: $White;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div {
+          border-bottom: 1px solid $Light-Gray3;
+          height: 55px;
+          width: 95%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        div:last-child {
+          border: none;
+          > p {
+            font-weight: 700;
+            span {
+              font-weight: initial;
+            }
+          }
+        }
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+        height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        background-color: $Green;
+        color: $White;
+        transition: 0.4s;
+
+        a {
+          text-decoration: none;
+          color: $White;
+          font-size: 16px;
+        }
+      }
+      button:hover {
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+          rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+          rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+          rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+          rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+          rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+      button:nth-child(3) {
+        background-color: $Black;
+      }
+      button:nth-child(4) {
+        background-color: $Red;
+      }
+    }
+  }
+}

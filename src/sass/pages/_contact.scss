@@ -1,0 +1,46 @@
+#contact {
+  padding: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .contact__container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    > p {
+      a {
+        text-decoration: none;
+        color: $Black;
+        font-weight: 600;
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      li {
+        display: flex;
+        gap: 10px;
+        color: $Secondary-color;
+
+        a {
+          color: $Dark-blue;
+          text-decoration: none;
+        }
+      }
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: $Secondary-color;
+      }
+    }
+  }
+}

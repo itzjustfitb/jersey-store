@@ -1,0 +1,23 @@
+// TODO * ---- LAYOUT ---- * //
+@import "../src/sass/layout/header";
+@import "../src/sass/layout/footer";
+
+// TODO * ---- BASE ---- * //
+@import "../src/sass/base/reset";
+@import "../src/sass/base/typography";
+
+// TODO * ---- PAGES ---- * //
+@import "../src/sass/pages/home";
+@import "../src/sass/pages/about";
+@import "../src/sass/pages/contact";
+@import "../src/sass/pages/cart";
+@import "../src/sass/pages/detail";
+
+// TODO * ---- COMPONENTS ---- * //
+@import "../src/sass/components/breadcrumbs";
+@import "../src/sass/components/swiper";
+@import "../src/sass/components/cartSidebar";
+@import "../src/sass/components/scrollbar";
+@import "../src/sass/components/sizeguide";
+@import "../src/sass/components/searchbar";
+@import "../src/sass/components/loader";

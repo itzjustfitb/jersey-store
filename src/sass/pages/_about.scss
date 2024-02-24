@@ -1,0 +1,34 @@
+#about {
+  padding: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .about__container {
+    width: 75%;
+    div {
+      color: $Secondary-color;
+      display: flex;
+      line-height: 1.6;
+      flex-direction: column;
+      gap: 40px;
+      p {
+        display: flex;
+        flex-direction: column;
+        a {
+          text-decoration: none;
+          color: $Secondary-color;
+        }
+        a:first-child {
+          color: $Black;
+        }
+        a:last-child {
+          color: $Dark-blue;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

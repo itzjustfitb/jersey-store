@@ -1,0 +1,115 @@
+.sizeguide__modal {
+  transition: 0.4s;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sizeguide__container {
+    position: absolute;
+    visibility: hidden;
+    transition: 0.4s;
+    opacity: 0;
+    width: 60%;
+    height: 60%;
+    background-color: $White;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    i {
+      position: absolute;
+      top: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+      right: 20px;
+    }
+    .sizeguide__title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      color: $Secondary-color;
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      p {
+        line-height: 1.2;
+        width: 90%;
+        text-align: center;
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+    table {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      thead {
+        display: flex;
+        tr {
+          background-color: $Light-gray;
+          display: flex;
+          width: 100%;
+          th {
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            width: 20%;
+            &:nth-child(2) {
+              width: 30%;
+            }
+          }
+        }
+      }
+      tbody {
+        display: flex;
+        flex-direction: column;
+        transition: 0.4s;
+        tr {
+          border-bottom: 1px solid $Light-gray;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          &:hover {
+            background-color: #f8f8f8;
+          }
+          td {
+            display: grid;
+            place-items: center;
+            font-size: 0.8rem;
+            transition: 0.4s;
+            padding: 20px 0;
+            width: 20%;
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.06);
+            }
+          }
+          td:nth-child(2) {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal__open {
+  visibility: visible;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.674);
+  .sizeguide__container {
+    visibility: visible;
+    opacity: 1;
+  }
+}
