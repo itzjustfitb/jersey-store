@@ -49,10 +49,10 @@ function Header() {
                 onClick={() => setCartListIsActive(!cartListIsActive)}
                 className="shopping__bag"
               >
-                <Link className="header__nav-icon bottom__bar">
+                <div className="header__nav-icon bottom__bar">
                   <span className="count">{cartList.length}</span>
                   <i className="ri-shopping-bag-line"></i>
-                </Link>
+                </div>
                 <p className="total">
                   {totalPrice}.00
                   <span> AZN</span>
