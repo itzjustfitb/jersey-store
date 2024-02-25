@@ -446,13 +446,27 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        .swiper {
+          height: 200px;
+          .swiper-button-next,
+          .swiper-button-prev {
+            width: 30px;
+            height: 30px;
+          }
+          .swiper-wrapper {
+            height: 200px;
+          }
+        }
         .swiper__footer {
           width: 100%;
-          height: 100px;
+          height: 60px;
           .swiper {
-            height: 100px;
+            height: 60px;
+            .swiper-slide {
+              height: 60px;
+            }
             .swiper-wrapper {
-              height: 100px;
+              height: 60px;
             }
           }
         }

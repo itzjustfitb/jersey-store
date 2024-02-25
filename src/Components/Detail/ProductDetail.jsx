@@ -5,31 +5,52 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { addToCartAction } from "../../redux/actions/cart.action";
 import SizeGuide from "../SizeGuide";
 import { fetchJerseysFromFirestoreOrAPI } from "../../jerseyService";
 function ProductDetail() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const location = useLocation();
-  const path = location.pathname.split("/").filter((x) => x !== "");
-  const index = path[path.length - 1];
-  const [productDetail, setProductDetail] = useState([]);
-  const [count, setCount] = useState(1);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [activeBtn, setActiveBtn] = useState("");
-  const buttonsList = ["XS", "S", "M", "L", "XL"];
-  const detailedJersey = productDetail.find((item) => item.id === index);
-
-  let dispatch = useDispatch();
-  console.log(detailedJersey);
   useEffect(() => {
     fetchJerseysFromFirestoreOrAPI().then((res) => {
       setProductDetail(res);
     });
   }, []);
 
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const location = useLocation();
+  const { cartList } = useSelector((state) => state);
+  const path = location.pathname.split("/").filter((x) => x !== "");
+  const index = path[path.length - 1];
+  const [productDetail, setProductDetail] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeBtn, setActiveBtn] = useState("");
+  const buttonsList = ["XS", "S", "M", "L", "XL"];
+  const detailedJersey = productDetail.find((item) => item.id === index);
+  const cartItem = cartList?.find((item) => item.id === detailedJersey?.id);
+  const [count, setCount] = useState(cartItem?.quantity || 1);
+  let dispatch = useDispatch();
+  console.log(cartItem?.quantity, "cartItem");
+  console.log(count, "count");
+  console.log(detailedJersey?.quantity, "detailedJersey");
+  console.log("------------------------");
+
+  const handleToCart = () => {
+    let totalQuantity;
+    if (cartItem?.quantity) {
+      totalQuantity = cartItem?.quantity + count;
+    } else {
+      totalQuantity = count;
+    }
+    dispatch(
+      addToCartAction({
+        ...detailedJersey,
+        quantity: totalQuantity,
+      })
+    );
+    totalQuantity = 1;
+    setCount(1);
+  };
   return (
     <section className="product__section">
       <div className="product__container">
@@ -115,19 +136,14 @@ function ProductDetail() {
               </button>
               <input
                 type="number"
-                onChange={(e) => setCount(e.target.value)}
+                onChange={(e) => {
+                  setCount(Number(e.target.value));
+                }}
                 value={count}
               />
               <button onClick={() => setCount((count) => count + 1)}>+</button>
             </div>
-            <button
-              onClick={() =>
-                dispatch(
-                  addToCartAction({ ...detailedJersey, quantity: count })
-                )
-              }
-              className="product__detail-add"
-            >
+            <button onClick={handleToCart} className="product__detail-add">
               <p>SƏBƏTƏ AT</p>
             </button>
           </div>

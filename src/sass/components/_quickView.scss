@@ -1,0 +1,45 @@
+.quick__view {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .quick__view-container {
+    transition: 0.4s;
+    width: 35%;
+    opacity: 0;
+    visibility: hidden;
+    i {
+      font-size: 3rem;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      transition: 0.4s;
+      color: $White;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.quick__view-show {
+  background-color: rgba(0, 0, 0, 0.674);
+  opacity: 1;
+  visibility: visible;
+  .quick__view-container {
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -529,7 +529,7 @@ header .header__container .header__bottom .header__bottom-container > div:hover 
     align-items: center;
   }
   header .header__container .header__top .header__top-container .header__nav .bottom__bar i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #313131;
   }
   header .header__container .header__top .header__top-container .header__nav .bottom__bar .count {
@@ -1034,7 +1034,6 @@ body {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   width: 262.5px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1116,6 +1115,7 @@ body {
   border-left: 5px solid #000; /* Color of the triangle */
 }
 #home .home__products .products__container .products__bottom .product .quick__shop-btns .quick__add-btn {
+  text-decoration: none;
   border: none;
   font-family: "Hanken Grotesk";
   transition: 0.2s;
@@ -1341,6 +1341,7 @@ body {
 }
 #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row {
   border-bottom: 1px solid #e6e6e6;
+  background-color: rebeccapurple;
   padding: 10px 0;
   width: 100%;
   display: flex;
@@ -1905,15 +1906,29 @@ body {
     flex-direction: column;
     gap: 10px;
   }
+  .product__section .product__container .product__left .swiper {
+    height: 200px;
+  }
+  .product__section .product__container .product__left .swiper .swiper-button-next,
+  .product__section .product__container .product__left .swiper .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
+  .product__section .product__container .product__left .swiper .swiper-wrapper {
+    height: 200px;
+  }
   .product__section .product__container .product__left .swiper__footer {
     width: 100%;
-    height: 100px;
+    height: 60px;
   }
   .product__section .product__container .product__left .swiper__footer .swiper {
-    height: 100px;
+    height: 60px;
+  }
+  .product__section .product__container .product__left .swiper__footer .swiper .swiper-slide {
+    height: 60px;
   }
   .product__section .product__container .product__left .swiper__footer .swiper .swiper-wrapper {
-    height: 100px;
+    height: 60px;
   }
   .product__section .product__container .product__left .mySwiper2 {
     width: 80%;
@@ -2501,7 +2516,6 @@ body {
 
 .modal__open {
   visibility: visible;
-  background-color: transparent;
   background-color: rgba(0, 0, 0, 0.674);
 }
 .modal__open .sizeguide__container {
@@ -2813,4 +2827,49 @@ body {
   50% {
     transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
   }
+}
+.quick__view {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quick__view .quick__view-container {
+  transition: 0.4s;
+  width: 35%;
+  opacity: 0;
+  visibility: hidden;
+}
+.quick__view .quick__view-container i {
+  font-size: 3rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+  color: #fff;
+}
+.quick__view .quick__view-container i:hover {
+  opacity: 0.6;
+}
+.quick__view .quick__view-container img {
+  width: 100%;
+}
+
+.quick__view-show {
+  background-color: rgba(0, 0, 0, 0.674);
+  opacity: 1;
+  visibility: visible;
+}
+.quick__view-show .quick__view-container {
+  opacity: 1;
+  visibility: visible;
 }
