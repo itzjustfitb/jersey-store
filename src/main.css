@@ -2572,6 +2572,7 @@ body {
   opacity: 0.6;
 }
 .searchbar .searchbar__container .searchbar__bottom {
+  position: relative;
   height: 70%;
   padding: 20px 0;
   z-index: 10;
@@ -2586,28 +2587,36 @@ body {
   gap: 10px;
   overflow-y: scroll;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card {
-  width: 262.5px;
-  cursor: pointer;
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
+  width: 262.5px;
   align-items: center;
   position: relative;
   text-decoration: none;
   gap: 20px;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card img {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product img {
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   width: 262.5px;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 262.5px;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns {
   position: absolute;
   top: 0;
   left: 0;
   width: 262.5px;
   height: 262.5px;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .base__btns {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns {
   transition: 0.4s;
   width: 100%;
   opacity: 0;
@@ -2616,11 +2625,11 @@ body {
   display: flex;
   flex-direction: column;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .base__btns .base__btns-icon {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon {
   cursor: pointer;
   position: relative;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .base__btns .base__btns-icon i {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon i {
   text-decoration: none;
   color: #313131;
   display: flex;
@@ -2630,7 +2639,7 @@ body {
   height: 35px;
   font-size: 24px;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .base__btns .base__btns-icon .tooltip {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon .tooltip {
   position: absolute;
   padding: 0 10px;
   line-height: 28px;
@@ -2646,7 +2655,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .base__btns .base__btns-icon .tooltip::after {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon .tooltip::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -2657,14 +2666,15 @@ body {
   transition: 0.4s;
   transform: translateY(-50%);
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .base__btns .base__btns-icon:hover .tooltip {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon:hover .tooltip {
   background-color: #000;
   color: #fff;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .base__btns .base__btns-icon:hover .tooltip::after {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon:hover .tooltip::after {
   border-left: 5px solid #000; /* Color of the triangle */
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .quick__add-btn {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .quick__add-btn {
+  text-decoration: none;
   border: none;
   font-family: "Hanken Grotesk";
   transition: 0.2s;
@@ -2682,28 +2692,30 @@ body {
   align-items: center;
   gap: 10px;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .quick__add-btn i {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .quick__add-btn i {
   font-size: 20px;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .quick__shop-btns .quick__add-btn p {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .quick__add-btn p {
   font-size: 14px;
   font-weight: 800;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .product__desc {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .product__desc {
   width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 7px;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .product__desc h3 {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .product__desc h3 {
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.3px;
   line-height: 1.4;
   color: #313131;
 }
-.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .searchbar__card .product__desc p {
+.searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .product__desc p {
   color: #949494;
 }
 .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product:hover .quick__shop-btns .base__btns {
@@ -2723,6 +2735,9 @@ body {
   display: flex;
   justify-content: center;
   color: #949494;
+}
+.searchbar .searchbar__container .searchbar__bottom .loader {
+  position: absolute;
 }
 
 .searchbar__show {

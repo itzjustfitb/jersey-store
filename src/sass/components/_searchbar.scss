@@ -45,6 +45,7 @@
       }
     }
     .searchbar__bottom {
+      position: relative;
       height: 70%;
       padding: 20px 0;
       z-index: 10;
@@ -57,17 +58,23 @@
         justify-content: center;
         gap: 10px;
         overflow-y: scroll;
-        .searchbar__card {
-          width: 262.5px;
-          cursor: pointer;
+        .product {
+          border-radius: 10px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+          height: fit-content;
           display: flex;
           flex-direction: column;
+          width: 262.5px;
           align-items: center;
           position: relative;
           text-decoration: none;
           gap: 20px;
           img {
+            border-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
             width: 262.5px;
+            object-fit: cover;
             height: 262.5px;
           }
           .quick__shop-btns {
@@ -140,6 +147,7 @@
               }
             }
             .quick__add-btn {
+              text-decoration: none;
               border: none;
               font-family: $Hanken-Grotesk;
               transition: 0.2s;
@@ -167,6 +175,8 @@
           }
           .product__desc {
             width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -205,6 +215,9 @@
         display: flex;
         justify-content: center;
         color: $Light-gray-2;
+      }
+      .loader {
+        position: absolute;
       }
     }
   }

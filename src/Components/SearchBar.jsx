@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { addToCartAction } from "../redux/actions/cart.action";
-import { useDispatch } from "react-redux";
 import { fetchJerseysFromFirestoreOrAPI } from "../jerseyService";
+import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 function SearchBar({ isOpen, setIsOpen }) {
   const [searchList, setSearchList] = useState([]);
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const dispatch = useDispatch();
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
 
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [searchList]);
   const searchingResult = (e) => {
     const searchResults = products.filter((item) =>
       item.title.toLowerCase().includes(e.target.value.toLowerCase())
     );
 
     setSearchList(searchResults);
-  };
-
-  const addToCart = (e) => {
-    e.preventDefault();
-    dispatch(addToCartAction(item));
   };
 
   useEffect(() => {
@@ -44,35 +47,39 @@ function SearchBar({ isOpen, setIsOpen }) {
           {searchList.length ? (
             <div className="searchbar__cards">
               {searchList.map((item) => {
-                console.log(item);
                 return (
                   <Link
                     key={item.id}
-                    to={`/product/${item.id}`}
-                    className="searchbar__card"
                     onClick={() => setIsOpen(false)}
+                    to={`/product/${item.id}`}
+                    className="product"
                   >
                     <img src={item.thumbnail} alt={`${item.title} image`} />
-                    <div className="quick__shop-btns">
+                    {/* <div className="quick__shop-btns">
                       <div className="base__btns">
                         <div className="base__btns-icon">
                           <i className="ri-heart-3-line"></i>
                           <div className="tooltip">Bəyən</div>
                         </div>
                         <div className="base__btns-icon">
-                          <i className="ri-zoom-in-line"></i>
+                          <i
+                            onClick={() => dispatch(quickViewOpenAction(item))}
+                            className="ri-zoom-in-line"
+                          ></i>
                           <div className="tooltip">Bax</div>
                         </div>
                       </div>
-                      <button onClick={addToCart} className="quick__add-btn">
-                        <i className="ri-shopping-cart-line"></i>
-                        <p>SƏBƏTƏ AT</p>
-                      </button>
-                    </div>
+                      <Link
+                        to={`/product/${item.id}`}
+                        className="quick__add-btn"
+                      >
+                        <i className="ri-eye-line"></i>
+                        <p>MƏHSULA BAX</p>
+                      </Link>
+                    </div> */}
                     <div className="product__desc">
                       <h3>
-                        {item.title} – <span>{item.id}</span>{" "}
-                        <span>(komandalar üçün)</span>
+                        {item.title} – <span>(komandalar üçün)</span>
                       </h3>
                       <p>
                         {item.price}
@@ -86,6 +93,7 @@ function SearchBar({ isOpen, setIsOpen }) {
           ) : (
             <div className="searchbar__empty">Məhsul tapılmadı</div>
           )}
+          {isLoading ? <Loader /> : ""}
         </div>
       </div>
     </div>
