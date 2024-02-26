@@ -13,7 +13,6 @@ function QuickView({ item }) {
       setView(false);
       document.body.style.overflow = "auto";
     }
-    console.log(view);
   }, [item.length]);
 
   return (

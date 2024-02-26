@@ -12,6 +12,7 @@ function Header() {
   const totalPrice = cartList.reduce((total, product) => {
     return total + product.quantity * product.price;
   }, 0);
+  const { wishList } = useSelector((state) => state);
 
   const [scrollInt, setScrollInt] = useState(0);
   window.addEventListener("scroll", () => {
@@ -43,7 +44,7 @@ function Header() {
               </div>
               <Link to="/wishlist" className="header__nav-icon bottom__bar">
                 <i className="ri-heart-3-line"></i>
-                <span className="count">0</span>
+                <span className="count">{wishList.length}</span>
               </Link>
               <div
                 onClick={() => setCartListIsActive(!cartListIsActive)}

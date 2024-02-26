@@ -6,10 +6,12 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { addToCartAction } from "../../redux/actions/cart.action";
 import SizeGuide from "../SizeGuide";
 import { fetchJerseysFromFirestoreOrAPI } from "../../jerseyService";
+import { addToWishListAction } from "../../redux/actions/like.action";
+import { addToCompareListAction } from "../../redux/actions/compare.action";
 function ProductDetail() {
   useEffect(() => {
     fetchJerseysFromFirestoreOrAPI().then((res) => {
@@ -17,6 +19,7 @@ function ProductDetail() {
     });
   }, []);
 
+  const [added, setAdded] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation();
   const { cartList } = useSelector((state) => state);
@@ -29,11 +32,9 @@ function ProductDetail() {
   const detailedJersey = productDetail.find((item) => item.id === index);
   const cartItem = cartList?.find((item) => item.id === detailedJersey?.id);
   const [count, setCount] = useState(cartItem?.quantity || 1);
+  const [addToCompareList, setAddToCompareList] = useState(false);
+
   let dispatch = useDispatch();
-  console.log(cartItem?.quantity, "cartItem");
-  console.log(count, "count");
-  console.log(detailedJersey?.quantity, "detailedJersey");
-  console.log("------------------------");
 
   const handleToCart = () => {
     let totalQuantity;
@@ -51,6 +52,18 @@ function ProductDetail() {
     totalQuantity = 1;
     setCount(1);
   };
+
+  const addToWishList = () => {
+    setAdded(!added);
+    dispatch(addToWishListAction(detailedJersey));
+  };
+
+  const addToComparelist = () => {
+    setAddToCompareList(!addToCompareList);
+    dispatch(addToCompareListAction(detailedJersey));
+    console.log(detailedJersey);
+  };
+
   return (
     <section className="product__section">
       <div className="product__container">
@@ -148,13 +161,23 @@ function ProductDetail() {
             </button>
           </div>
           <div className="product__detail-footer">
-            <button className="wishlist">
-              <i className="ri-heart-line"></i>
-              <p>Bəyən</p>
+            <button onClick={addToWishList} className="wishlist">
+              <i className={added ? "ri-heart-fill" : "ri-heart-3-line"}></i>
+              <p>{added ? "Bəyəndiklərimdən çıxart" : "Bəyən"}</p>
             </button>
-            <button className="compare">
-              <i className="ri-arrow-left-right-line"></i>
-              <p>Müqayisə et</p>
+            <button onClick={addToComparelist} className="compare">
+              <i
+                className={
+                  addToCompareList ? "ri-refresh-line" : "ri-loop-left-line"
+                }
+              ></i>
+              <p>
+                {addToCompareList ? (
+                  <Link to="/compare">Müqayisə olunanlara bax</Link>
+                ) : (
+                  "Müqayisə et"
+                )}
+              </p>
             </button>
             <button onClick={() => setModalOpen(true)} className="sizeguide">
               <i className="ri-ruler-line"></i>

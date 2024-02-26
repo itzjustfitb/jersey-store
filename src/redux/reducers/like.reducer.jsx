@@ -1,17 +1,17 @@
-export function quickViewReducer(state = [], action) {
+export function likeReducer(state = [], action) {
   switch (action.type) {
-    case "QUICK_VIEW_OPEN":
+    case "ADD_TO_WISHLIST":
       const existingProductIndex = state.findIndex(
         (product) => product.id === action.payload.id
       );
+      console.log("sala,");
       if (existingProductIndex !== -1) {
         return state.filter((item) => item.id !== action.payload.id);
       } else {
         return [...state, action.payload];
       }
-
-    case "QUICK_VIEW_CLOSE":
-      return state.filter((item) => item.id !== action.payload.id);
+    case "REMOVE_FROM_WISHLIST":
+      return state.filter((item) => item !== action.payload);
     default:
       return state;
   }

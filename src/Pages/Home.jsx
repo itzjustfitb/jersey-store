@@ -4,13 +4,11 @@ import Products from "../Components/Home/Products";
 import QuickView from "../Components/Home/QuickView";
 function Home() {
   const { quickViewList } = useSelector((state) => state);
-  console.log(quickViewList, "quickViewList");
   return (
     <main id="home">
       <Hero />
       <Products />
       <QuickView item={quickViewList} />
-      {/* {quickViewList.length ? <QuickView item={quickViewList} /> : ""} */}
     </main>
   );
 }

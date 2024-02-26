@@ -11,6 +11,8 @@ import Cart from "./Pages/Cart";
 import Questions from "./Pages/Questions";
 import { useEffect, useState } from "react";
 import Loader from "./Components/Loader";
+import WishList from "./Pages/WishList";
+import Compare from "./Pages/Compare";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,6 +41,8 @@ function App() {
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/questions" element={<Questions />} />
+        <Route path="/wishlist" element={<WishList />} />
+        <Route path="/compare" element={<Compare />} />
       </Routes>
       <Footer />
     </>

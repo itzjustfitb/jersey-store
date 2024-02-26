@@ -1,12 +1,14 @@
 import { combineReducers, createStore } from "redux";
 import { cartReducer } from "../reducers/cart.reducer";
-import jerseyReducer from "../reducers/jersey.reducer";
 import { quickViewReducer } from "../reducers/quickView.action";
+import { likeReducer } from "../reducers/like.reducer";
+import { compareReducer } from "../reducers/compare.reduce";
 
 const reducers = combineReducers({
   cartList: cartReducer,
-  jerseyList: jerseyReducer,
+  wishList: likeReducer,
   quickViewList: quickViewReducer,
+  compareList: compareReducer,
 });
 
 export const globalStore = createStore(reducers);

@@ -33,8 +33,8 @@ function Footer() {
               <Link to="">
                 <li>Xidmət şərtləri</li>
               </Link>
-              <Link to="">
-                <li>Məxfilik siyasəti</li>
+              <Link to="/compare">
+                <li>Müqayisə olunan məhsullar</li>
               </Link>
             </ul>
           </div>

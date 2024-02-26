@@ -108,7 +108,8 @@
                 line-height: 28px;
                 font-size: 12px;
                 letter-spacing: 0.3px;
-                visibility: visible;
+                visibility: hidden;
+                opacity: 0;
                 white-space: nowrap;
                 color: transparent;
                 background-color: transparent;
@@ -117,13 +118,23 @@
                 right: calc(100% + 10px); /* Positioning from the right */
                 top: 50%;
                 transform: translateY(-50%);
+                a {
+                  visibility: visible;
+                  text-decoration: none;
+                  color: $White;
+                }
+              }
+
+              .base__btns-icon:hover .tooltip {
+                visibility: visible;
+                opacity: 1;
               }
 
               .base__btns-icon .tooltip::after {
                 content: "";
                 position: absolute;
                 top: 50%;
-                right: -5px; /* Positioning the triangle on the right side */
+                right: -5px;
                 border-top: 5px solid transparent;
                 border-bottom: 5px solid transparent;
                 border-left: 5px solid transparent; /* Color of the triangle */

@@ -1,6 +1,6 @@
-export function quickViewReducer(state = [], action) {
+export function compareReducer(state = [], action) {
   switch (action.type) {
-    case "QUICK_VIEW_OPEN":
+    case "ADD_TO_COMPARE_LIST":
       const existingProductIndex = state.findIndex(
         (product) => product.id === action.payload.id
       );
@@ -9,8 +9,7 @@ export function quickViewReducer(state = [], action) {
       } else {
         return [...state, action.payload];
       }
-
-    case "QUICK_VIEW_CLOSE":
+    case "REMOVE_FROM_COMPARE_LIST":
       return state.filter((item) => item.id !== action.payload.id);
     default:
       return state;
