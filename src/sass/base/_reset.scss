@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 div,
@@ -87,6 +91,8 @@ video {
   vertical-align: baseline;
 }
 body {
+  font-family: $Hanken-Grotesk;
+  position: relative;
   line-height: 1;
 }
 ol,

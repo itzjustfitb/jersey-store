@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import Loader from "./Components/Loader";
 import WishList from "./Pages/WishList";
 import Compare from "./Pages/Compare";
+import ScrollTopBtn from "./Components/ScrollTopBtn";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,6 +45,7 @@ function App() {
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/compare" element={<Compare />} />
       </Routes>
+      <ScrollTopBtn />
       <Footer />
     </>
   );

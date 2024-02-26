@@ -5,8 +5,6 @@ body {
 }
 
 body {
-  font-family: "Hanken Grotesk";
-  position: relative;
   margin-top: 111.6px;
 }
 
@@ -848,6 +846,10 @@ footer .footer__container .footer__bottom {
     align-items: center;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 div,
@@ -938,6 +940,8 @@ video {
 }
 
 body {
+  font-family: "Hanken Grotesk";
+  position: relative;
   line-height: 1;
 }
 
@@ -965,8 +969,6 @@ table {
 }
 
 body {
-  font-family: "Hanken Grotesk";
-  position: relative;
   margin-top: 111.6px;
 }
 
@@ -3253,4 +3255,58 @@ body {
   to {
     transform: translateY(-0.1em);
   }
+}
+.scroll__top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 0.4s;
+}
+.scroll__top-btn i {
+  transition: 0.4s;
+}
+.scroll__top-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.scroll__top-btn:hover span {
+  overflow: hidden;
+}
+.scroll__top-btn:hover span i {
+  animation: scroll-down 2s infinite ease;
+}
+@keyframes scroll-down {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-0.6rem);
+    opacity: 0;
+  }
+}
+.scroll__top-btn span {
+  display: block;
+  height: 90%;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: #001a2e;
+}
+
+.grid {
+  display: grid;
 }
