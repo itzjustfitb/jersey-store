@@ -71,8 +71,10 @@
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.4s;
+
   i {
     transition: 0.4s;
+    color: $Black;
   }
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
@@ -80,7 +82,7 @@
     span {
       overflow: hidden;
       i {
-        animation: scroll-down 2s infinite ease;
+        animation: scroll-down 1.5s infinite ease;
       }
     }
   }
@@ -91,7 +93,7 @@
       opacity: 0;
     }
     50% {
-      transform: translateY(0);
+      transform: translateY(0rem);
       opacity: 1;
     }
     100% {
@@ -113,6 +115,6 @@
   }
 }
 
-.grid {
-  display: grid;
+.none {
+  display: none;
 }

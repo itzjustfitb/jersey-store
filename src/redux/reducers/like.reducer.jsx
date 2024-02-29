@@ -4,7 +4,6 @@ export function likeReducer(state = [], action) {
       const existingProductIndex = state.findIndex(
         (product) => product.id === action.payload.id
       );
-      console.log("sala,");
       if (existingProductIndex !== -1) {
         return state.filter((item) => item.id !== action.payload.id);
       } else {

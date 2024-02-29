@@ -4,18 +4,36 @@ import { quickViewOpenAction } from "../../redux/actions/quickView.action";
 import { addToWishListAction } from "../../redux/actions/like.action";
 import { useState } from "react";
 import { addToCompareListAction } from "../../redux/actions/compare.action";
+import { toast } from "react-toastify";
 
 function Product({ item }) {
   const dispatch = useDispatch();
   const [addToList, setAddToList] = useState(false);
   const [addToCompareList, setAddToCompareList] = useState(false);
   const addToWishList = () => {
-    setAddToList(!addToList);
-    dispatch(addToWishListAction(item));
+    try {
+      setAddToList(!addToList);
+      dispatch(addToWishListAction(item));
+      if (!addToList) {
+        toast.success("Bəyəndiklərimə əlavə olundu");
+      } else {
+        toast.warning("Bəyəndiklərimdən silindi");
+      }
+    } catch (error) {
+      toast.error("Xəta başverdi");
+    }
   };
   const addToComparelist = () => {
     setAddToCompareList(!addToCompareList);
-    dispatch(addToCompareListAction(item));
+
+    try {
+      dispatch(addToCompareListAction(item));
+      if (!addToCompareList) {
+        toast.success("Müqayisə siyahısına əlavə olundu");
+      }
+    } catch (error) {
+      toast.error("Xəta başverdi");
+    }
   };
   return (
     <div className="product">

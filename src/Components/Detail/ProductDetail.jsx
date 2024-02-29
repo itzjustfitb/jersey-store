@@ -12,6 +12,7 @@ import SizeGuide from "../SizeGuide";
 import { fetchJerseysFromFirestoreOrAPI } from "../../jerseyService";
 import { addToWishListAction } from "../../redux/actions/like.action";
 import { addToCompareListAction } from "../../redux/actions/compare.action";
+import { toast } from "react-toastify";
 function ProductDetail() {
   useEffect(() => {
     fetchJerseysFromFirestoreOrAPI().then((res) => {
@@ -43,12 +44,19 @@ function ProductDetail() {
     } else {
       totalQuantity = count;
     }
-    dispatch(
-      addToCartAction({
-        ...detailedJersey,
-        quantity: totalQuantity,
-      })
-    );
+
+    try {
+      dispatch(
+        addToCartAction({
+          ...detailedJersey,
+          quantity: totalQuantity,
+        })
+      );
+      toast.success("Məhsul səbətə əlavə olundu");
+    } catch (error) {
+      toast.error(error);
+    }
+
     totalQuantity = 1;
     setCount(1);
   };
@@ -118,17 +126,17 @@ function ProductDetail() {
             <p>Ölçülər:</p>
             <div className="product__detail-sizes-buttons">
               {buttonsList.map((item, index) => {
-                if (index !== item) {
-                  return (
-                    <button
-                      key={item}
-                      className={activeBtn ? "button__active" : ""}
-                      onClick={() => setActiveBtn(true)}
-                    >
-                      {item}
-                    </button>
-                  );
-                }
+                console.log(item, index);
+
+                return (
+                  <button
+                    key={item}
+                    className={activeBtn ? "button__active" : ""}
+                    onClick={() => setActiveBtn(true)}
+                  >
+                    {item}
+                  </button>
+                );
               })}
             </div>
           </div>

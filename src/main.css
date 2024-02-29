@@ -1353,7 +1353,6 @@ body {
 }
 #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row {
   border-bottom: 1px solid #e6e6e6;
-  background-color: rebeccapurple;
   padding: 10px 0;
   width: 100%;
   display: flex;
@@ -1450,6 +1449,7 @@ body {
   font-weight: initial;
 }
 #cart .cart__container .cart__right button {
+  font-family: "Hanken Grotesk";
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3271,6 +3271,7 @@ body {
 }
 .scroll__top-btn i {
   transition: 0.4s;
+  color: #000;
 }
 .scroll__top-btn:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -3279,7 +3280,7 @@ body {
   overflow: hidden;
 }
 .scroll__top-btn:hover span i {
-  animation: scroll-down 2s infinite ease;
+  animation: scroll-down 1.5s infinite ease;
 }
 @keyframes scroll-down {
   0% {
@@ -3287,7 +3288,7 @@ body {
     opacity: 0;
   }
   50% {
-    transform: translateY(0);
+    transform: translateY(0rem);
     opacity: 1;
   }
   100% {
@@ -3307,6 +3308,14 @@ body {
   color: #001a2e;
 }
 
-.grid {
-  display: grid;
+.none {
+  display: none;
+}
+
+.Toastify {
+  z-index: -1 !important;
+}
+.Toastify .Toastify__toast-body {
+  font-family: "Hanken Grotesk";
+  font-weight: 500;
 }

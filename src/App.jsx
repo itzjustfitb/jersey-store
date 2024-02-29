@@ -14,7 +14,8 @@ import Loader from "./Components/Loader";
 import WishList from "./Pages/WishList";
 import Compare from "./Pages/Compare";
 import ScrollTopBtn from "./Components/ScrollTopBtn";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
@@ -35,6 +36,7 @@ function App() {
     <>
       <Header />
       {isLoading ? <Loader /> : ""}
+      <ToastContainer className="toast" autoClose={2000} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<Product />} />

@@ -15,9 +15,9 @@ function ScrollTopBtn() {
 
     let scrollValue = Math.round((pos * 100) / calcHeight);
     if (pos > 100) {
-      setValue("grid");
+      setValue("scroll__top-btn");
     } else {
-      setValue("");
+      setValue("none");
     }
 
     document.querySelector(
@@ -29,11 +29,7 @@ function ScrollTopBtn() {
   window.onload = calcScrollValue;
 
   return (
-    <div
-      id="scroll__top-btn"
-      onClick={btnHandleClick}
-      className={`scroll__top-btn ${value}`}
-    >
+    <div id="scroll__top-btn" onClick={btnHandleClick} className={value}>
       <span>
         <i className="ri-arrow-up-line"></i>
       </span>
