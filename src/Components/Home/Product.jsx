@@ -1,12 +1,13 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { quickViewOpenAction } from "../../redux/actions/quickView.action";
 import { addToWishListAction } from "../../redux/actions/like.action";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addToCompareListAction } from "../../redux/actions/compare.action";
 import { toast } from "react-toastify";
 
 function Product({ item }) {
+  const wishList = useSelector((state) => state.wishList);
   const dispatch = useDispatch();
   const [addToList, setAddToList] = useState(false);
   const [addToCompareList, setAddToCompareList] = useState(false);
@@ -14,6 +15,7 @@ function Product({ item }) {
     try {
       setAddToList(!addToList);
       dispatch(addToWishListAction(item));
+
       if (!addToList) {
         toast.success("Bəyəndiklərimə əlavə olundu");
       } else {
@@ -23,6 +25,7 @@ function Product({ item }) {
       toast.error("Xəta başverdi");
     }
   };
+
   const addToComparelist = () => {
     setAddToCompareList(!addToCompareList);
 
@@ -35,6 +38,7 @@ function Product({ item }) {
       toast.error("Xəta başverdi");
     }
   };
+
   return (
     <div className="product">
       <img src={item.thumbnail} alt={`${item.title} image`} />

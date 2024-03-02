@@ -4,7 +4,7 @@ import { removeFromCartAction } from "../redux/actions/cart.action";
 import { Link } from "react-router-dom";
 
 function CartSidebar({ activate, setActivate, totalPrice }) {
-  const { cartList } = useSelector((state) => state);
+  const cartList = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
 
   return (

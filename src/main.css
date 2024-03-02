@@ -1044,6 +1044,7 @@ body {
   gap: 20px;
 }
 #home .home__products .products__container .products__bottom .product img {
+  transition: 0.4s;
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;

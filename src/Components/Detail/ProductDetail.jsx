@@ -69,7 +69,6 @@ function ProductDetail() {
   const addToComparelist = () => {
     setAddToCompareList(!addToCompareList);
     dispatch(addToCompareListAction(detailedJersey));
-    console.log(detailedJersey);
   };
 
   return (
@@ -126,8 +125,6 @@ function ProductDetail() {
             <p>Ölçülər:</p>
             <div className="product__detail-sizes-buttons">
               {buttonsList.map((item, index) => {
-                console.log(item, index);
-
                 return (
                   <button
                     key={item}
