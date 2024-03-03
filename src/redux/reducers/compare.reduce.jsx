@@ -11,6 +11,8 @@ export function compareReducer(state = [], action) {
       }
     case "REMOVE_FROM_COMPARE_LIST":
       return state.filter((item) => item.id !== action.payload.id);
+    case "SET_TO_COMPARE_LIST":
+      return action.payload;
     default:
       return state;
   }

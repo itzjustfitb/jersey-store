@@ -16,9 +16,15 @@ import Compare from "./Pages/Compare";
 import ScrollTopBtn from "./Components/ScrollTopBtn";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { setToWishlistAction } from "./redux/actions/like.action";
+import { useDispatch } from "react-redux";
+import { setToComparelistAction } from "./redux/actions/compare.action";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
+  const storedCompareList = JSON.parse(localStorage.getItem("comparelist"));
   const location = useLocation();
+  const dispatch = useDispatch();
   useEffect(() => {
     setIsLoading(true);
     document.body.style.position = "fixed";
@@ -31,6 +37,13 @@ function App() {
       clearTimeout(timer);
     };
   }, [location]);
+
+  useEffect(() => {
+    if (storedWishList || storedCompareList) {
+      dispatch(setToWishlistAction(storedWishList));
+      dispatch(setToComparelistAction(storedCompareList));
+    }
+  }, []);
 
   return (
     <>

@@ -10,32 +10,45 @@ import { Link, useLocation } from "react-router-dom";
 import { addToCartAction } from "../../redux/actions/cart.action";
 import SizeGuide from "../SizeGuide";
 import { fetchJerseysFromFirestoreOrAPI } from "../../jerseyService";
-import { addToWishListAction } from "../../redux/actions/like.action";
+import {
+  addToWishListAction,
+  setToWishlistAction,
+} from "../../redux/actions/like.action";
 import { addToCompareListAction } from "../../redux/actions/compare.action";
 import { toast } from "react-toastify";
+import Loader from "../Loader";
 function ProductDetail() {
+  const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
+  useEffect(() => {
+    if (storedWishList) {
+      dispatch(setToWishlistAction(storedWishList));
+    }
+  }, []);
   useEffect(() => {
     fetchJerseysFromFirestoreOrAPI().then((res) => {
       setProductDetail(res);
     });
   }, []);
 
-  const [added, setAdded] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation();
-  const { cartList } = useSelector((state) => state);
+  const cartList = useSelector((state) => state.cartList);
   const path = location.pathname.split("/").filter((x) => x !== "");
   const index = path[path.length - 1];
   const [productDetail, setProductDetail] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-  const [activeBtn, setActiveBtn] = useState("");
-  const buttonsList = ["XS", "S", "M", "L", "XL"];
   const detailedJersey = productDetail.find((item) => item.id === index);
   const cartItem = cartList?.find((item) => item.id === detailedJersey?.id);
   const [count, setCount] = useState(cartItem?.quantity || 1);
   const [addToCompareList, setAddToCompareList] = useState(false);
-
+  const wishList = useSelector((state) => state.wishList);
   let dispatch = useDispatch();
+  const [addedWish, setAddedWish] = useState(
+    wishList?.filter((wishedItem) => wishedItem?.id === index).length
+  );
+
+  console.log(addedWish);
+  console.log(wishList, "list");
 
   const handleToCart = () => {
     let totalQuantity;
@@ -62,8 +75,25 @@ function ProductDetail() {
   };
 
   const addToWishList = () => {
-    setAdded(!added);
-    dispatch(addToWishListAction(detailedJersey));
+    try {
+      setAddedWish(!addedWish);
+      dispatch(addToWishListAction(detailedJersey));
+      localStorage.setItem(
+        "wishlist",
+        JSON.stringify([...wishList, detailedJersey])
+      );
+      if (!addedWish) {
+        toast.success("Bəyəndiklərimə əlavə olundu");
+      } else {
+        const filteredWishlist = wishList.filter(
+          (wishedItem) => wishedItem.id !== index
+        );
+        localStorage.setItem("wishlist", JSON.stringify(filteredWishlist));
+        toast.warning("Bəyəndiklərimdən silindi");
+      }
+    } catch (error) {
+      toast.error("Xəta başverdi");
+    }
   };
 
   const addToComparelist = () => {
@@ -121,22 +151,6 @@ function ProductDetail() {
 
             <p>Sifarişlər 4-6 gün ərzində təhvil verilir.</p>
           </div>
-          <div className="product__detail-sizes">
-            <p>Ölçülər:</p>
-            <div className="product__detail-sizes-buttons">
-              {buttonsList.map((item, index) => {
-                return (
-                  <button
-                    key={item}
-                    className={activeBtn ? "button__active" : ""}
-                    onClick={() => setActiveBtn(true)}
-                  >
-                    {item}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
           <div className="product__detail-selection">
             <div className="counter">
               <button
@@ -167,8 +181,10 @@ function ProductDetail() {
           </div>
           <div className="product__detail-footer">
             <button onClick={addToWishList} className="wishlist">
-              <i className={added ? "ri-heart-fill" : "ri-heart-3-line"}></i>
-              <p>{added ? "Bəyəndiklərimdən çıxart" : "Bəyən"}</p>
+              <i
+                className={addedWish ? "ri-heart-fill" : "ri-heart-3-line"}
+              ></i>
+              <p>{addedWish ? "Bəyəndiklərimdən çıxart" : "Bəyən"}</p>
             </button>
             <button onClick={addToComparelist} className="compare">
               <i

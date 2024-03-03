@@ -10,3 +10,10 @@ export function removeFromCompareListAction(payload) {
     payload,
   };
 }
+
+export function setToComparelistAction(payload) {
+  return {
+    type: "SET_TO_COMPARE_LIST",
+    payload,
+  };
+}

@@ -2,15 +2,19 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromCompareListAction } from "../redux/actions/compare.action";
+import { toast } from "react-toastify";
 
 function Compare() {
   const compareList = useSelector((state) => state.compareList);
-  console.log(compareList);
   const dispatch = useDispatch();
   function removeItem(e, element) {
-    console.log(element);
+    toast.warning("Müqayisə siyahısından silindi");
     e.preventDefault();
     dispatch(removeFromCompareListAction(element));
+    const filteredCompareList = compareList.filter(
+      (comparedItem) => comparedItem.id !== element.id
+    );
+    localStorage.setItem("comparelist", JSON.stringify(filteredCompareList));
   }
 
   return (

@@ -11,6 +11,8 @@ export function likeReducer(state = [], action) {
       }
     case "REMOVE_FROM_WISHLIST":
       return state.filter((item) => item !== action.payload);
+    case "SET_TO_WISHLIST":
+      return action.payload;
     default:
       return state;
   }

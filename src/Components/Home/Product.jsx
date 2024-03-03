@@ -2,23 +2,34 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { quickViewOpenAction } from "../../redux/actions/quickView.action";
 import { addToWishListAction } from "../../redux/actions/like.action";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { addToCompareListAction } from "../../redux/actions/compare.action";
 import { toast } from "react-toastify";
 
 function Product({ item }) {
   const wishList = useSelector((state) => state.wishList);
+  const compareList = useSelector((state) => state.compareList);
+
+  const [addedWish, setAddedWish] = useState(
+    wishList.filter((wishedItem) => wishedItem.id === item.id).length
+  );
+  const [addedCompare, setAddedCompare] = useState(
+    compareList.filter((comparedItem) => comparedItem.id === item.id).length
+  );
   const dispatch = useDispatch();
-  const [addToList, setAddToList] = useState(false);
-  const [addToCompareList, setAddToCompareList] = useState(false);
+
   const addToWishList = () => {
     try {
-      setAddToList(!addToList);
+      setAddedWish(!addedWish);
       dispatch(addToWishListAction(item));
-
-      if (!addToList) {
+      localStorage.setItem("wishlist", JSON.stringify([...wishList, item]));
+      if (!addedWish) {
         toast.success("Bəyəndiklərimə əlavə olundu");
       } else {
+        const filteredWishlist = wishList.filter(
+          (product) => product.id !== item.id
+        );
+        localStorage.setItem("wishlist", JSON.stringify(filteredWishlist));
         toast.warning("Bəyəndiklərimdən silindi");
       }
     } catch (error) {
@@ -27,12 +38,24 @@ function Product({ item }) {
   };
 
   const addToComparelist = () => {
-    setAddToCompareList(!addToCompareList);
-
     try {
+      setAddedCompare(!addedCompare);
       dispatch(addToCompareListAction(item));
-      if (!addToCompareList) {
+      localStorage.setItem(
+        "comparelist",
+        JSON.stringify([...compareList, item])
+      );
+      if (!addedCompare) {
         toast.success("Müqayisə siyahısına əlavə olundu");
+      } else {
+        const filteredCompareList = compareList.filter(
+          (product) => product.id !== item.id
+        );
+        localStorage.setItem(
+          "comparelist",
+          JSON.stringify(filteredCompareList)
+        );
+        toast.warning("Müqayisə siyahısından silindi");
       }
     } catch (error) {
       toast.error("Xəta başverdi");
@@ -47,21 +70,21 @@ function Product({ item }) {
           <div className="base__btns-icon">
             <i
               onClick={addToWishList}
-              className={addToList ? "ri-heart-fill" : "ri-heart-3-line"}
+              className={addedWish ? "ri-heart-fill" : "ri-heart-3-line"}
             ></i>
             <div className="tooltip">
-              {addToList ? "Bəyəndiklərimdən çıxart" : "Bəyən"}
+              {addedWish ? "Bəyəndiklərimdən çıxart" : "Bəyən"}
             </div>
           </div>
           <div className="base__btns-icon">
             <i
               onClick={addToComparelist}
               className={
-                addToCompareList ? "ri-refresh-line" : "ri-loop-left-fill"
+                addedCompare ? "ri-check-double-line" : "ri-loop-left-fill"
               }
             ></i>
             <div className="tooltip">
-              {addToCompareList ? (
+              {addedCompare ? (
                 <Link to="/compare">Müqayisə olunanlara bax</Link>
               ) : (
                 "Müqayisə et"

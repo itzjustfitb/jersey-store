@@ -1,18 +1,19 @@
-import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromWishListAction } from "../redux/actions/like.action";
 
 function WishList() {
   const wishList = useSelector((state) => state.wishList);
-  console.log(wishList);
+  let dispatch = useDispatch();
 
   function removeItem(e, element) {
-    console.log(element);
     e.preventDefault();
     dispatch(removeFromWishListAction(element));
+    const filteredWishlist = wishList.filter(
+      (product) => product.id !== element.id
+    );
+    localStorage.setItem("wishlist", JSON.stringify(filteredWishlist));
   }
-  let dispatch = useDispatch();
   return (
     <main className="wishlist">
       <div className="wishlist__container">
