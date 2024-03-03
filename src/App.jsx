@@ -19,6 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { setToWishlistAction } from "./redux/actions/like.action";
 import { useDispatch } from "react-redux";
 import { setToComparelistAction } from "./redux/actions/compare.action";
+import NotFound from "./Components/NotFound";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
@@ -39,8 +40,10 @@ function App() {
   }, [location]);
 
   useEffect(() => {
-    if (storedWishList || storedCompareList) {
+    if (storedWishList) {
       dispatch(setToWishlistAction(storedWishList));
+    }
+    if (storedCompareList) {
       dispatch(setToComparelistAction(storedCompareList));
     }
   }, []);
@@ -59,6 +62,7 @@ function App() {
         <Route path="/questions" element={<Questions />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/compare" element={<Compare />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ScrollTopBtn />
       <Footer />

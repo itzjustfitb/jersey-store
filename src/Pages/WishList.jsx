@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromWishListAction } from "../redux/actions/like.action";
+import { toast } from "react-toastify";
 
 function WishList() {
   const wishList = useSelector((state) => state.wishList);
@@ -13,6 +14,7 @@ function WishList() {
       (product) => product.id !== element.id
     );
     localStorage.setItem("wishlist", JSON.stringify(filteredWishlist));
+    toast.warning("Bəyəndiklərimdən silindi");
   }
   return (
     <main className="wishlist">

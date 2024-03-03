@@ -14,14 +14,20 @@ import {
   addToWishListAction,
   setToWishlistAction,
 } from "../../redux/actions/like.action";
-import { addToCompareListAction } from "../../redux/actions/compare.action";
+import {
+  addToCompareListAction,
+  setToComparelistAction,
+} from "../../redux/actions/compare.action";
 import { toast } from "react-toastify";
-import Loader from "../Loader";
 function ProductDetail() {
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
+  const storedCompareList = JSON.parse(localStorage.getItem("comparelist"));
   useEffect(() => {
     if (storedWishList) {
       dispatch(setToWishlistAction(storedWishList));
+    }
+    if (storedCompareList) {
+      dispatch(setToComparelistAction(storedCompareList));
     }
   }, []);
   useEffect(() => {
@@ -40,15 +46,16 @@ function ProductDetail() {
   const detailedJersey = productDetail.find((item) => item.id === index);
   const cartItem = cartList?.find((item) => item.id === detailedJersey?.id);
   const [count, setCount] = useState(cartItem?.quantity || 1);
-  const [addToCompareList, setAddToCompareList] = useState(false);
+  const [addedCompare, setAddedCompare] = useState(
+    storedCompareList?.filter((comparedItem) => comparedItem?.id === index)
+      .length
+  );
   const wishList = useSelector((state) => state.wishList);
+  const compareList = useSelector((state) => state.compareList);
   let dispatch = useDispatch();
   const [addedWish, setAddedWish] = useState(
-    wishList?.filter((wishedItem) => wishedItem?.id === index).length
+    storedWishList?.filter((wishedItem) => wishedItem?.id === index).length
   );
-
-  console.log(addedWish);
-  console.log(wishList, "list");
 
   const handleToCart = () => {
     let totalQuantity;
@@ -97,8 +104,21 @@ function ProductDetail() {
   };
 
   const addToComparelist = () => {
-    setAddToCompareList(!addToCompareList);
+    setAddedCompare(!addedCompare);
     dispatch(addToCompareListAction(detailedJersey));
+    localStorage.setItem(
+      "comparelist",
+      JSON.stringify([...compareList, detailedJersey])
+    );
+    if (!addedCompare) {
+      toast.success("Müqayisə siyahısına əlavə olundu");
+    } else {
+      toast.warning("Müqayisə siyahısından silindi");
+      const filteredCompareList = compareList.filter(
+        (comparedItem) => comparedItem.id !== index
+      );
+      localStorage.setItem("comparelist", JSON.stringify(filteredCompareList));
+    }
   };
 
   return (
@@ -186,14 +206,15 @@ function ProductDetail() {
               ></i>
               <p>{addedWish ? "Bəyəndiklərimdən çıxart" : "Bəyən"}</p>
             </button>
-            <button onClick={addToComparelist} className="compare">
+            <button className="compare">
               <i
+                onClick={addToComparelist}
                 className={
-                  addToCompareList ? "ri-refresh-line" : "ri-loop-left-line"
+                  addedCompare ? "ri-check-double-line" : "ri-loop-left-line"
                 }
               ></i>
               <p>
-                {addToCompareList ? (
+                {addedCompare ? (
                   <Link to="/compare">Müqayisə olunanlara bax</Link>
                 ) : (
                   "Müqayisə et"
