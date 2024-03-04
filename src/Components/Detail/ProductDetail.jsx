@@ -227,7 +227,7 @@ function ProductDetail() {
             </button>
           </div>
           <div className="product__detail-description">
-            <h1>Description</h1>
+            <h1>Ətraflı</h1>
             <p>
               Yeni buraxılmış <span>{detailedJersey?.title}</span> ilə Blaugrana
               ehtirasınızı ortaya qoymağa hazır olun. Yalnız JerseyStore.az

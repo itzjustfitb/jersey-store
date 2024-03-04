@@ -3111,24 +3111,231 @@ body {
 }
 .quick__view .quick__view-container {
   transition: 0.4s;
-  width: 35%;
+  width: 50%;
+  height: 60%;
   opacity: 0;
   visibility: hidden;
 }
-.quick__view .quick__view-container i {
-  font-size: 3rem;
+.quick__view .quick__view-container .quick__view-content {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+}
+.quick__view .quick__view-container .quick__view-content > i {
+  font-size: 2rem;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
   transition: 0.4s;
-  color: #fff;
+  color: #000;
 }
-.quick__view .quick__view-container i:hover {
+.quick__view .quick__view-container .quick__view-content > i:hover {
   opacity: 0.6;
 }
-.quick__view .quick__view-container img {
-  width: 100%;
+.quick__view .quick__view-container .quick__view-content .quick__view-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left img {
+  width: 90%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions {
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+  width: 70%;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  padding: 10px 0;
+  gap: 5px;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon {
+  position: relative;
+  cursor: pointer;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon i {
+  text-decoration: none;
+  color: #313131;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  font-size: 1.7rem;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon .tooltip {
+  position: absolute;
+  padding: 0 10px;
+  line-height: 28px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  visibility: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  color: transparent;
+  background-color: transparent;
+  transition: 0.4s;
+  left: auto;
+  right: calc(100% + 10px); /* Positioning from the right */
+  top: 50%;
+  transform: translateY(-50%);
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon .tooltip a {
+  visibility: visible;
+  text-decoration: none;
+  color: #fff;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent; /* Color of the triangle */
+  transition: 0.4s;
+  transform: translateY(-50%);
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  background-color: #000;
+  color: #fff;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon:hover .tooltip::after {
+  border-left: 5px solid #000; /* Color of the triangle */
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container > h1 {
+  padding-top: 20px;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container > p {
+  font-size: 1.5rem;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container > p:nth-child(3) {
+  font-size: 1rem;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket {
+  height: 75px;
+  background-color: re;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter {
+  height: 40px;
+  display: flex;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter button {
+  width: 20px;
+  border: 1px solid #949494;
+  cursor: pointer;
+  transition: 0.4s;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter button:hover {
+  opacity: 0.6;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter button:first-child {
+  border-right: none;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter button:last-child {
+  border-left: none;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter input {
+  font-family: "Hanken Grotesk";
+  box-sizing: border-box;
+  border: 1px solid #949494;
+  background-color: #ffffff;
+  width: 40px;
+  padding: 10px;
+  transition: 0.4s;
+  text-align: center;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter input::-webkit-inner-spin-button, .quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter input:focus {
+  outline-color: transparent;
+  outline-width: 0px;
+  border-color: black;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-add {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  width: 122px;
+  height: 40px;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-family: "Hanken Grotesk";
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  align-items: center;
+  transition: 0.4s;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-add:hover {
+  opacity: 0.6;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-description p {
+  font-size: 0.9rem;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-description p:nth-child(1) {
+  line-height: 1.4;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-description p:nth-child(2) {
+  font-weight: 700;
+  display: flex;
+  gap: 7px;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-description p:nth-child(2) span {
+  font-weight: initial;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-description p:nth-child(3) {
+  font-weight: 700;
+  display: flex;
+  gap: 7px;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-description p:nth-child(3) span {
+  font-weight: initial;
+  display: flex;
+  gap: 5px;
+}
+.quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-description p:nth-child(3) span i {
+  color: orange;
 }
 
 .quick__view-show {
