@@ -3124,6 +3124,7 @@ body {
 }
 .quick__view .quick__view-container {
   transition: 0.4s;
+  transform: scale(0.8);
   width: 50%;
   height: 60%;
   opacity: 0;
@@ -3357,6 +3358,7 @@ body {
   visibility: visible;
 }
 .quick__view-show .quick__view-container {
+  transform: scale(1.1);
   opacity: 1;
   visibility: visible;
 }
@@ -3484,38 +3486,67 @@ body {
   font-weight: 500;
 }
 
-.frem {
+.notfound {
   width: 100%;
-  height: 100vh;
   display: flex;
-  position: relative;
   justify-content: center;
   align-items: center;
+}
+.notfound .notfound__container {
+  width: 90%;
+  display: flex;
   flex-direction: column;
+  height: 100%;
+  gap: 50px;
 }
-.frem p {
-  position: absolute;
-  top: 3rem;
-  font-size: 7rem;
-  color: rgba(0, 0, 0, 0.3882352941);
+.notfound .notfound__container .notfound__top {
+  width: 100%;
+  height: 340px;
+  position: relative;
 }
-.frem h2 {
-  position: absolute;
-  bottom: 8rem;
-  font-size: 34px;
+.notfound .notfound__container .notfound__top h1 {
+  font-size: 25rem;
+  font-weight: 700;
+  text-align: center;
+  color: #e5e5e5;
 }
-.frem h5 {
+.notfound .notfound__container .notfound__top span {
   position: absolute;
-  bottom: 6rem;
-  color: #9c9c9c;
+  font-size: 75px;
+  top: 60%;
+  left: 50%;
+  letter-spacing: 3px;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
 }
-.frem a {
-  position: absolute;
-  bottom: 1rem;
-  background: linear-gradient(45deg, #ff0034, #ffbc00);
-  padding: 12px;
-  color: white;
+.notfound .notfound__container .notfound__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.notfound .notfound__container .notfound__bottom p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.notfound .notfound__container .notfound__bottom a {
   text-decoration: none;
-  font-size: 23px;
-  border-radius: 13px;
+}
+.notfound .notfound__container .notfound__bottom a button {
+  font-family: "Hanken Grotesk";
+  font-weight: 700;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  transition: 0.4s;
+}
+.notfound .notfound__container .notfound__bottom a button:hover {
+  opacity: 0.6;
 }

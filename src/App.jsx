@@ -19,7 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { setToWishlistAction } from "./redux/actions/like.action";
 import { useDispatch } from "react-redux";
 import { setToComparelistAction } from "./redux/actions/compare.action";
-import NotFound from "./Components/NotFound";
+import NotFound from "./Pages/NotFound";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));

@@ -12,7 +12,11 @@
   justify-content: center;
   align-items: center;
   .quick__view-container {
+    // position: absolute;
     transition: 0.4s;
+    // left: -100%;
+    // top: 50%;
+    transform: scale(0.8);
     width: 50%;
     height: 60%;
     opacity: 0;
@@ -250,6 +254,9 @@
   opacity: 1;
   visibility: visible;
   .quick__view-container {
+    // left: 50%;
+    // top: 50%;
+    transform: scale(1.1);
     opacity: 1;
     visibility: visible;
   }
