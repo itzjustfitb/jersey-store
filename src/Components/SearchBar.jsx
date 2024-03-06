@@ -22,7 +22,6 @@ function SearchBar({ isOpen, setIsOpen }) {
     const searchResults = products.filter((item) =>
       item.title.toLowerCase().includes(e.target.value.toLowerCase())
     );
-
     setSearchList(searchResults);
   };
 

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { quickViewOpenAction } from "../../redux/actions/quickView.action";
 import { addToWishListAction } from "../../redux/actions/like.action";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addToCompareListAction } from "../../redux/actions/compare.action";
 import { toast } from "react-toastify";
 
@@ -18,9 +18,26 @@ function Product({ item }) {
   );
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (wishList) {
+      setAddedWish(
+        wishList.filter((wishItem) => wishItem.id === item.id).length
+      );
+    }
+  }, [wishList]);
+
+  useEffect(() => {
+    if (compareList) {
+      setAddedCompare(
+        compareList.filter((comparedItem) => comparedItem.id === item.id).length
+      );
+    }
+  }, [compareList]);
+
   const addToWishList = () => {
     try {
       setAddedWish(!addedWish);
+      console.log(addedWish);
       dispatch(addToWishListAction(item));
       localStorage.setItem("wishlist", JSON.stringify([...wishList, item]));
       if (!addedWish) {
@@ -64,7 +81,9 @@ function Product({ item }) {
 
   return (
     <div className="product">
-      <img src={item.thumbnail} alt={`${item.title} image`} />
+      <div className="product__image">
+        <img src={item.thumbnail} alt={`${item.title} image`} />
+      </div>
       <div className="quick__shop-btns">
         <div className="base__btns">
           <div className="base__btns-icon">

@@ -1,15 +1,16 @@
 import Product from "./Product";
 import { useEffect, useState } from "react";
 import { fetchJerseysFromFirestoreOrAPI } from "../../jerseyService";
+import { useSelector } from "react-redux";
 function Products() {
   const [datas, setDatas] = useState([]);
+  const wishList = useSelector((state) => state.wishList);
 
   useEffect(() => {
     fetchJerseysFromFirestoreOrAPI().then((res) => {
       setDatas(res);
     });
   }, []);
-
   return (
     <section className="home__products">
       <div className="products__container">

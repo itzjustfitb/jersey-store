@@ -22,14 +22,14 @@ import { toast } from "react-toastify";
 function ProductDetail() {
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
   const storedCompareList = JSON.parse(localStorage.getItem("comparelist"));
-  useEffect(() => {
-    if (storedWishList) {
-      dispatch(setToWishlistAction(storedWishList));
-    }
-    if (storedCompareList) {
-      dispatch(setToComparelistAction(storedCompareList));
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (storedWishList) {
+  //     dispatch(setToWishlistAction(storedWishList));
+  //   }
+  //   if (storedCompareList) {
+  //     dispatch(setToComparelistAction(storedCompareList));
+  //   }
+  // }, []);
   useEffect(() => {
     fetchJerseysFromFirestoreOrAPI().then((res) => {
       setProductDetail(res);

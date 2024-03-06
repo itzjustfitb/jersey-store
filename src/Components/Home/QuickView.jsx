@@ -1,10 +1,41 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { quickViewCloseAction } from "../../redux/actions/quickView.action";
+import { toast } from "react-toastify";
+import {
+  addToWishListAction,
+  removeFromWishListAction,
+  setToWishlistAction,
+} from "../../redux/actions/like.action";
+import { addToCompareListAction } from "../../redux/actions/compare.action";
+import { Link } from "react-router-dom";
 
-function QuickView({ item }) {
+function QuickView() {
+  const item = useSelector((state) => state.quickViewList);
   const [view, setView] = useState(false);
+  const wishList = useSelector((state) => state.wishList);
+  const compareList = useSelector((state) => state.compareList);
+  const [addedWish, setAddedWish] = useState(false);
+  const [addedCompare, setAddedCompare] = useState(false);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (wishList.length) {
+      setAddedWish(
+        wishList.filter((wishItem) => wishItem.id === item[0]?.id).length
+      );
+    }
+  }, [wishList, item]);
+
+  useEffect(() => {
+    if (compareList.length) {
+      setAddedCompare(
+        compareList.filter((comparedItem) => comparedItem.id === item[0]?.id)
+          .length
+      );
+    }
+  }, [compareList, item]);
+
   useEffect(() => {
     if (item.length === 1) {
       setView(true);
@@ -16,8 +47,51 @@ function QuickView({ item }) {
   }, [item.length]);
 
   const clickToContainer = (e) => {
-    console.log("Sala");
     e.stopPropagation();
+  };
+
+  const addToWishList = () => {
+    try {
+      setAddedWish(!addedWish);
+      dispatch(addToWishListAction(item[0]));
+      localStorage.setItem("wishlist", JSON.stringify([...wishList, item]));
+      if (!addedWish) {
+        toast.success("Bəyəndiklərimə əlavə olundu");
+      } else {
+        const filteredWishlist = wishList.filter(
+          (product) => product.id !== item[0]?.id
+        );
+        localStorage.setItem("wishlist", JSON.stringify(filteredWishlist));
+        toast.warning("Bəyəndiklərimdən silindi");
+      }
+    } catch (error) {
+      toast.error("Xəta başverdi");
+    }
+  };
+
+  const addToComparelist = () => {
+    try {
+      setAddedCompare(!addedCompare);
+      dispatch(addToCompareListAction(item[0]));
+      localStorage.setItem(
+        "comparelist",
+        JSON.stringify([...compareList, item])
+      );
+      if (!addedCompare) {
+        toast.success("Müqayisə siyahısına əlavə olundu");
+      } else {
+        const filteredCompareList = compareList.filter(
+          (comparedItem) => comparedItem.id !== item[0]?.id
+        );
+        localStorage.setItem(
+          "comparelist",
+          JSON.stringify(filteredCompareList)
+        );
+        toast.warning("Müqayisə siyahısından silindi");
+      }
+    } catch (error) {
+      toast.error("Xəta başverdi");
+    }
   };
 
   return (
@@ -35,12 +109,28 @@ function QuickView({ item }) {
             <img src={item[0]?.thumbnail} alt={item[0]?.title} />
             <div className="quick__view-actions">
               <div className="quick__view-icon">
-                <div className="tooltip">Bəyən</div>
-                <i className="ri-heart-line"></i>
+                <div className="tooltip">
+                  {addedWish ? "Bəyəndiklərimdən çıxart" : "Bəyən"}
+                </div>
+                <i
+                  onClick={addToWishList}
+                  className={addedWish ? "ri-heart-fill" : "ri-heart-3-line"}
+                ></i>
               </div>
               <div className="quick__view-icon">
-                <div className="tooltip">Müqayisə et</div>
-                <i className="ri-loop-left-line"></i>
+                <div className="tooltip">
+                  {addedCompare ? (
+                    <Link to="/compare">Müqayisə olunanlara bax</Link>
+                  ) : (
+                    "Müqayisə et"
+                  )}
+                </div>
+                <i
+                  onClick={addToComparelist}
+                  className={
+                    addedCompare ? "ri-check-double-line" : "ri-loop-left-fill"
+                  }
+                ></i>
               </div>
             </div>
           </div>
@@ -67,7 +157,7 @@ function QuickView({ item }) {
                   kluba sarsılmaz dəstəyinizi göstərin.
                 </p>
                 <p>
-                  Title: <span>{item[0]?.title}</span>
+                  Club: <span>{item[0]?.club}</span>
                 </p>
                 <p>
                   Rating:

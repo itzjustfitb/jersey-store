@@ -64,14 +64,30 @@
           position: relative;
           text-decoration: none;
           gap: 20px;
-          img {
-            transition: 0.4s;
+          transition: 0.4s;
+
+          .product__image {
             border-radius: 10px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            width: 262.5px;
-            object-fit: cover;
-            height: 262.5px;
+            display: flex;
+            justify-content: center;
+            img {
+              border-radius: 10px;
+              transition: 0.4s;
+              border-radius: 10px;
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+              width: 262.5px;
+              object-fit: cover;
+              height: 262.5px;
+            }
+          }
+          &:hover {
+            .product__image {
+              overflow: hidden;
+              img {
+                transform: scale(1.1);
+              }
+            }
           }
           .quick__shop-btns {
             position: absolute;
