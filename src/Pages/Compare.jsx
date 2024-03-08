@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromCompareListAction } from "../redux/actions/compare.action";
 import { toast } from "react-toastify";
+import Breadcrumbs from "../Components/Breadcrumbs";
 
 function Compare() {
   const compareList = useSelector((state) => state.compareList);
@@ -22,6 +23,7 @@ function Compare() {
       <div className="compare__container">
         {compareList.length ? (
           <div className="compare__fill">
+            <Breadcrumbs />
             <div className="compare__header">
               <h1>MÜQAYİSƏ OLUNAN MƏHSULLAR</h1>
             </div>

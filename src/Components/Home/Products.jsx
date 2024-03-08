@@ -2,6 +2,7 @@ import Product from "./Product";
 import { useEffect, useState } from "react";
 import { fetchJerseysFromFirestoreOrAPI } from "../../jerseyService";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 function Products() {
   const [datas, setDatas] = useState([]);
   const wishList = useSelector((state) => state.wishList);
@@ -20,6 +21,10 @@ function Products() {
             İstədiyiniz dizayn və loqolarla yüksək texnologiyalı parçadan
             hazırlanan uyğun qiymətli oyun formaları
           </p>
+          <Link to="/products">
+            <p>Bütün məhsullar</p>
+            <i className="ri-arrow-right-line"></i>
+          </Link>
         </div>
         <div className="products__bottom">
           {datas?.map((item) => {

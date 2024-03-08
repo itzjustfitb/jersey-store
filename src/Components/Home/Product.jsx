@@ -118,7 +118,7 @@ function Product({ item }) {
             <div className="tooltip">Bax</div>
           </div>
         </div>
-        <Link to={`/product/${item.id}`} className="quick__add-btn">
+        <Link to={`/products/${item.id}`} className="quick__add-btn">
           <i className="ri-eye-line"></i>
           <p>MƏHSULA BAX</p>
         </Link>

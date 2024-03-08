@@ -10,26 +10,13 @@ import { Link, useLocation } from "react-router-dom";
 import { addToCartAction } from "../../redux/actions/cart.action";
 import SizeGuide from "../SizeGuide";
 import { fetchJerseysFromFirestoreOrAPI } from "../../jerseyService";
-import {
-  addToWishListAction,
-  setToWishlistAction,
-} from "../../redux/actions/like.action";
-import {
-  addToCompareListAction,
-  setToComparelistAction,
-} from "../../redux/actions/compare.action";
+import { addToWishListAction } from "../../redux/actions/like.action";
+import { addToCompareListAction } from "../../redux/actions/compare.action";
 import { toast } from "react-toastify";
+import Breadcrumbs from "../Breadcrumbs";
 function ProductDetail() {
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
   const storedCompareList = JSON.parse(localStorage.getItem("comparelist"));
-  // useEffect(() => {
-  //   if (storedWishList) {
-  //     dispatch(setToWishlistAction(storedWishList));
-  //   }
-  //   if (storedCompareList) {
-  //     dispatch(setToComparelistAction(storedCompareList));
-  //   }
-  // }, []);
   useEffect(() => {
     fetchJerseysFromFirestoreOrAPI().then((res) => {
       setProductDetail(res);
@@ -163,6 +150,7 @@ function ProductDetail() {
           </div>
         </div>
         <div className="product__right">
+          <Breadcrumbs />
           <div className="product__detail-title">
             <h1 className="product__detail-header">{detailedJersey?.title}</h1>
             <p className="product__detail-price">

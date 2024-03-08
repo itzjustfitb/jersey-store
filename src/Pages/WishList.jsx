@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromWishListAction } from "../redux/actions/like.action";
 import { toast } from "react-toastify";
+import Breadcrumbs from "../Components/Breadcrumbs";
 
 function WishList() {
   const wishList = useSelector((state) => state.wishList);
@@ -21,6 +22,7 @@ function WishList() {
       <div className="wishlist__container">
         {wishList.length ? (
           <div className="wishlist__fill">
+            <Breadcrumbs />
             <div className="wishlist__header">
               <h1>BƏYƏNDİKLƏRİNİZİN SİYAHISI</h1>
             </div>

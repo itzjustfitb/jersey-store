@@ -1,27 +1,23 @@
 .breadcrumps {
-  width: 100%;
+  // width: 100%;
+  width: fit-content;
   height: 40px;
-  background-color: $Breadcrumps-color;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 5px;
   .breadcrumps__container {
     display: flex;
-    width: 90%;
-    gap: 10px;
+    width: fit-content;
+    gap: 5px;
     .crump {
       display: flex;
-      gap: 10px;
+      gap: 5px;
       a {
         width: 100%;
         display: flex;
-        gap: 5%;
+        gap: 5px;
         text-decoration: none;
         color: $Secondary-color;
-        p {
-          width: 90px;
-        }
       }
       > p {
         color: $Light-gray-2;

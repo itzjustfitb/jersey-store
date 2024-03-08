@@ -20,6 +20,7 @@ import { setToWishlistAction } from "./redux/actions/like.action";
 import { useDispatch } from "react-redux";
 import { setToComparelistAction } from "./redux/actions/compare.action";
 import NotFound from "./Pages/NotFound";
+import Products from "./Pages/Products";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
@@ -55,7 +56,7 @@ function App() {
       <ToastContainer className="toast" autoClose={2000} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/products/:id" element={<Product />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
@@ -63,6 +64,7 @@ function App() {
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/compare" element={<Compare />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
       <ScrollTopBtn />
       <Footer />

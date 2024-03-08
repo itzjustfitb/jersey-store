@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 function NotFound() {
   const wishList = useSelector((state) => state.wishList);
 
-  console.log(wishList);
-
   return (
     <main className="notfound">
       <div className="notfound__container">

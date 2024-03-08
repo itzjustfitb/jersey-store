@@ -7,7 +7,6 @@ function Home() {
     <main id="home">
       <Hero />
       <Products />
-
       <QuickView />
     </main>
   );
