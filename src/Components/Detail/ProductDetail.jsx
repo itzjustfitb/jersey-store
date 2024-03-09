@@ -45,12 +45,8 @@ function ProductDetail() {
   );
 
   const handleToCart = () => {
-    let totalQuantity;
-    if (cartItem?.quantity) {
-      totalQuantity = cartItem?.quantity + count;
-    } else {
-      totalQuantity = count;
-    }
+    let totalQuantity = 0;
+    totalQuantity = totalQuantity += count;
 
     try {
       dispatch(

@@ -21,6 +21,7 @@ import { useDispatch } from "react-redux";
 import { setToComparelistAction } from "./redux/actions/compare.action";
 import NotFound from "./Pages/NotFound";
 import Products from "./Pages/Products";
+import QuickView from "./Components/QuickView";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
@@ -53,7 +54,13 @@ function App() {
     <>
       <Header />
       {isLoading ? <Loader /> : ""}
-      <ToastContainer className="toast" autoClose={2000} />
+      <ToastContainer
+        className="toast"
+        position="bottom-right"
+        draggable
+        newestOnTop
+        autoClose={2000}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:id" element={<Product />} />
@@ -66,6 +73,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/products" element={<Products />} />
       </Routes>
+      <QuickView />
       <ScrollTopBtn />
       <Footer />
     </>

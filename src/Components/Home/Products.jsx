@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function Products() {
   const [datas, setDatas] = useState([]);
-  const wishList = useSelector((state) => state.wishList);
-
   useEffect(() => {
     fetchJerseysFromFirestoreOrAPI().then((res) => {
       setDatas(res);

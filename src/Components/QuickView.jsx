@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { quickViewCloseAction } from "../../redux/actions/quickView.action";
+import { quickViewCloseAction } from "../redux/actions/quickView.action";
 import { toast } from "react-toastify";
-import {
-  addToWishListAction,
-  removeFromWishListAction,
-  setToWishlistAction,
-} from "../../redux/actions/like.action";
-import { addToCompareListAction } from "../../redux/actions/compare.action";
+import { addToWishListAction } from "../redux/actions/like.action";
+import { addToCompareListAction } from "../redux/actions/compare.action";
 import { Link } from "react-router-dom";
+import { addToCartAction } from "../redux/actions/cart.action";
 
 function QuickView() {
   const item = useSelector((state) => state.quickViewList);
@@ -17,6 +14,7 @@ function QuickView() {
   const compareList = useSelector((state) => state.compareList);
   const [addedWish, setAddedWish] = useState(false);
   const [addedCompare, setAddedCompare] = useState(false);
+  const [count, setCount] = useState(1);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -94,6 +92,26 @@ function QuickView() {
     }
   };
 
+  const handleToCart = () => {
+    let totalQuantity = 0;
+    totalQuantity = totalQuantity += count;
+
+    try {
+      dispatch(
+        addToCartAction({
+          ...item[0],
+          quantity: totalQuantity,
+        })
+      );
+      toast.success("Məhsul səbətə əlavə olundu");
+    } catch (error) {
+      toast.error(error);
+    }
+
+    totalQuantity = 1;
+    setCount(1);
+  };
+
   return (
     <div
       onClick={() => dispatch(quickViewCloseAction(item[0]))}
@@ -143,11 +161,31 @@ function QuickView() {
               <p>Sifarişlər 4-6 gün ərzində təhvil verilir.</p>
               <div className="quick__view-basket">
                 <div className="quick__view-counter">
-                  <button>-</button>
-                  <input type="number" />
-                  <button>+</button>
+                  <button
+                    onClick={() =>
+                      setCount((prev) => {
+                        if (prev < 2) {
+                          return prev;
+                        } else {
+                          return prev - 1;
+                        }
+                      })
+                    }
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    value={count}
+                    onChange={(e) => setCount(Number(e.target.value))}
+                  />
+                  <button onClick={() => setCount((prev) => prev + 1)}>
+                    +
+                  </button>
                 </div>
-                <button className="quick__view-add">SƏBƏTƏ AT</button>
+                <button onClick={handleToCart} className="quick__view-add">
+                  SƏBƏTƏ AT
+                </button>
               </div>
               <div className="quick__view-description">
                 <p>

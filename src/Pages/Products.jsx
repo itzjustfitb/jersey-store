@@ -1,4 +1,4 @@
-import React, { Children, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchJerseysFromFirestoreOrAPI } from "../jerseyService";
 import Product from "../Components/Home/Product";
 import Breadcrumbs from "../Components/Breadcrumbs";

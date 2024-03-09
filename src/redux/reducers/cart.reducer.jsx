@@ -8,7 +8,7 @@ export function cartReducer(state = [], action) {
         if (action.payload.quantity === 1) {
           state[existingProductIndex].quantity += 1;
         } else {
-          state[existingProductIndex].quantity = action.payload.quantity;
+          state[existingProductIndex].quantity += action.payload.quantity;
         }
       } else {
         state.push(action.payload);

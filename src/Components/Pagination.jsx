@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-
 function Pagination({ totalPosts, postsPerPage, setCurrentPage, currentPage }) {
   let pages = [];
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {

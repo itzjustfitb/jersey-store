@@ -30,7 +30,7 @@ function WishList() {
               {wishList.length
                 ? wishList.map((item) => {
                     return (
-                      <div key={item.id} className="product">
+                      <div key={item.id} className="wishlist__product">
                         <button
                           onClick={(e) => removeItem(e, item)}
                           className="delete-btn"

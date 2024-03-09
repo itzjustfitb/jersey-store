@@ -1,6 +1,6 @@
 .cart__sidebar {
   transition: 0.4s;
-  z-index: 10;
+  z-index: 100 !important;
   position: fixed;
   right: -100%;
   width: 340px;
@@ -154,4 +154,5 @@
 
 .show {
   right: 0;
+  z-index: 100;
 }

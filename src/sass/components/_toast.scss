@@ -1,7 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+
 .Toastify {
-  z-index: -1 !important;
-  .Toastify__toast-body {
-    font-family: $Hanken-Grotesk;
-    font-weight: 500;
+  --toastify-font-family: "Hanken Grotesk";
+  --toastify-z-index: 10 !important;
+  z-index: var(--toastify-z-index) !important;
+  .Toastify-toast-container {
+    .Toastify-toast {
+      .Toastify__toast-body {
+        font-weight: 700;
+      }
+    }
   }
 }

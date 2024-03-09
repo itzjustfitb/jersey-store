@@ -1,4 +1,3 @@
-import Breadcrumbs from "../Components/Breadcrumbs";
 import ProductDetail from "../Components/Detail/ProductDetail";
 
 function Detail() {

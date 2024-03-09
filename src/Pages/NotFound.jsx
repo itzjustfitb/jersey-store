@@ -1,10 +1,6 @@
 import React from "react";
-import notFoundImg from "../assets/images/not-found.gif";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function NotFound() {
-  const wishList = useSelector((state) => state.wishList);
-
   return (
     <main className="notfound">
       <div className="notfound__container">
