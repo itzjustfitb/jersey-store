@@ -6,8 +6,9 @@ import {
   emptyTheCartAction,
   removeFromCartAction,
 } from "../redux/actions/cart.action";
+import { toast } from "react-toastify";
 function Cart() {
-  const { cartList } = useSelector((state) => state);
+  const cartList = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
 
   const totalPrice = cartList.reduce((total, product) => {
@@ -44,9 +45,17 @@ function Cart() {
                       </p>
                       <div>
                         <button
-                          onClick={() =>
-                            dispatch(removeFromCartAction(product))
-                          }
+                          onClick={() => {
+                            dispatch(removeFromCartAction(product));
+                            const filteredCartList = cartList.filter(
+                              (item) => item.id !== product.id
+                            );
+                            localStorage.setItem(
+                              "cartlist",
+                              JSON.stringify(filteredCartList)
+                            );
+                            toast.warning("Məhsul səbətdən silindi");
+                          }}
                         >
                           <i className="ri-delete-bin-line"></i>
                         </button>
@@ -97,7 +106,13 @@ function Cart() {
             <i className="fa-solid fa-circle-left"></i>
             <Link to="/">Alışverişə davam et</Link>
           </button>
-          <button onClick={() => dispatch(emptyTheCartAction(cartList))}>
+          <button
+            onClick={() => {
+              dispatch(emptyTheCartAction(cartList));
+              localStorage.setItem("cartlist", JSON.stringify([]));
+              toast.warning("Səbətiniz artıq boşdur");
+            }}
+          >
             <i className="fa-solid fa-trash"></i>
             <Link to="#">Səbəti boşalt</Link>
           </button>

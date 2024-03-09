@@ -22,10 +22,12 @@ import { setToComparelistAction } from "./redux/actions/compare.action";
 import NotFound from "./Pages/NotFound";
 import Products from "./Pages/Products";
 import QuickView from "./Components/QuickView";
+import { setToCartAction } from "./redux/actions/cart.action";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
   const storedCompareList = JSON.parse(localStorage.getItem("comparelist"));
+  const storedCartList = JSON.parse(localStorage.getItem("cartlist"));
   const location = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -47,6 +49,9 @@ function App() {
     }
     if (storedCompareList) {
       dispatch(setToComparelistAction(storedCompareList));
+    }
+    if (storedCartList) {
+      dispatch(setToCartAction(storedCartList));
     }
   }, []);
 

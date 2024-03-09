@@ -16,7 +16,7 @@ function QuickView() {
   const [addedCompare, setAddedCompare] = useState(false);
   const [count, setCount] = useState(1);
   const dispatch = useDispatch();
-
+  const cartList = useSelector((state) => state.cartList);
   useEffect(() => {
     if (wishList.length) {
       setAddedWish(
@@ -103,6 +103,7 @@ function QuickView() {
           quantity: totalQuantity,
         })
       );
+      localStorage.setItem("cartlist", JSON.stringify(cartList));
       toast.success("Məhsul səbətə əlavə olundu");
     } catch (error) {
       toast.error(error);

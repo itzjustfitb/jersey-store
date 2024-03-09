@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function CartSidebar({ activate, setActivate, totalPrice }) {
   const cartList = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
-
+  console.log(cartList);
   return (
     <aside className={`cart__sidebar ${activate ? "show" : ""}`}>
       <div className="cart__top">
@@ -37,7 +37,16 @@ function CartSidebar({ activate, setActivate, totalPrice }) {
                         </p>
                       </div>
                       <button
-                        onClick={() => dispatch(removeFromCartAction(item))}
+                        onClick={() => {
+                          dispatch(removeFromCartAction(item));
+                          const filteredCartList = cartList.filter(
+                            (cartItem) => cartItem.id !== item.id
+                          );
+                          localStorage.setItem(
+                            "cartlist",
+                            JSON.stringify(filteredCartList)
+                          );
+                        }}
                         className="cart__remove"
                       >
                         <i className="ri-close-line"></i>

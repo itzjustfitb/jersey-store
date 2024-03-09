@@ -19,6 +19,8 @@ export function cartReducer(state = [], action) {
     case "EMPTY_THE_CART":
       state = [];
       return state;
+    case "SET_TO_CART":
+      return action.payload;
     default:
       return state;
   }

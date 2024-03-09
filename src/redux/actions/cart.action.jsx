@@ -18,3 +18,10 @@ export function emptyTheCartAction(payload) {
     payload,
   };
 }
+
+export function setToCartAction(payload) {
+  return {
+    type: "SET_TO_CART",
+    payload,
+  };
+}

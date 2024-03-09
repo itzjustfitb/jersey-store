@@ -19,16 +19,16 @@ function Products() {
             İstədiyiniz dizayn və loqolarla yüksək texnologiyalı parçadan
             hazırlanan uyğun qiymətli oyun formaları
           </p>
-          <Link to="/products">
-            <p>Bütün məhsullar</p>
-            <i className="ri-arrow-right-line"></i>
-          </Link>
         </div>
         <div className="products__bottom">
           {datas?.map((item) => {
             return <Product key={item.id} item={item} />;
           })}
         </div>
+        <Link to="/products">
+          <p>Bütün məhsullar</p>
+          <i className="ri-arrow-right-line"></i>
+        </Link>
       </div>
     </section>
   );

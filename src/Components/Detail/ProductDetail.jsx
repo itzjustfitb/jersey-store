@@ -55,6 +55,7 @@ function ProductDetail() {
           quantity: totalQuantity,
         })
       );
+      localStorage.setItem("cartlist", JSON.stringify(cartList));
       toast.success("Məhsul səbətə əlavə olundu");
     } catch (error) {
       toast.error(error);
