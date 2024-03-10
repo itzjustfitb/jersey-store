@@ -1250,9 +1250,12 @@ body {
   }
   #home .home__hero .home__container {
     width: 100%;
+    height: 200px;
+    background-color: rebeccapurple;
   }
   #home .home__hero .home__container img {
     width: 100%;
+    height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }

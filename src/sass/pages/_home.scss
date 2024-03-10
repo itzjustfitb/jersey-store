@@ -1,90 +1,3 @@
-// #home {
-//   width: 100%;
-
-//   .home__hero {
-//     width: 100%;
-//     .home__container {
-//       width: 100%;
-//       img {
-//         width: 100%;
-//         object-fit: cover;
-//       }
-//     }
-//   }
-//   .home__products {
-//     padding: 32px 0;
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     .products__container {
-//       width: 80%;
-//       display: flex;
-//       flex-direction: column;
-//       gap: 20px;
-//       .products__top {
-//         // background-color: rebeccapurple;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         gap: 30px;
-//         h1 {
-//           font-size: 26px;
-//           position: relative;
-//           font-weight: 600;
-//           text-align: center;
-//         }
-//         h1::after {
-//           content: "";
-//           position: absolute;
-//           bottom: -12px;
-//           left: 50%;
-//           transform: translate(-50%);
-//           width: 10%;
-//           height: 2px;
-//           background-color: $Secondary-color;
-//         }
-//         > p {
-//           font-size: 14px;
-//           text-align: center;
-//           line-height: 1.6;
-//         }
-//       }
-//       .products__bottom {
-//         // background-color: green;
-//         display: flex;
-//         flex-wrap: wrap;
-//         // justify-content: center;
-//         justify-content: space-between;
-//         gap: 40px;
-//       }
-//       > a {
-//         margin: 0 auto;
-//         background-color: $Black;
-//         padding: 10px 15px;
-//         border-radius: 20px;
-//         text-decoration: none;
-//         display: flex;
-//         justify-content: center;
-//         gap: 5px;
-//         color: $White;
-//         font-weight: 500;
-//         transition: 0.4s;
-//         i,
-//         p {
-//           transition: 0.4s;
-//         }
-//         &:hover {
-//           opacity: 0.8;
-//           i {
-//             transform: translateX(5px);
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
 #home {
   width: 100%;
 
@@ -382,8 +295,11 @@
       width: 100%;
       .home__container {
         width: 100%;
+        height: 200px;
+        background-color: rebeccapurple;
         img {
           width: 100%;
+          height: 100%;
           object-fit: cover;
         }
       }
