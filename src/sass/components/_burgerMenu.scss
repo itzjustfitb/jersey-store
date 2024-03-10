@@ -1,0 +1,104 @@
+.burger__menu {
+  transition: 0.4s;
+  position: fixed;
+  right: 0;
+  right: -200%;
+  width: 100%;
+  background-color: $White;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  .burger__menu-container {
+    width: 90%;
+    display: grid;
+    grid-template-rows: 91px 1fr 140px;
+    .burger__menu-top {
+      display: flex;
+      border-bottom: 1px solid $Black;
+      align-items: center;
+      justify-content: space-between;
+      h2 {
+        font-size: 24px;
+        font-weight: 900;
+      }
+      i {
+        font-size: 2rem;
+      }
+    }
+    .burger__menu-bottom {
+      padding: 20px 0;
+      height: fit-content;
+      border-bottom: 1px solid $Black;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        li {
+          color: $White;
+          display: flex;
+          align-items: center;
+          height: 40px;
+          border-radius: 10px;
+          padding: 5px 20px;
+          border-radius: 10px;
+          a,
+          div {
+            position: relative;
+            width: 100%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: $Black;
+            font-weight: 700;
+            gap: 10px;
+            i {
+              font-weight: 500;
+              font-size: 2rem;
+            }
+            span {
+              width: 20px;
+              height: 20px;
+              padding: 3px;
+              background-color: rgba(194, 194, 194, 0.403);
+              border-radius: 50%;
+              display: grid;
+              place-items: center;
+              position: absolute;
+              right: 0;
+            }
+          }
+        }
+        // .active {
+        //   background-color: $Black;
+        //   a,
+        //   div {
+        //     color: $White;
+        //   }
+        // }
+      }
+    }
+    .burger__menu-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      img {
+        width: 120px;
+      }
+      p {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.active__burger-menu {
+  right: 0;
+}
+@media screen and (max-width: 650px) {
+  .burger__menu {
+    display: flex;
+  }
+}

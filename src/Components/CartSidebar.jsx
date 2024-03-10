@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 function CartSidebar({ activate, setActivate, totalPrice }) {
   const cartList = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
-  console.log(cartList);
   return (
     <aside className={`cart__sidebar ${activate ? "show" : ""}`}>
       <div className="cart__top">

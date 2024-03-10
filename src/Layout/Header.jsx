@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import CartSidebar from "../Components/CartSidebar";
 import SearchBar from "../Components/SearchBar";
+import BurgerMenu from "../Components/BurgerMenu";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [cartListIsActive, setCartListIsActive] = useState(false);
+  const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
   const { cartList } = useSelector((state) => state);
   const totalPrice = cartList.reduce((total, product) => {
     return total + product.quantity * product.price;
@@ -64,11 +66,14 @@ function Header() {
               </Link>
             </div>
             <div className="header__burger">
-              <i className="ri-menu-5-line"></i>
+              <i
+                onClick={() => setOpenBurgerMenu(true)}
+                className="ri-menu-5-line"
+              ></i>
             </div>
           </div>
         </div>
-        <div className="header__bottom">
+        {/* <div className="header__bottom">
           <nav className="header__bottom-container">
             <Link to="">ÖZƏL DİZAYN FORMALAR</Link>
             <Link to="">KOMANDA ÜÇÜN</Link>
@@ -88,12 +93,16 @@ function Header() {
               </div>
             </div>
           </nav>
-        </div>
+        </div> */}
       </div>
       <CartSidebar
         setActivate={setCartListIsActive}
         activate={cartListIsActive}
         totalPrice={totalPrice}
+      />
+      <BurgerMenu
+        setOpenBurgerMenu={setOpenBurgerMenu}
+        openBurgerMenu={openBurgerMenu}
       />
       <SearchBar setIsOpen={setIsOpen} isOpen={isOpen} />
     </header>
