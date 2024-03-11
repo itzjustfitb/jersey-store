@@ -649,7 +649,7 @@ footer .footer__container .footer__top {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: space-between;
-  height: 246px;
+  padding: 30px;
   gap: 30px;
 }
 footer .footer__container .footer__top p {
