@@ -3,11 +3,17 @@ import { Link } from "react-router-dom";
 import { removeFromWishListAction } from "../redux/actions/like.action";
 import { toast } from "react-toastify";
 import Breadcrumbs from "../Components/Breadcrumbs";
+import Pagination from "../Components/Pagination";
+import { useState } from "react";
 
 function WishList() {
   const wishList = useSelector((state) => state.wishList);
   let dispatch = useDispatch();
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(5);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = wishList.slice(firstPostIndex, lastPostIndex);
   function removeItem(e, element) {
     e.preventDefault();
     dispatch(removeFromWishListAction(element));
@@ -28,7 +34,7 @@ function WishList() {
             </div>
             <div className="wishlist__bottom">
               {wishList.length
-                ? wishList.map((item) => {
+                ? currentPosts.map((item) => {
                     return (
                       <div key={item.id} className="wishlist__product">
                         <button
@@ -42,7 +48,7 @@ function WishList() {
                         </button>
 
                         <Link
-                          to={`/product/${item.id}`}
+                          to={`/products/${item.id}`}
                           className="product__content"
                         >
                           <img
@@ -64,6 +70,12 @@ function WishList() {
                   })
                 : ""}
             </div>
+            <Pagination
+              totalPosts={wishList.length}
+              postsPerPage={postsPerPage}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
           </div>
         ) : (
           <div className="wishlist__empty">
