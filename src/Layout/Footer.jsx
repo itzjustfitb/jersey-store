@@ -19,7 +19,7 @@ function Footer() {
               <Link to="/contact-us">
                 <li>Bizimlə əlaqə</li>
               </Link>
-              <Link to="/questions">
+              <Link to="/compare">
                 <li>Müqayisə olunan məhsullar</li>
               </Link>
             </ul>
