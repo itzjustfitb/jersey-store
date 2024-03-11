@@ -8,7 +8,6 @@ import Product from "./Pages/Detail";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Cart from "./Pages/Cart";
-import Questions from "./Pages/Questions";
 import { useEffect, useState } from "react";
 import Loader from "./Components/Loader";
 import WishList from "./Pages/WishList";
@@ -72,7 +71,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/questions" element={<Questions />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/compare" element={<Compare />} />
         <Route path="*" element={<NotFound />} />
