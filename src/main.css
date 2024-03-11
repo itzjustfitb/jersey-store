@@ -3659,6 +3659,7 @@ body {
   color: #e5e5e5;
 }
 #compare .compare__container .compare__empty p {
+  text-align: center;
   font-size: 2.7rem;
   font-weight: 900;
 }
@@ -3843,16 +3844,18 @@ body {
     gap: 20px;
   }
   #compare .compare__container .compare__empty i {
-    font-size: 180px;
+    font-size: 120px;
     color: #e5e5e5;
   }
   #compare .compare__container .compare__empty p {
-    font-size: 2.7rem;
+    font-size: 1.7rem;
+    text-align: center;
+    line-height: 1.2;
     font-weight: 900;
   }
   #compare .compare__container .compare__empty a {
     text-decoration: none;
-    width: 200px;
+    width: 150px;
     height: 50px;
     background-color: #000;
     color: #fff;
@@ -3861,6 +3864,7 @@ body {
     align-items: center;
     font-weight: 700;
     transition: 0.4s;
+    font-size: 0.8rem;
   }
   #compare .compare__container .compare__empty a:hover {
     opacity: 0.6;
