@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import emptyCart from "../assets/images/empty-cart.svg";
 import { Link } from "react-router-dom";
@@ -21,7 +21,9 @@ function Cart() {
   const totalPrice = cartList.reduce((total, product) => {
     return total + product.quantity * product.price;
   }, 0);
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPosts]);
   return (
     <main id="cart">
       <div className="cart__container">
