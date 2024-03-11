@@ -22,6 +22,7 @@ import NotFound from "./Pages/NotFound";
 import Products from "./Pages/Products";
 import QuickView from "./Components/QuickView";
 import { setToCartAction } from "./redux/actions/cart.action";
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
