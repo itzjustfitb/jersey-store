@@ -167,6 +167,7 @@
       }
 
       p {
+        text-align: center;
         font-size: 2.7rem;
         font-weight: 900;
       }
@@ -355,17 +356,19 @@
         align-items: center;
         gap: 20px;
         i {
-          font-size: 180px;
+          font-size: 120px;
           color: $Light-gray;
         }
 
         p {
-          font-size: 2.7rem;
+          font-size: 1.7rem;
+          text-align: center;
+          line-height: 1.2;
           font-weight: 900;
         }
         a {
           text-decoration: none;
-          width: 200px;
+          width: 150px;
           height: 50px;
           background-color: $Black;
           color: $White;
@@ -374,6 +377,7 @@
           align-items: center;
           font-weight: 700;
           transition: 0.4s;
+          font-size: 0.8rem;
           &:hover {
             opacity: 0.6;
           }
