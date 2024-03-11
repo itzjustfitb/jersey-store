@@ -4,7 +4,16 @@ footer {
   justify-content: center;
   align-items: center;
   color: $Secondary-color;
-  border-top: 1px solid $Light-gray;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.5px;
+    top: 0;
+    left: 0;
+    background-color: $Light-gray;
+  }
   .footer__container {
     width: 75%;
     display: flex;
@@ -15,7 +24,6 @@ footer {
       grid-template-columns: 1fr 1fr;
       align-items: center;
       justify-content: space-between;
-      // height: 246px;
       padding: 30px;
       gap: 30px;
       p {
