@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import emptyCart from "../assets/images/empty-cart.svg";
 import { Link } from "react-router-dom";
+import Pagination from "../Components/Pagination";
+
 import {
   emptyTheCartAction,
   removeFromCartAction,
@@ -10,60 +12,88 @@ import { toast } from "react-toastify";
 function Cart() {
   const cartList = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(5);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = cartList.slice(firstPostIndex, lastPostIndex);
 
   const totalPrice = cartList.reduce((total, product) => {
     return total + product.quantity * product.price;
   }, 0);
+  window.scrollTo({ top: 0, behavior: "smooth" });
   return (
     <main id="cart">
       <div className="cart__container">
         <div className="cart__left">
-          {cartList.length ? (
+          {currentPosts?.length ? (
             <div className="cart__fill">
               <div className="cart__top">
-                <p>Şəkil</p>
-                <p>Adı</p>
-                <p>Ədəd</p>
-                <p>Qiymət</p>
-                <p>Cəm</p>
-                <p>Sil</p>
+                <p>MƏHSUL</p>
+                <p>QİYMƏT</p>
+                <p>ƏDƏD</p>
+                <p>CƏMİ MƏBLƏĞ</p>
               </div>
               <div className="cart__bottom">
-                {cartList.map((product) => {
+                {currentPosts.map((product) => {
                   return (
                     <div key={product.id} className="cart__row">
-                      <Link to={`/product/${product.id}`}>
-                        <img src={product.thumbnail} alt="" />
-                      </Link>
-                      <p>{product.title}</p>
-                      <p>{product.quantity}</p>
-                      <p>
-                        {product.price} <span>AZN</span>
-                      </p>
-                      <p>
-                        {product.price * product.quantity} <span>AZN</span>
-                      </p>
-                      <div>
-                        <button
-                          onClick={() => {
-                            dispatch(removeFromCartAction(product));
-                            const filteredCartList = cartList.filter(
-                              (item) => item.id !== product.id
-                            );
-                            localStorage.setItem(
-                              "cartlist",
-                              JSON.stringify(filteredCartList)
-                            );
-                            toast.warning("Məhsul səbətdən silindi");
-                          }}
-                        >
-                          <i className="ri-delete-bin-line"></i>
-                        </button>
+                      <div className="cart__row-product-title">
+                        <div>
+                          <button
+                            onClick={() => {
+                              dispatch(removeFromCartAction(product));
+                              const filteredCartList = cartList.filter(
+                                (item) => item.id !== product.id
+                              );
+                              localStorage.setItem(
+                                "cartlist",
+                                JSON.stringify(filteredCartList)
+                              );
+                              toast.warning("Məhsul səbətdən silindi");
+                            }}
+                          >
+                            <i className="ri-delete-bin-line"></i>
+                          </button>
+                          <Link to={`/products/${product.id}`}>
+                            <img src={product.thumbnail} alt={product.title} />
+                          </Link>
+                          <span>
+                            <p className="cart__row-mobile-view">Məhsul Adı</p>
+
+                            <Link to={`/products/${product.id}`}>
+                              {product.title}
+                            </Link>
+                            <p>Təxmini Çatdırılma: 17 - 18 March, 2024</p>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="cart__row-product-price">
+                        <p className="cart__row-mobile-view">Qiymət</p>
+                        <p>
+                          {product.price} <span>AZN</span>
+                        </p>
+                      </div>
+                      <div className="cart__row-product-quantity">
+                        <p className="cart__row-mobile-view">Ədəd</p>
+                        <p>{product.quantity}</p>
+                      </div>
+                      <div className="cart__row-product-total-price">
+                        <p className="cart__row-mobile-view">Cəmi Məbləğ</p>
+                        <p>
+                          {product.price * product.quantity} <span>AZN</span>
+                        </p>
                       </div>
                     </div>
                   );
                 })}
               </div>
+              <Pagination
+                totalPosts={cartList.length}
+                postsPerPage={postsPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
             </div>
           ) : (
             <div className="cart__default">
