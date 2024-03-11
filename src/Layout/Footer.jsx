@@ -20,35 +20,7 @@ function Footer() {
                 <li>Bizimlə əlaqə</li>
               </Link>
               <Link to="/questions">
-                <li>Tez-tez verilən suallar</li>
-              </Link>
-            </ul>
-          </div>
-          <div className="footer__row">
-            <h1>MƏLUMAT</h1>
-            <ul>
-              <Link to="">
-                <li>Ölçülər</li>
-              </Link>
-              <Link to="">
-                <li>Xidmət şərtləri</li>
-              </Link>
-              <Link to="/compare">
                 <li>Müqayisə olunan məhsullar</li>
-              </Link>
-            </ul>
-          </div>
-          <div className="footer__row">
-            <h1>KEÇİDLƏR</h1>
-            <ul>
-              <Link to="">
-                <li>JERSEY STORE necə işləyir?</li>
-              </Link>
-              <Link to="">
-                <li>Topdan sifariş</li>
-              </Link>
-              <Link to="">
-                <li>Parça növləri</li>
               </Link>
             </ul>
           </div>

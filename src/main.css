@@ -645,9 +645,10 @@ footer .footer__container {
 }
 footer .footer__container .footer__top {
   border-bottom: 1px solid #e5e5e5;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 246px;
   gap: 30px;
 }
@@ -655,12 +656,13 @@ footer .footer__container .footer__top p {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
-  width: 25%;
+  width: 100%;
 }
 footer .footer__container .footer__top .footer__row {
-  width: 25%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 footer .footer__container .footer__top .footer__row h1 {
   margin-bottom: 25px;
@@ -677,7 +679,7 @@ footer .footer__container .footer__top .footer__row h1:after {
   background-color: #e5e5e5;
 }
 footer .footer__container .footer__top .footer__row ul {
-  padding-left: 20px;
+  padding-left: 40px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -700,11 +702,9 @@ footer .footer__container .footer__bottom {
   align-items: center;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 650px) {
   footer {
     width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -717,101 +717,24 @@ footer .footer__container .footer__bottom {
     flex-direction: column;
   }
   footer .footer__container .footer__top {
-    padding: 20px;
     border-bottom: 1px solid #e5e5e5;
     display: flex;
-    flex-wrap: wrap;
     height: initial;
+    flex-direction: column;
     gap: 30px;
+    padding: 20px 0;
   }
   footer .footer__container .footer__top p {
     font-size: 15px;
     font-weight: 400;
     line-height: 1.6;
-    width: 40%;
-    height: 25%;
+    width: 100%;
   }
   footer .footer__container .footer__top .footer__row {
-    width: 40%;
-    height: 25%;
-    display: flex;
-    flex-direction: column;
-  }
-  footer .footer__container .footer__top .footer__row h1 {
-    margin-bottom: 25px;
-    font-weight: 700;
-    position: relative;
-  }
-  footer .footer__container .footer__top .footer__row h1:after {
-    position: absolute;
-    content: "";
-    bottom: -10px;
-    left: 0;
-    width: 10%;
-    height: 10%;
-    background-color: #e5e5e5;
-  }
-  footer .footer__container .footer__top .footer__row ul {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  footer .footer__container .footer__top .footer__row ul a {
-    list-style: disc;
-    text-decoration: none;
-    color: #313131;
-    transition: 0.4s;
-    width: -moz-max-content;
-    width: max-content;
-  }
-  footer .footer__container .footer__top .footer__row ul a:hover {
-    color: #003a5e;
-  }
-  footer .footer__container .footer__bottom {
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media screen and (max-width: 650px) {
-  footer {
-    margin-bottom: 100px !important;
     width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #313131;
-    border-top: 1px solid #e5e5e5;
-  }
-  footer .footer__container {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-  }
-  footer .footer__container .footer__top {
-    border-bottom: 1px solid #e5e5e5;
     display: flex;
     flex-direction: column;
     align-items: start;
-    height: initial;
-    gap: 30px;
-  }
-  footer .footer__container .footer__top p {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.6;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-  footer .footer__container .footer__top .footer__row {
-    width: -moz-fit-content;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
   }
   footer .footer__container .footer__top .footer__row h1 {
     margin-bottom: 25px;
@@ -846,6 +769,9 @@ footer .footer__container .footer__bottom {
   }
   footer .footer__container .footer__bottom {
     height: 65px;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.2;
     display: flex;
     justify-content: center;
     align-items: center;
