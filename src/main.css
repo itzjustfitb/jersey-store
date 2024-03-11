@@ -3091,22 +3091,25 @@ body {
     gap: 20px;
   }
   .wishlist .wishlist__container .wishlist__empty i {
-    font-size: 180px;
+    font-size: 120px;
     color: #e5e5e5;
   }
   .wishlist .wishlist__container .wishlist__empty p {
-    font-size: 2.7rem;
+    font-size: 1.7rem;
+    text-align: center;
+    line-height: 1.2;
     font-weight: 900;
   }
   .wishlist .wishlist__container .wishlist__empty a {
     text-decoration: none;
-    width: 200px;
+    width: 150px;
     height: 50px;
     background-color: #000;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.8rem;
     font-weight: 700;
     transition: 0.4s;
   }
