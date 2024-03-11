@@ -4,7 +4,7 @@ import { removeFromWishListAction } from "../redux/actions/like.action";
 import { toast } from "react-toastify";
 import Breadcrumbs from "../Components/Breadcrumbs";
 import Pagination from "../Components/Pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function WishList() {
   const wishList = useSelector((state) => state.wishList);
@@ -14,6 +14,10 @@ function WishList() {
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = wishList.slice(firstPostIndex, lastPostIndex);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPosts]);
+
   function removeItem(e, element) {
     e.preventDefault();
     dispatch(removeFromWishListAction(element));

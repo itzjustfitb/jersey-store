@@ -3018,7 +3018,7 @@ body {
     align-items: center;
   }
   .wishlist .wishlist__container .wishlist__fill .wishlist__header h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
     font-weight: 700;
   }
@@ -3117,114 +3117,119 @@ body {
     opacity: 0.6;
   }
 }
-.compare {
+#compare {
   padding: 20px 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.compare .compare__container {
+#compare .compare__container {
   width: 90%;
   display: flex;
   justify-content: center;
 }
-.compare .compare__container .compare__fill {
+#compare .compare__container .compare__fill {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.compare .compare__container .compare__fill .compare__header {
+#compare .compare__container .compare__fill .compare__header {
   width: 100%;
   padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.compare .compare__container .compare__fill .compare__header h1 {
+#compare .compare__container .compare__fill .compare__header h1 {
   font-size: 2rem;
   font-weight: 700;
 }
-.compare .compare__container .compare__fill .compare__bottom {
+#compare .compare__container .compare__fill .compare__bottom {
   padding: 20px 0;
   width: 100%;
   display: flex;
   justify-content: start;
   gap: 20px;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__nav {
+#compare .compare__container .compare__fill .compare__bottom .compare__nav {
   padding: 10px 0;
   width: 20%;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__field {
+#compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__field {
   width: 270px;
   height: 320px;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details {
+#compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details {
   display: flex;
   flex-direction: column;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p {
+#compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p {
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p:nth-child(odd) {
+#compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p:nth-child(odd) {
   background-color: #e5e5e5;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p:nth-child(even) {
+#compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p:nth-child(even) {
   background-color: #f5f5f5;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container {
-  width: 80%;
-  gap: 15px;
-  display: flex;
-  overflow-x: auto;
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container {
+  width: 100%;
+  overflow-x: auto !important;
   padding: 10px 0;
+  display: flex;
+  gap: 20px;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar {
   height: 5px;
   background-color: transparent;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-thumb {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-thumb {
   background-color: darkgray;
   border-radius: 10px;
   background-color: #313131;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-thumb:hover {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-thumb:hover {
   background-color: darkgray;
   border-radius: 10px !important;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-track {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-track {
   height: 4px;
   border-radius: 10px;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card {
+  width: 260px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content {
   width: 270px;
-  height: -moz-fit-content;
-  height: fit-content;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content a {
-  width: 270px;
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content a {
   height: 270px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content a img {
-  width: 100%;
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content a img {
+  width: -moz-fit-content;
+  width: fit-content;
   height: 270px;
+  width: 270px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details {
   display: flex;
   flex-direction: column;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p {
   height: 60px;
   display: flex;
   justify-content: center;
@@ -3232,13 +3237,16 @@ body {
   font-weight: 700;
   gap: 10px;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(odd) {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:first-child {
+  font-size: 0.8rem;
+}
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(odd) {
   background-color: #e5e5e5;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(even) {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(even) {
   background-color: #f5f5f5;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(3) span {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(3) span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3249,20 +3257,20 @@ body {
   width: 90px;
   height: 30px;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(2) {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(2) {
   word-break: break-all;
   font-weight: 400;
   text-align: center;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(2) span {
-  width: 85%;
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(2) span {
+  font-size: 0.8rem;
   text-decoration: underline;
   line-height: 1.4;
 }
-.compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(5) {
+#compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(5) {
   color: orange;
 }
-.compare .compare__container .compare__empty {
+#compare .compare__container .compare__empty {
   padding: 40px 0;
   width: 100%;
   display: flex;
@@ -3270,15 +3278,15 @@ body {
   align-items: center;
   gap: 20px;
 }
-.compare .compare__container .compare__empty i {
+#compare .compare__container .compare__empty i {
   font-size: 180px;
   color: #e5e5e5;
 }
-.compare .compare__container .compare__empty p {
+#compare .compare__container .compare__empty p {
   font-size: 2.7rem;
   font-weight: 900;
 }
-.compare .compare__container .compare__empty a {
+#compare .compare__container .compare__empty a {
   text-decoration: none;
   width: 200px;
   height: 50px;
@@ -3290,10 +3298,198 @@ body {
   font-weight: 700;
   transition: 0.4s;
 }
-.compare .compare__container .compare__empty a:hover {
+#compare .compare__container .compare__empty a:hover {
   opacity: 0.6;
 }
 
+@media screen and (max-width: 650px) {
+  #compare {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #compare .compare__container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+  #compare .compare__container .compare__fill {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #compare .compare__container .compare__fill .compare__header {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #compare .compare__container .compare__fill .compare__header h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  #compare .compare__container .compare__fill .compare__bottom {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__nav {
+    padding: 10px 0;
+    width: 20%;
+    display: none;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__field {
+    width: 270px;
+    height: 320px;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details {
+    display: flex;
+    flex-direction: column;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p:nth-child(odd) {
+    background-color: #e5e5e5;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__nav .compare__details p:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container {
+    width: 100%;
+    overflow-x: auto !important;
+    padding: 10px 0;
+    display: flex;
+    gap: 20px;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar {
+    height: 5px;
+    background-color: transparent;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 10px;
+    background-color: #313131;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-thumb:hover {
+    background-color: darkgray;
+    border-radius: 10px !important;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container::-webkit-scrollbar-track {
+    height: 4px;
+    border-radius: 10px;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content {
+    width: 270px;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content a {
+    height: 270px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content a img {
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 270px;
+    width: 270px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details {
+    display: flex;
+    flex-direction: column;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    gap: 10px;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:first-child {
+    font-size: 0.8rem;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(odd) {
+    background-color: #e5e5e5;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(3) span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+    font-size: 0.9rem;
+    color: green;
+    background-color: #f5f5f5;
+    width: 90px;
+    height: 30px;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(2) {
+    word-break: break-all;
+    font-weight: 400;
+    text-align: center;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(2) span {
+    font-size: 0.8rem;
+    text-decoration: underline;
+    line-height: 1.4;
+  }
+  #compare .compare__container .compare__fill .compare__bottom .compare__list-container .compare__card .compare__card-content .compare__card-details p:nth-child(5) {
+    color: orange;
+  }
+  #compare .compare__container .compare__empty {
+    padding: 40px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #compare .compare__container .compare__empty i {
+    font-size: 180px;
+    color: #e5e5e5;
+  }
+  #compare .compare__container .compare__empty p {
+    font-size: 2.7rem;
+    font-weight: 900;
+  }
+  #compare .compare__container .compare__empty a {
+    text-decoration: none;
+    width: 200px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    transition: 0.4s;
+  }
+  #compare .compare__container .compare__empty a:hover {
+    opacity: 0.6;
+  }
+}
 .products__page {
   padding: 20px 0;
   width: 100%;

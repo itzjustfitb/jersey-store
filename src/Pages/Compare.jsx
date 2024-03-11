@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromCompareListAction } from "../redux/actions/compare.action";
 import { toast } from "react-toastify";
 import Breadcrumbs from "../Components/Breadcrumbs";
+import Pagination from "../Components/Pagination";
 
 function Compare() {
   const compareList = useSelector((state) => state.compareList);
   const dispatch = useDispatch();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(5);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = compareList.slice(firstPostIndex, lastPostIndex);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPosts]);
+
   function removeItem(e, element) {
     toast.warning("Müqayisə siyahısından silindi");
     e.preventDefault();
@@ -19,7 +30,7 @@ function Compare() {
   }
 
   return (
-    <main className="compare">
+    <main id="compare">
       <div className="compare__container">
         {compareList.length ? (
           <div className="compare__fill">
@@ -39,7 +50,7 @@ function Compare() {
                 </div>
               </div>
               <div className="compare__list-container">
-                {compareList?.map((item) => (
+                {currentPosts?.map((item) => (
                   <div key={item.id} className="compare__card">
                     <button
                       onClick={(e) => removeItem(e, item)}
@@ -78,6 +89,12 @@ function Compare() {
                 ))}
               </div>
             </div>
+            <Pagination
+              totalPosts={compareList.length}
+              postsPerPage={postsPerPage}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
           </div>
         ) : (
           <div className="compare__empty">
