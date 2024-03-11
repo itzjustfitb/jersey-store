@@ -1,45 +1,499 @@
-#contact {
-  padding: 40px 0;
+.contact__us-section {
+  padding: 20px 0;
   width: 100%;
+  font-family: $Hanken-Grotesk;
+  background-color: $Gray;
   display: flex;
   justify-content: center;
-  align-items: center;
-  .contact__container {
-    width: 75%;
+  .contact__us-container {
+    width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    > p {
-      a {
-        text-decoration: none;
-        color: $Black;
-        font-weight: 600;
-      }
-    }
-    ul {
+    gap: 50px;
+    .contact__us-header {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      li {
+      align-items: center;
+      h3 {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 700;
+      }
+    }
+    .contact__us-bottom {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      .contact__us-card {
+        width: 100%;
+        height: 200px;
+        border-radius: 5px;
+        background-color: $White;
         display: flex;
-        gap: 10px;
-        color: $Secondary-color;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        div {
+          transition: 0.4s;
+          width: 80px;
+          height: 80px;
+          border: 5px solid $Black;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          i {
+            transition: 0.8s;
+            color: $Black;
+            font-size: 30px;
+          }
+        }
+        h5 {
+          font-size: 20px;
+          font-weight: 700;
+          height: 12px;
+          color: $Dark-Gray;
+        }
+        p {
+          color: $Dark-Gray;
+        }
+      }
+      .contact__us-card:hover i {
+        transform: rotate(360deg);
+        color: $White;
+      }
+      .contact__us-card:hover div {
+        background-color: $Black;
+      }
+    }
+    .contact__us-top {
+      display: flex;
+      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .contact__us-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h3 {
+          font-size: 2rem;
+          font-weight: 500;
+          color: $Dark-Gray;
+        }
+        .inputs {
+          display: flex;
+          gap: 20px;
+          input {
+            transition: 0.4s;
+            font-family: $Hanken-Grotesk;
+            width: 100%;
+            border-radius: 5px;
+            height: 47px;
+            border: 1px solid $Black;
+            padding-left: 20px;
+            outline-color: $Black;
+          }
+        }
+        .textareas {
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          gap: 20px;
+          textarea {
+            transition: 0.4s;
+            width: 100%;
+            box-sizing: border-box;
+            resize: none;
+            outline-color: $Black;
+            border-radius: 5px;
+            font-family: $Hanken-Grotesk;
+            padding-left: 20px;
+            padding-top: 10px;
+            border: 1px solid $Black;
+          }
 
-        a {
-          color: $Dark-blue;
-          text-decoration: none;
+          .submit__button {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            flex-direction: row-reverse;
+            align-items: center;
+            button {
+              position: relative;
+              transition: 0.4s;
+              cursor: pointer;
+              width: 100px;
+              border-radius: 5px;
+              height: 45.6px;
+              background-color: $Green;
+              border: 2px solid $Green;
+              font-weight: 400;
+              font-family: $Hanken-Grotesk;
+              font-size: 16px;
+              color: $White;
+              i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: 0.4s;
+                opacity: 0;
+              }
+            }
+            button:disabled {
+              background-color: $Light-Gray3;
+              border: none;
+              color: $Black;
+              cursor: not-allowed;
+            }
+            button:disabled:hover {
+              background-color: $Light-Gray3;
+              border: none;
+              color: $Black;
+              cursor: not-allowed;
+            }
+            button:hover {
+              background-color: transparent;
+              color: $Green;
+            }
+          }
+        }
+      }
+      .contact__us-map {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contact__us-section {
+    padding: 20px 0;
+    width: 100%;
+    font-family: $Hanken-Grotesk;
+    background-color: $Gray;
+    display: flex;
+    justify-content: center;
+    .contact__us-container {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .contact__us-bottom {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+        gap: 30px;
+        .contact__us-card {
+          width: 100%;
+          height: 200px;
+          border-radius: 5px;
+          background-color: $White;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          div {
+            transition: 0.4s;
+            width: 80px;
+            height: 80px;
+            border: 5px solid $Black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+              transition: 0.8s;
+              color: $Black;
+              font-size: 30px;
+            }
+          }
+          h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            height: 12px;
+            color: $Dark-Gray;
+          }
+          p {
+            font-size: 0.8rem;
+            color: $Dark-Gray;
+          }
+        }
+        .contact__us-card:hover i {
+          transform: rotate(360deg);
+          color: $White;
+        }
+        .contact__us-card:hover div {
+          background-color: $Black;
+        }
+      }
+      .contact__us-top {
+        display: flex;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        .contact__us-inputs {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: $Dark-Gray;
+          }
+          .inputs {
+            display: flex;
+            gap: 20px;
+            input {
+              transition: 0.4s;
+              font-family: $Hanken-Grotesk;
+              width: 100%;
+              border-radius: 5px;
+              height: 47px;
+              border: 1px solid $Black;
+              padding-left: 20px;
+              outline-color: $Black;
+            }
+          }
+          .textareas {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            gap: 20px;
+            textarea {
+              transition: 0.4s;
+              width: 100%;
+              box-sizing: border-box;
+              resize: none;
+              outline-color: $Black;
+              border-radius: 5px;
+              font-family: $Hanken-Grotesk;
+              padding-left: 20px;
+              padding-top: 10px;
+              border: 1px solid $Black;
+            }
+
+            .submit__button {
+              width: 100%;
+              display: flex;
+              justify-content: end;
+              flex-direction: row-reverse;
+              align-items: center;
+              button {
+                position: relative;
+                transition: 0.4s;
+                cursor: pointer;
+                width: 100px;
+                border-radius: 5px;
+                height: 45.6px;
+                background-color: $Green;
+                border: 2px solid $Green;
+                font-weight: 400;
+                font-family: $Hanken-Grotesk;
+                font-size: 16px;
+                color: $White;
+                i {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  transition: 0.4s;
+                  opacity: 0;
+                }
+              }
+              button:disabled {
+                background-color: $Light-Gray3;
+                border: none;
+                color: $Black;
+                cursor: not-allowed;
+              }
+              button:disabled:hover {
+                background-color: $Light-Gray3;
+                border: none;
+                color: $Black;
+                cursor: not-allowed;
+              }
+              button:hover {
+                background-color: transparent;
+                color: $Green;
+              }
+            }
+          }
+        }
+        .contact__us-map {
+          width: 100%;
+          height: 500px;
         }
       }
     }
-    > div {
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contact__us-section {
+    padding: 20px 0;
+    width: 100%;
+    font-family: $Hanken-Grotesk;
+    background-color: $Gray;
+    display: flex;
+    justify-content: center;
+    .contact__us-container {
+      width: 80%;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      div {
+      gap: 50px;
+      .contact__us-bottom {
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 10px;
-        color: $Secondary-color;
+        .contact__us-card {
+          width: 100%;
+          height: 200px;
+          border-radius: 5px;
+          background-color: $White;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          div {
+            transition: 0.4s;
+            width: 80px;
+            height: 80px;
+            border: 5px solid $Black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+              transition: 0.8s;
+              color: $Black;
+              font-size: 30px;
+            }
+          }
+          h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            height: 12px;
+            color: $Dark-Gray;
+          }
+          p {
+            font-size: 0.8rem;
+            color: $Dark-Gray;
+          }
+        }
+        .contact__us-card:hover i {
+          transform: rotate(360deg);
+          color: $White;
+        }
+        .contact__us-card:hover div {
+          background-color: $Black;
+        }
+      }
+      .contact__us-top {
+        display: flex;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        .contact__us-inputs {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: $Dark-Gray;
+          }
+          .inputs {
+            display: flex;
+            gap: 20px;
+            input {
+              transition: 0.4s;
+              font-family: $Hanken-Grotesk;
+              width: 100%;
+              border-radius: 5px;
+              height: 47px;
+              border: 1px solid $Black;
+              padding-left: 20px;
+              outline-color: $Black;
+            }
+          }
+          .textareas {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            gap: 20px;
+            textarea {
+              transition: 0.4s;
+              width: 100%;
+              box-sizing: border-box;
+              resize: none;
+              outline-color: $Black;
+              border-radius: 5px;
+              font-family: $Hanken-Grotesk;
+              padding-left: 20px;
+              padding-top: 10px;
+              border: 1px solid $Black;
+            }
+
+            .submit__button {
+              width: 100%;
+              display: flex;
+              justify-content: end;
+              flex-direction: row-reverse;
+              align-items: center;
+              button {
+                position: relative;
+                transition: 0.4s;
+                cursor: pointer;
+                width: 100px;
+                border-radius: 5px;
+                height: 45.6px;
+                background-color: $Green;
+                border: 2px solid $Green;
+                font-weight: 400;
+                font-family: $Hanken-Grotesk;
+                font-size: 16px;
+                color: $White;
+                i {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  transition: 0.4s;
+                  opacity: 0;
+                }
+              }
+              button:disabled {
+                background-color: $Light-Gray3;
+                border: none;
+                color: $Black;
+                cursor: not-allowed;
+              }
+              button:disabled:hover {
+                background-color: $Light-Gray3;
+                border: none;
+                color: $Black;
+                cursor: not-allowed;
+              }
+              button:hover {
+                background-color: transparent;
+                color: $Green;
+              }
+            }
+          }
+        }
+        .contact__us-map {
+          width: 100%;
+          height: 500px;
+        }
       }
     }
   }

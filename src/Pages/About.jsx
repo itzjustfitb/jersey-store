@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import Breadcrumbs from "../Components/Breadcrumbs";
 
 function About() {
   return (
     <main id="about">
       <div className="about__container">
-        <div>
+        <Breadcrumbs />
+        <h1>Haqqımızda</h1>
+        <div className="about__container-row">
           <p>
             Hər zaman içimizdə olan futbol sevgisini özümüzə axtardığımız
             əfsanəvi formaların kolleksiyasını yığmaqla bu yola başladıq.

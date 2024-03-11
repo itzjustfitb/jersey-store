@@ -6,7 +6,16 @@
   align-items: center;
   .about__container {
     width: 75%;
-    div {
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 10px 0 20px;
+    }
+    .breadcrumps {
+      width: 100%;
+      display: flex;
+    }
+    .about__container-row {
       color: $Secondary-color;
       display: flex;
       line-height: 1.6;
@@ -16,6 +25,7 @@
         display: flex;
         flex-direction: column;
         a {
+          width: fit-content;
           text-decoration: none;
           color: $Secondary-color;
         }
