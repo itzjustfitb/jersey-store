@@ -56,7 +56,6 @@
       .products__bottom {
         display: grid;
         place-items: center;
-        // grid-template-columns: 25% 25% 25% 25%;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         row-gap: 30px;
         .product {
