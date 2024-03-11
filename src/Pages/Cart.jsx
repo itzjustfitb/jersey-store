@@ -57,12 +57,17 @@ function Cart() {
                           >
                             <i className="ri-delete-bin-line"></i>
                           </button>
-                          <Link to={`/products/${product.id}`}>
-                            <img src={product.thumbnail} alt={product.title} />
-                          </Link>
+                          <div className="cart__row-image">
+                            <p className="cart__row-mobile-view">Şəkil</p>
+                            <Link to={`/products/${product.id}`}>
+                              <img
+                                src={product.thumbnail}
+                                alt={product.title}
+                              />
+                            </Link>
+                          </div>
                           <span>
                             <p className="cart__row-mobile-view">Məhsul Adı</p>
-
                             <Link to={`/products/${product.id}`}>
                               {product.title}
                             </Link>
