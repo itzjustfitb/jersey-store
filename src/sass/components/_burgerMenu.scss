@@ -69,14 +69,13 @@
               right: 0;
             }
           }
+          &:last-child {
+            justify-content: center;
+          }
+          .night__mode-button {
+            height: 31.6px;
+          }
         }
-        // .active {
-        //   background-color: $Black;
-        //   a,
-        //   div {
-        //     color: $White;
-        //   }
-        // }
       }
     }
     .burger__menu-footer {
