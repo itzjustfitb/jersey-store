@@ -14,7 +14,6 @@ export function removeFromWishListAction(payload) {
 export function setToWishlistAction(payload) {
   return {
     type: "SET_TO_WISHLIST",
-
     payload,
   };
 }
