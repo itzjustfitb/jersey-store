@@ -5,6 +5,7 @@ import siteLogo from "../assets/images/jersey-store-logo.png";
 import NightModeBtn from "./NightModeBtn";
 
 function BurgerMenu({
+  setIsOpen,
   openBurgerMenu,
   setOpenBurgerMenu,
   nightModeActive,
@@ -42,25 +43,6 @@ function BurgerMenu({
     },
   ];
 
-  // let activeMenu;
-  // useEffect(() => {
-  //   if (localStorage) {
-  //     activeMenu = localStorage.getItem("active-menu");
-  //   }
-  // });
-
-  // function activeMenuRow(e, params) {
-  //   localStorage.setItem("active-menu", params);
-  // }
-
-  // function inactiveMenuRow(params) {
-  //   localStorage.setItem("active-menu", params);
-  // }
-
-  // if (activeMenu) {
-  //   activeMenuRow();
-  // }
-
   const cartList = useSelector((state) => state.cartList);
   const wishList = useSelector((state) => state.wishList);
   const compareList = useSelector((state) => state.compareList);
@@ -89,27 +71,28 @@ function BurgerMenu({
                   onClick={(e) => {
                     setOpenBurgerMenu(false);
                     setCheck(e.target.textContent);
-                    // activeMenu = localStorage.getItem("active-menu");
-                    // if (!activeMenu) {
-                    //   activeMenuRow(navigate.content);
-                    // } else {
-                    //   inactiveMenuRow(navigate.content);
-                    // }
                   }}
                   key={index}
                 >
                   {index === 1 ? (
-                    <div>
+                    <div
+                      onClick={() => {
+                        setIsOpen(true);
+                        document.body.style.position = "static";
+                      }}
+                    >
                       <i className={navigate.className}></i>
                       <p>{navigate.content}</p>
                     </div>
                   ) : index === 5 ? (
-                    <NightModeBtn
-                      nightModeActive={nightModeActive}
-                      setNightModeActive={setNightModeActive}
-                    />
+                    <NightModeBtn />
                   ) : (
-                    <Link to={navigate.url}>
+                    <Link
+                      onClick={() => {
+                        document.body.style.position = "static";
+                      }}
+                      to={navigate.url}
+                    >
                       <i className={navigate.className}></i>
                       <p>{navigate.content}</p>
                       {index === 2 ? (
