@@ -54,24 +54,6 @@ header {
           .search {
             z-index: 1;
             position: relative;
-            input {
-              transition: 0.4s;
-              width: 0;
-              z-index: -1;
-              position: absolute;
-              right: -5px;
-              height: 30px;
-              border: 1px solid $Secondary-color;
-              border-radius: 20px;
-              padding: 0 40px 0 10px;
-              transition: 0.4s;
-              font-family: $Hanken-Grotesk;
-              visibility: hidden;
-              opacity: 0;
-            }
-            input:focus {
-              border-width: 1px;
-            }
           }
           .header__nav-icon {
             width: 30px;
@@ -80,7 +62,7 @@ header {
             place-items: center;
             position: relative;
             text-decoration: none;
-            color: black;
+            color: $Black;
             font-size: 25px;
             i {
               cursor: pointer;
@@ -127,75 +109,6 @@ header {
         .dark-light__mode,
         .home__icon {
           display: none;
-        }
-      }
-    }
-    .header__bottom {
-      width: 100%;
-      display: flex;
-      border-top: 1px solid $Border-color;
-      border-bottom: 1px solid $Border-color;
-      justify-content: center;
-      .header__bottom-container {
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 95%;
-        gap: 26px;
-        a {
-          font-family: $Hanken-Grotesk;
-          text-decoration: none;
-          color: $Secondary-color;
-        }
-        > div {
-          font-size: 15px;
-          display: flex;
-          cursor: pointer;
-          text-decoration: none;
-          color: $Secondary-color;
-          font-weight: 400;
-          transition: 0.4s;
-          position: relative;
-          height: 100%;
-          align-items: center;
-          justify-content: center;
-          .dropdown {
-            background-color: $White;
-            border-radius: 4px;
-            top: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            height: 0;
-            overflow: hidden;
-            position: absolute;
-            transition: 0.4s;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            a {
-              padding: 10px;
-              text-decoration: none;
-              transition: 0.4s;
-              p {
-                transition: 0.4s;
-                color: $Secondary-color;
-              }
-            }
-            a:hover {
-              background-color: #edecff;
-              p {
-                transform: translate(5px);
-                color: $Dark-blue;
-              }
-            }
-          }
-        }
-        > div:hover {
-          color: $Dark-blue;
-          .dropdown {
-            height: 108px;
-          }
         }
       }
     }
