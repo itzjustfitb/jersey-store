@@ -120,3 +120,41 @@
 .none {
   display: none;
 }
+
+.night__mode-button {
+  cursor: pointer;
+  border-radius: 16px;
+  border: 1px solid $Black;
+  transition: 0.4s;
+  width: 50px !important;
+  padding: 0 5px;
+  position: relative;
+  background-color: $Secondary-color;
+  &:hover {
+    opacity: 1 !important;
+  }
+  i {
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    position: absolute;
+    background-color: $White;
+    color: $Black;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 1rem !important;
+    transition: 0.4s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.night__mode-button-active {
+  border-color: $Primary-color;
+  background-color: $Primary-color;
+  i {
+    background-color: $White;
+    color: $Primary-color;
+    left: 55%;
+  }
+}
