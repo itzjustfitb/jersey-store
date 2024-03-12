@@ -14,6 +14,7 @@ export function removeFromCompareListAction(payload) {
 export function setToComparelistAction(payload) {
   return {
     type: "SET_TO_COMPARE_LIST",
+
     payload,
   };
 }
