@@ -8,6 +8,7 @@ export function quickViewOpenAction(payload) {
 export function quickViewCloseAction(payload) {
   return {
     type: "QUICK_VIEW_CLOSE",
+
     payload,
   };
 }
