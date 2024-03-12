@@ -228,3 +228,234 @@
 .searchbar__show {
   top: 60.04px;
 }
+
+@media screen and (max-width: 650px) {
+  .searchbar {
+    z-index: 10;
+    position: fixed;
+    background-color: $White;
+    transition: 0.4s;
+    top: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .searchbar__container {
+      height: 100vh;
+      display: flex;
+      width: 90%;
+      flex-direction: column;
+      .searchbar__header {
+        width: 100%;
+        position: relative;
+        input {
+          width: 100%;
+          height: 110px;
+          border: none;
+          outline-offset: 0;
+          outline-color: transparent;
+          outline-width: 0;
+          text-align: center;
+          font-family: $Hanken-Grotesk;
+          font-weight: 500;
+          border-bottom: 1px solid $Light-gray-2;
+          font-size: 1.3rem;
+          color: $Secondary-color;
+          padding: 20px 60px 0;
+          box-sizing: border-box;
+        }
+        i {
+          position: absolute;
+          top: 55%;
+          cursor: pointer;
+          transform: translateY(-50%);
+          right: 10px;
+          font-size: 3rem;
+          transition: 0.4s;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+      .searchbar__bottom {
+        position: relative;
+        height: 80%;
+        max-height: 100%;
+        padding: 20px 0;
+        z-index: 10;
+        width: 100%;
+        .searchbar__cards {
+          padding: 10px;
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+          overflow-y: scroll;
+          .product {
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            width: 262.5px;
+            align-items: center;
+            position: relative;
+            text-decoration: none;
+            gap: 20px;
+            img {
+              border-radius: 10px;
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+              width: 262.5px;
+              object-fit: cover;
+              height: 262.5px;
+            }
+            .quick__shop-btns {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 262.5px;
+              height: 262.5px;
+              .base__btns {
+                transition: 0.4s;
+                width: 100%;
+                opacity: 0;
+                visibility: hidden;
+                align-items: end;
+                display: flex;
+                flex-direction: column;
+                .base__btns-icon {
+                  cursor: pointer;
+                  position: relative;
+                }
+
+                .base__btns-icon i {
+                  text-decoration: none;
+                  color: $Secondary-color;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 35px;
+                  height: 35px;
+                  font-size: 24px;
+                }
+
+                .base__btns-icon .tooltip {
+                  position: absolute;
+                  padding: 0 10px;
+                  line-height: 28px;
+                  font-size: 12px;
+                  letter-spacing: 0.3px;
+                  visibility: visible;
+                  white-space: nowrap;
+                  color: transparent;
+                  background-color: transparent;
+                  transition: 0.4s;
+                  left: auto;
+                  right: calc(100% + 10px); /* Positioning from the right */
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+
+                .base__btns-icon .tooltip::after {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  right: -5px; /* Positioning the triangle on the right side */
+                  border-top: 5px solid transparent;
+                  border-bottom: 5px solid transparent;
+                  border-left: 5px solid transparent; /* Color of the triangle */
+                  transition: 0.4s;
+                  transform: translateY(-50%);
+                }
+
+                .base__btns-icon:hover {
+                  .tooltip {
+                    background-color: #000;
+                    color: #fff;
+                  }
+                  .tooltip::after {
+                    border-left: 5px solid #000; /* Color of the triangle */
+                  }
+                }
+              }
+              .quick__add-btn {
+                text-decoration: none;
+                border: none;
+                font-family: $Hanken-Grotesk;
+                transition: 0.2s;
+                visibility: hidden;
+                opacity: 0;
+                cursor: pointer;
+                position: absolute;
+                background-color: $Black;
+                bottom: 0;
+                color: $White;
+                display: flex;
+                width: 100%;
+                height: 0px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                i {
+                  font-size: 20px;
+                }
+                p {
+                  font-size: 14px;
+                  font-weight: 800;
+                }
+              }
+            }
+            .product__desc {
+              width: 100%;
+              padding: 10px;
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              gap: 7px;
+              h3 {
+                font-weight: 700;
+                font-size: 15px;
+                letter-spacing: 0.3px;
+                line-height: 1.4;
+                color: $Secondary-color;
+              }
+              p {
+                color: $Light-gray-2;
+              }
+            }
+          }
+          .product:hover {
+            .quick__shop-btns {
+              .base__btns {
+                width: 100%;
+                opacity: 1;
+                visibility: visible;
+              }
+              .quick__add-btn {
+                height: 40px;
+                visibility: visible;
+                opacity: 1;
+              }
+              .quick__add-btn:hover {
+                background-color: $Button-hover-color;
+              }
+            }
+          }
+        }
+        .searchbar__empty {
+          display: flex;
+          justify-content: center;
+          color: $Light-gray-2;
+        }
+        .loader {
+          position: absolute;
+        }
+      }
+    }
+  }
+  .searchbar__show {
+    top: 0;
+  }
+}

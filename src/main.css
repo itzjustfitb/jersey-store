@@ -2377,7 +2377,7 @@ body {
   #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-title div .cart__row-image::after, #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-title div .cart__row-image::before {
     position: absolute;
     content: "";
-    width: 105.5%;
+    width: 104.5%;
     background-color: #e6e6e6;
     height: 1px;
     bottom: 0;
@@ -3170,43 +3170,44 @@ body {
     line-height: 1.2;
   }
 }
-.wishlist {
+#wishlist {
   padding: 20px 0;
   width: 100%;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.wishlist .wishlist__container {
+#wishlist .wishlist__container {
   width: 90%;
   display: flex;
   justify-content: center;
 }
-.wishlist .wishlist__container .wishlist__fill {
+#wishlist .wishlist__container .wishlist__fill {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__header {
+#wishlist .wishlist__container .wishlist__fill .wishlist__header {
   width: 100%;
   padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__header h1 {
+#wishlist .wishlist__container .wishlist__fill .wishlist__header h1 {
   font-size: 2rem;
   text-align: center;
   font-weight: 700;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__bottom {
+#wishlist .wishlist__container .wishlist__fill .wishlist__bottom {
   padding: 20px 0;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product {
+#wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product {
   width: 100%;
   position: relative;
   display: flex;
@@ -3214,10 +3215,10 @@ body {
   gap: 10px;
   transition: 0.4s;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product:hover {
+#wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product:hover {
   transform: scale(0.98);
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content {
+#wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content {
   text-decoration: none;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -3226,7 +3227,7 @@ body {
   align-items: center;
   gap: 20px;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content img {
+#wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content img {
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -3235,7 +3236,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content .product__desc {
+#wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content .product__desc {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -3244,17 +3245,17 @@ body {
   text-align: center;
   gap: 7px;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content .product__desc h3 {
+#wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content .product__desc h3 {
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.3px;
   line-height: 1.4;
   color: #313131;
 }
-.wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content .product__desc p {
+#wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content .product__desc p {
   color: #949494;
 }
-.wishlist .wishlist__container .wishlist__empty {
+#wishlist .wishlist__container .wishlist__empty {
   padding: 40px 0;
   width: 100%;
   display: flex;
@@ -3262,15 +3263,15 @@ body {
   align-items: center;
   gap: 20px;
 }
-.wishlist .wishlist__container .wishlist__empty i {
+#wishlist .wishlist__container .wishlist__empty i {
   font-size: 180px;
   color: #e5e5e5;
 }
-.wishlist .wishlist__container .wishlist__empty p {
+#wishlist .wishlist__container .wishlist__empty p {
   font-size: 2.7rem;
   font-weight: 900;
 }
-.wishlist .wishlist__container .wishlist__empty a {
+#wishlist .wishlist__container .wishlist__empty a {
   text-decoration: none;
   width: 200px;
   height: 50px;
@@ -3282,7 +3283,7 @@ body {
   font-weight: 700;
   transition: 0.4s;
 }
-.wishlist .wishlist__container .wishlist__empty a:hover {
+#wishlist .wishlist__container .wishlist__empty a:hover {
   opacity: 0.6;
 }
 
@@ -3415,6 +3416,7 @@ body {
   padding: 20px 0;
   width: 100%;
   display: flex;
+  min-height: 500px;
   justify-content: center;
   align-items: center;
 }
@@ -4723,6 +4725,228 @@ body {
   top: 60.04px;
 }
 
+@media screen and (max-width: 650px) {
+  .searchbar {
+    z-index: 10;
+    position: fixed;
+    background-color: #fff;
+    transition: 0.4s;
+    top: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .searchbar .searchbar__container {
+    height: 100vh;
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+  }
+  .searchbar .searchbar__container .searchbar__header {
+    width: 100%;
+    position: relative;
+  }
+  .searchbar .searchbar__container .searchbar__header input {
+    width: 100%;
+    height: 110px;
+    border: none;
+    outline-offset: 0;
+    outline-color: transparent;
+    outline-width: 0;
+    text-align: center;
+    font-family: "Hanken Grotesk";
+    font-weight: 500;
+    border-bottom: 1px solid #949494;
+    font-size: 1.3rem;
+    color: #313131;
+    padding: 20px 60px 0;
+    box-sizing: border-box;
+  }
+  .searchbar .searchbar__container .searchbar__header i {
+    position: absolute;
+    top: 55%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    right: 10px;
+    font-size: 3rem;
+    transition: 0.4s;
+  }
+  .searchbar .searchbar__container .searchbar__header i:hover {
+    opacity: 0.6;
+  }
+  .searchbar .searchbar__container .searchbar__bottom {
+    position: relative;
+    height: 80%;
+    max-height: 100%;
+    padding: 20px 0;
+    z-index: 10;
+    width: 100%;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards {
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    overflow-y: scroll;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 262.5px;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    gap: 20px;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product img {
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 262.5px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 262.5px;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 262.5px;
+    height: 262.5px;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns {
+    transition: 0.4s;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon {
+    cursor: pointer;
+    position: relative;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon i {
+    text-decoration: none;
+    color: #313131;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon .tooltip {
+    position: absolute;
+    padding: 0 10px;
+    line-height: 28px;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    visibility: visible;
+    white-space: nowrap;
+    color: transparent;
+    background-color: transparent;
+    transition: 0.4s;
+    left: auto;
+    right: calc(100% + 10px); /* Positioning from the right */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -5px; /* Positioning the triangle on the right side */
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent; /* Color of the triangle */
+    transition: 0.4s;
+    transform: translateY(-50%);
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon:hover .tooltip {
+    background-color: #000;
+    color: #fff;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .base__btns .base__btns-icon:hover .tooltip::after {
+    border-left: 5px solid #000; /* Color of the triangle */
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .quick__add-btn {
+    text-decoration: none;
+    border: none;
+    font-family: "Hanken Grotesk";
+    transition: 0.2s;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    background-color: #000;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    width: 100%;
+    height: 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .quick__add-btn i {
+    font-size: 20px;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .quick__shop-btns .quick__add-btn p {
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .product__desc {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 7px;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .product__desc h3 {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+    color: #313131;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product .product__desc p {
+    color: #949494;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product:hover .quick__shop-btns .base__btns {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product:hover .quick__shop-btns .quick__add-btn {
+    height: 40px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__cards .product:hover .quick__shop-btns .quick__add-btn:hover {
+    background-color: #1c1c1c;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .searchbar__empty {
+    display: flex;
+    justify-content: center;
+    color: #949494;
+  }
+  .searchbar .searchbar__container .searchbar__bottom .loader {
+    position: absolute;
+  }
+  .searchbar__show {
+    top: 0;
+  }
+}
 .loader {
   transition: 0.4s;
   z-index: 1000;
@@ -4796,9 +5020,13 @@ body {
   position: relative;
 }
 .quick__view .quick__view-container .quick__view-content > i {
+  background-color: red;
+  z-index: -1;
   font-size: 2rem;
   position: absolute;
-  top: 10px;
+  top: -30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   right: 10px;
   cursor: pointer;
   transition: 0.4s;
@@ -4816,9 +5044,13 @@ body {
   position: relative;
 }
 .quick__view .quick__view-container .quick__view-content .quick__view-left img {
-  width: 90%;
-  height: -moz-fit-content;
-  height: fit-content;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions {
   bottom: 10px;
@@ -4912,7 +5144,6 @@ body {
 }
 .quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket {
   height: 75px;
-  background-color: re;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -4926,7 +5157,11 @@ body {
   border: 1px solid #949494;
   cursor: pointer;
   transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1rem;
+  color: #000;
   background-color: #f9f9f9;
 }
 .quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter button:hover {
@@ -4942,7 +5177,8 @@ body {
   font-family: "Hanken Grotesk";
   box-sizing: border-box;
   border: 1px solid #949494;
-  background-color: #ffffff;
+  background-color: #fff;
+  border-radius: 0;
   width: 40px;
   padding: 10px;
   transition: 0.4s;
@@ -4955,7 +5191,7 @@ body {
 .quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter input:focus {
   outline-color: transparent;
   outline-width: 0px;
-  border-color: black;
+  border-color: #000;
 }
 .quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-add {
   display: flex;
@@ -5054,11 +5290,16 @@ body {
   .quick__view .quick__view-container .quick__view-content > i {
     font-size: 2rem;
     position: absolute;
-    top: 10px;
     right: 10px;
     cursor: pointer;
     transition: 0.4s;
     color: #000;
+    background-color: red;
+    z-index: -1;
+    font-size: 2rem;
+    top: -30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
   .quick__view .quick__view-container .quick__view-content > i:hover {
     opacity: 0.6;
@@ -5072,9 +5313,10 @@ body {
     position: relative;
   }
   .quick__view .quick__view-container .quick__view-content .quick__view-left img {
-    width: 90%;
-    height: -moz-fit-content;
-    height: fit-content;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions {
     bottom: 10px;
@@ -5278,7 +5520,8 @@ body {
 @media screen and (max-width: 650px) {
   .quick__view {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow-y: scroll;
     position: fixed;
     transition: 0.4s;
     opacity: 0;
@@ -5292,6 +5535,7 @@ body {
   }
   .quick__view .quick__view-container {
     transition: 0.4s;
+    overflow: hidden;
     transform: scale(0.8);
     width: 80%;
     height: 85%;
@@ -5301,6 +5545,7 @@ body {
   .quick__view .quick__view-container .quick__view-content {
     border-radius: 20px;
     width: 100%;
+    gap: 20px;
     height: 100%;
     background-color: #fff;
     display: flex;
@@ -5309,19 +5554,24 @@ body {
     position: relative;
   }
   .quick__view .quick__view-container .quick__view-content > i {
-    font-size: 2rem;
-    position: absolute;
-    top: 10px;
     right: 10px;
     cursor: pointer;
     transition: 0.4s;
     color: #000;
+    background-color: red;
+    z-index: 1;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-radius: 50%;
   }
   .quick__view .quick__view-container .quick__view-content > i:hover {
     opacity: 0.6;
   }
   .quick__view .quick__view-container .quick__view-content .quick__view-left {
-    width: 80%;
+    width: 100%;
     height: 40%;
     display: flex;
     justify-content: center;
@@ -5329,9 +5579,11 @@ body {
     position: relative;
   }
   .quick__view .quick__view-container .quick__view-content .quick__view-left img {
-    -o-object-fit: contain;
-       object-fit: contain;
-    width: 90%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
     height: 100%;
   }
   .quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions {
@@ -6196,14 +6448,20 @@ body {
   color: #949494;
   border-color: transparent;
 }
-.night__mode #root .wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product button {
+.night__mode #root #wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product button {
   background-color: #2f2b3a;
 }
-.night__mode #root .wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product button:hover {
+.night__mode #root #wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product button:hover {
   background-color: red;
 }
-.night__mode #root .wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content .product__desc h3 {
+.night__mode #root #wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product .product__content .product__desc h3 {
   color: #949494;
+}
+.night__mode #root #wishlist .wishlist__container .wishlist__empty i {
+  color: #949494;
+}
+.night__mode #root #wishlist .wishlist__container .wishlist__empty a {
+  background-color: #2f2b3a;
 }
 .night__mode #root #compare .compare__container .compare__empty i {
   color: #949494;
@@ -6245,7 +6503,7 @@ body {
   width: 90px;
 }
 .night__mode #root #cart {
-  background-color: #2f2b3a;
+  background-color: #1a1625;
 }
 .night__mode #root #cart .cart__container .cart__left .cart__default p:nth-child(2), .night__mode #root #cart .cart__container .cart__left .cart__default p:nth-child(3) {
   color: #949494;
@@ -6259,13 +6517,13 @@ body {
 }
 .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__top {
   border-color: #484848;
-  background-color: #1a1625;
+  background-color: #2f2b3a;
 }
 .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__top p {
   color: #949494;
 }
 .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom {
-  background-color: #1a1625;
+  background-color: #2f2b3a;
 }
 .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row {
   border-color: #484848;
@@ -6274,10 +6532,59 @@ body {
   color: #fff;
 }
 .night__mode #root #cart .cart__container .cart__right .cart__price-container {
-  background-color: #1a1625;
+  background-color: #2f2b3a;
 }
 .night__mode #root #cart .cart__container .cart__right .cart__price-container div {
   border-color: #484848;
+}
+@media screen and (max-width: 650px) {
+  .night__mode #root #cart {
+    background-color: #1a1625;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__default p:nth-child(2), .night__mode #root #cart .cart__container .cart__left .cart__default p:nth-child(3) {
+    color: #949494;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__default a {
+    color: #fff !important;
+    background-color: #1a1625;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__default a p {
+    color: #fff !important;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__top {
+    border-color: #484848;
+    background-color: #1a1625;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__top p {
+    color: #949494;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom {
+    background-color: #1a1625;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row {
+    border-color: #484848;
+    background-color: #2f2b3a;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-title {
+    border-color: #484848;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-title span a {
+    color: #fff;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-title .cart__row-image::after, .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-title .cart__row-image::before {
+    background-color: #484848;
+  }
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-price,
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-quantity,
+  .night__mode #root #cart .cart__container .cart__left .cart__fill .cart__bottom .cart__row .cart__row-product-total-price {
+    border-color: #484848;
+  }
+  .night__mode #root #cart .cart__container .cart__right .cart__price-container {
+    background-color: #1a1625;
+  }
+  .night__mode #root #cart .cart__container .cart__right .cart__price-container div {
+    border-color: #484848;
+  }
 }
 .night__mode #root .searchbar {
   background-color: #1a1625;
@@ -6329,6 +6636,73 @@ body {
 }
 .night__mode #root .product .quick__shop-btns .base__btns .base__btns-icon .tooltip::after {
   border-left-color: #1a1625;
+}
+.night__mode #root .quick__view .quick__view-container .quick__view-content {
+  background-color: #1a1625;
+}
+.night__mode #root .quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon i {
+  color: #2f2b3a;
+}
+.night__mode #root .quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon .tooltip {
+  background-color: #2f2b3a;
+}
+.night__mode #root .quick__view .quick__view-container .quick__view-content .quick__view-left .quick__view-actions .quick__view-icon .tooltip::after {
+  border-left-color: #2f2b3a;
+}
+.night__mode #root .quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter button {
+  background-color: #2f2b3a;
+  border-color: #484848;
+  color: #949494;
+}
+.night__mode #root .quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-counter input:focus {
+  border-color: #484848;
+}
+.night__mode #root .quick__view .quick__view-container .quick__view-content .quick__view-right .quick__view-right-container .quick__view-basket .quick__view-add {
+  background-color: #2f2b3a;
+}
+.night__mode #root .contact__us-section {
+  background-color: #1a1625;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-top .contact__us-inputs .inputs input {
+  background-color: #2f2b3a;
+  border-color: #484848;
+  outline-color: #484848;
+  color: #949494;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-top .contact__us-inputs .inputs input:focus {
+  outline-offset: 0;
+  outline-width: 0;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-top .contact__us-inputs .textareas textarea {
+  background-color: #2f2b3a;
+  border-color: #484848;
+  color: #949494;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-top .contact__us-inputs .textareas textarea:focus {
+  outline-offset: 0;
+  outline-width: 0;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-bottom .contact__us-card {
+  background-color: #2f2b3a;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-bottom .contact__us-card div {
+  border-color: #484848;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-bottom .contact__us-card div i {
+  color: #949494;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-bottom .contact__us-card h5,
+.night__mode #root .contact__us-section .contact__us-container .contact__us-bottom .contact__us-card p {
+  color: #949494;
+}
+.night__mode #root .contact__us-section .contact__us-container .contact__us-bottom .contact__us-card:hover div {
+  background-color: #1a1625;
+}
+.night__mode #root #about .about__container .about__container-row p {
+  color: #949494;
+}
+.night__mode #root #about .about__container .about__container-row p a:first-child {
+  color: #fff;
 }
 
 .night__mode::-webkit-scrollbar {
