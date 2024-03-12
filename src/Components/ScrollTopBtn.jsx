@@ -23,6 +23,11 @@ function ScrollTopBtn() {
     document.querySelector(
       "#scroll__top-btn"
     ).style.background = `conic-gradient(#000 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+    if (document.body.classList.contains("night__mode")) {
+      document.querySelector(
+        "#scroll__top-btn"
+      ).style.background = `conic-gradient(#2f2b3a ${scrollValue}%, #1a1625 ${scrollValue}%)`;
+    }
   };
 
   window.onscroll = calcScrollValue;
