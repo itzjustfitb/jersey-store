@@ -1,0 +1,421 @@
+.night__mode {
+  #root {
+    background-color: $Night-Mode-Primary;
+    color: $Light-gray-2;
+    header {
+      background-color: $Night-Mode-Primary;
+      .header__contact {
+        p {
+          color: $Light-gray-2;
+        }
+      }
+
+      .header__nav {
+        i {
+          color: $Light-gray-2;
+        }
+        .count {
+          background-color: $Night-Mode-Secondary;
+        }
+      }
+      .header__burger {
+        i {
+          color: $Light-gray-2;
+        }
+      }
+    }
+    .burger__menu {
+      background-color: $Night-Mode-Primary;
+      .burger__menu-container {
+        .burger__menu-top {
+          border-color: $Night-Border;
+        }
+        .burger__menu-bottom {
+          border-color: $Night-Border;
+          ul {
+            li {
+              a,
+              div {
+                color: $Light-gray-2;
+              }
+            }
+          }
+        }
+      }
+    }
+    .shadow__header {
+      box-shadow: 0 1px 16px hsla(0, 0%, 0%, 0.6);
+    }
+    #home {
+      .home__products {
+        .products__container {
+          .products__top {
+            h1 {
+              &::after {
+                background-color: $Night-Mode-Secondary;
+              }
+            }
+          }
+          > a {
+            background-color: $Night-Mode-Secondary;
+          }
+        }
+      }
+    }
+    .product__section {
+      .product__container {
+        .product__left {
+          .swiper-button-next,
+          .swiper-button-prev {
+            background-color: $Night-Mode-Secondary;
+            color: $Light-gray-2;
+          }
+        }
+        .product__right {
+          .product__detail-selection {
+            .counter {
+              button {
+                background-color: $Night-Mode-Secondary;
+                border-color: $Night-Border;
+                color: $White;
+              }
+              input {
+                &:focus {
+                  border-color: $Night-Border;
+                }
+              }
+            }
+            .product__detail-add {
+              background-color: $Night-Mode-Secondary;
+            }
+          }
+          .product__detail-footer {
+            border-color: $Night-Border;
+            button {
+              color: $Light-gray-2;
+            }
+          }
+        }
+      }
+    }
+    footer {
+      color: $Light-gray-2;
+      &::after {
+        background-color: $Night-Border;
+      }
+      .footer__container {
+        .footer__top {
+          border-color: $Night-Border;
+          .footer__row {
+            h1 {
+              &::after {
+                background-color: $Night-Mode-Secondary;
+              }
+            }
+            ul {
+              li {
+                color: $Light-gray-2;
+              }
+            }
+          }
+        }
+      }
+    }
+    .loader {
+      background-color: $Night-Mode-Primary;
+    }
+    .custom-loader {
+      width: 60px;
+      height: 60px;
+      --c: radial-gradient(farthest-side, #2f2b3a 92%, #0000);
+      background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+        var(--c) 0 50%;
+      background-size: 10px 10px;
+      background-repeat: no-repeat;
+      animation: s8 1s infinite;
+      position: relative;
+      &::before {
+        background: repeating-conic-gradient(
+          #0000 0 35deg,
+          $Night-Mode-Secondary 0 90deg
+        );
+      }
+    }
+    .pagination {
+      .pagination__container {
+        button {
+          background-color: $Light-gray-2;
+          color: $Night-Mode-Primary;
+          &:hover {
+            border-color: $Night-Mode-Secondary;
+          }
+        }
+        .active {
+          color: $Light-gray-2;
+          background-color: $Night-Mode-Secondary;
+        }
+      }
+    }
+    .cart__sidebar {
+      .cart__top {
+        color: $Light-gray-2;
+        background-color: $Night-Mode-Primary;
+      }
+      .cart__bottom {
+        background-color: $Night-Mode-Secondary;
+        .cart__fill {
+          .cart__rows {
+            .cart__row {
+              .cart__row-container {
+                border-color: $Night-Border;
+                .cart__remove {
+                  color: $Light-gray-2;
+                }
+              }
+            }
+          }
+          .cart__total {
+            .cart__total-top {
+              p:last-child {
+                color: $White;
+              }
+            }
+            .cart__total-bottom {
+              background-color: $Night-Mode-Primary;
+              color: $Light-gray-2;
+              border-color: transparent;
+            }
+          }
+        }
+      }
+    }
+    .wishlist {
+      .wishlist__container {
+        .wishlist__fill {
+          .wishlist__bottom {
+            .wishlist__product {
+              button {
+                background-color: $Night-Mode-Secondary;
+                &:hover {
+                  background-color: $Red;
+                }
+              }
+              .product__content {
+                .product__desc {
+                  h3 {
+                    color: $Light-gray-2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #compare {
+      .compare__container {
+        .compare__empty {
+          i {
+            color: $Light-gray-2;
+          }
+          a {
+            background-color: $Night-Mode-Secondary;
+          }
+        }
+        .compare__fill {
+          .compare__bottom {
+            .compare__nav {
+              .compare__details {
+                border: 1px solid $Light-gray-2;
+                p {
+                  &:nth-child(odd) {
+                    background-color: $Night-Mode-Primary;
+                  }
+                  &:nth-child(even) {
+                    background-color: $Night-Mode-Secondary;
+                  }
+                }
+              }
+            }
+            .compare__list-container {
+              &::-webkit-scrollbar {
+                height: 5px;
+                background-color: transparent;
+              }
+              &::-webkit-scrollbar-thumb {
+                background-color: $Night-Mode-Secondary;
+              }
+
+              .compare__card {
+                .delete-btn {
+                  background-color: $Night-Mode-Secondary;
+                }
+                .compare__card-details {
+                  border: 1px solid $Light-gray-2;
+                  p {
+                    &:nth-child(odd) {
+                      background-color: $Night-Mode-Primary;
+                    }
+                    &:nth-child(even) {
+                      background-color: $Night-Mode-Secondary;
+                    }
+                    &:nth-child(3) {
+                      span {
+                        color: $Light-gray-2;
+                        background-color: $Night-Mode-Secondary;
+                        width: 90px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #cart {
+      background-color: $Night-Mode-Secondary;
+      .cart__container {
+        .cart__left {
+          .cart__default {
+            p {
+              &:nth-child(2),
+              &:nth-child(3) {
+                color: $Light-gray-2;
+              }
+            }
+            a {
+              color: $White !important  ;
+              background-color: $Night-Mode-Primary;
+              p {
+                color: $White !important;
+              }
+            }
+          }
+          .cart__fill {
+            .cart__top {
+              border-color: $Night-Border;
+              background-color: $Night-Mode-Primary;
+              p {
+                color: $Light-gray-2;
+              }
+            }
+            .cart__bottom {
+              background-color: $Night-Mode-Primary;
+              .cart__row {
+                border-color: $Night-Border;
+                .cart__row-product-title {
+                  span {
+                    a {
+                      color: $White;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .cart__right {
+          .cart__price-container {
+            background-color: $Night-Mode-Primary;
+            div {
+              border-color: $Night-Border;
+            }
+          }
+        }
+      }
+    }
+    .searchbar {
+      background-color: $Night-Mode-Primary;
+      .searchbar__container {
+        .searchbar__header {
+          input {
+            background-color: $Night-Mode-Primary;
+            color: $Light-gray-2;
+            border-bottom: 1px solid $Night-Border;
+          }
+        }
+      }
+    }
+    .scroll__top-btn {
+      span {
+        background-color: $Night-Mode-Primary;
+        i {
+          color: $Light-gray-2;
+        }
+      }
+    }
+    .breadcrumps {
+      color: $Light-gray-2;
+      .breadcrumps__container {
+        .crump {
+          a {
+            color: $Light-gray-2;
+          }
+        }
+      }
+      .crump {
+        color: $Light-gray-2;
+      }
+    }
+    .products__page {
+      .products__page-container {
+        .products__page-top {
+          .products__page-selection {
+            .products__page-selection-top {
+              .products__page-selection-header {
+                .setting-btn {
+                  background-color: $Night-Mode-Secondary;
+                  box-shadow: 0px 0px 0px 2px hsla(256, 15%, 20%, 0.61);
+                }
+              }
+            }
+            .products__page-dropdown {
+              background-color: $Night-Mode-Secondary;
+              .products__page-dropdown-row {
+                h1 {
+                  &::after {
+                    background-color: $Night-Mode-Primary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .product {
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 8px;
+      h3 {
+        color: $Light-gray-2;
+      }
+      .quick__shop-btns {
+        .quick__add-btn {
+          background-color: $Night-Mode-Secondary;
+        }
+        .base__btns {
+          .base__btns-icon {
+            i {
+              color: $Night-Mode-Secondary;
+            }
+            .tooltip {
+              background-color: $Night-Mode-Primary;
+              &::after {
+                border-left-color: $Night-Mode-Primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.night__mode::-webkit-scrollbar {
+  width: 5px;
+  background-color: $Night-Mode-Primary;
+}
+
+.night__mode::-webkit-scrollbar-thumb {
+  background-color: $Light-gray-2;
+}
