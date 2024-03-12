@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import siteLogo from "../assets/images/jersey-store-logo.png";
+import NightModeBtn from "./NightModeBtn";
 
-function BurgerMenu({ openBurgerMenu, setOpenBurgerMenu }) {
+function BurgerMenu({
+  openBurgerMenu,
+  setOpenBurgerMenu,
+  nightModeActive,
+  setNightModeActive,
+}) {
   const [check, setCheck] = useState("");
-  const location = useLocation();
   const navigations = [
     {
       url: "/",
@@ -68,7 +73,10 @@ function BurgerMenu({ openBurgerMenu, setOpenBurgerMenu }) {
         <div className="burger__menu-top">
           <h2>MENU</h2>
           <i
-            onClick={() => setOpenBurgerMenu(false)}
+            onClick={() => {
+              setOpenBurgerMenu(false);
+              document.body.style.position = "static";
+            }}
             className="ri-close-line"
           ></i>
         </div>
@@ -90,11 +98,16 @@ function BurgerMenu({ openBurgerMenu, setOpenBurgerMenu }) {
                   }}
                   key={index}
                 >
-                  {index === 1 || index === 5 ? (
+                  {index === 1 ? (
                     <div>
                       <i className={navigate.className}></i>
                       <p>{navigate.content}</p>
                     </div>
+                  ) : index === 5 ? (
+                    <NightModeBtn
+                      nightModeActive={nightModeActive}
+                      setNightModeActive={setNightModeActive}
+                    />
                   ) : (
                     <Link to={navigate.url}>
                       <i className={navigate.className}></i>
