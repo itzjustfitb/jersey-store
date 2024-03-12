@@ -28,7 +28,7 @@ function WishList() {
     toast.warning("Bəyəndiklərimdən silindi");
   }
   return (
-    <main className="wishlist">
+    <main id="wishlist">
       <div className="wishlist__container">
         {wishList.length ? (
           <div className="wishlist__fill">
