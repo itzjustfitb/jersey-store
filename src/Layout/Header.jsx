@@ -12,24 +12,17 @@ function Header() {
   const [cartListIsActive, setCartListIsActive] = useState(false);
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
   const [nightModeActive, setNightModeActive] = useState(false);
-  const { cartList } = useSelector((state) => state);
+  const cartList = useSelector((state) => state.cartList);
   const totalPrice = cartList.reduce((total, product) => {
     return total + product.quantity * product.price;
   }, 0);
-  const { wishList } = useSelector((state) => state);
+  const wishList = useSelector((state) => state.wishList);
 
   const [scrollInt, setScrollInt] = useState(0);
   window.addEventListener("scroll", () => {
     setScrollInt(scrollY);
   });
 
-  useEffect(() => {
-    if (nightModeActive) {
-      document.body.classList.add("night__mode");
-    } else {
-      document.body.classList.remove("night__mode");
-    }
-  }, [nightModeActive]);
   return (
     <header className={scrollInt >= 50 ? "shadow__header" : ""}>
       <div className="header__container">
@@ -102,6 +95,7 @@ function Header() {
         totalPrice={totalPrice}
       />
       <BurgerMenu
+        setIsOpen={setIsOpen}
         setOpenBurgerMenu={setOpenBurgerMenu}
         openBurgerMenu={openBurgerMenu}
         setNightModeActive={setNightModeActive}
