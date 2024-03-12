@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import siteLogo from "../assets/images/jersey-store-logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import CartSidebar from "../Components/CartSidebar";
 import SearchBar from "../Components/SearchBar";
 import BurgerMenu from "../Components/BurgerMenu";
+import NightModeBtn from "../Components/NightModeBtn";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [cartListIsActive, setCartListIsActive] = useState(false);
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
+  const [nightModeActive, setNightModeActive] = useState(false);
   const { cartList } = useSelector((state) => state);
   const totalPrice = cartList.reduce((total, product) => {
     return total + product.quantity * product.price;
@@ -21,6 +23,13 @@ function Header() {
     setScrollInt(scrollY);
   });
 
+  useEffect(() => {
+    if (nightModeActive) {
+      document.body.classList.add("night__mode");
+    } else {
+      document.body.classList.remove("night__mode");
+    }
+  }, [nightModeActive]);
   return (
     <header className={scrollInt >= 50 ? "shadow__header" : ""}>
       <div className="header__container">
@@ -38,18 +47,31 @@ function Header() {
               <Link to="/" className="bottom__bar home__icon">
                 <i className="ri-home-3-line"></i>
               </Link>
-              <div className={`header__nav-icon search bottom__bar`}>
+              <div className={`header__nav-icon search`}>
                 <i
-                  onClick={() => setIsOpen(!isOpen)}
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                    document.body.style.position = "fixed";
+                  }}
                   className="ri-search-eye-line"
                 ></i>
               </div>
+              <NightModeBtn
+                nightModeActive={nightModeActive}
+                setNightModeActive={setNightModeActive}
+              />
               <Link to="/wishlist" className="header__nav-icon bottom__bar">
-                <i className="ri-heart-3-line"></i>
+                <i
+                  onClick={() => setIsOpen(false)}
+                  className="ri-heart-3-line"
+                ></i>
                 <span className="count">{wishList.length}</span>
               </Link>
               <div
-                onClick={() => setCartListIsActive(!cartListIsActive)}
+                onClick={() => {
+                  setCartListIsActive(!cartListIsActive);
+                  setIsOpen(false);
+                }}
                 className="shopping__bag"
               >
                 <div className="header__nav-icon bottom__bar">
@@ -61,39 +83,18 @@ function Header() {
                   <span> AZN</span>
                 </p>
               </div>
-              <Link className="bottom__bar dark-light__mode">
-                <i className="ri-moon-line"></i>
-              </Link>
             </div>
             <div className="header__burger">
               <i
-                onClick={() => setOpenBurgerMenu(true)}
+                onClick={() => {
+                  setOpenBurgerMenu(true);
+                  document.body.style.position = "fixed";
+                }}
                 className="ri-menu-5-line"
               ></i>
             </div>
           </div>
         </div>
-        {/* <div className="header__bottom">
-          <nav className="header__bottom-container">
-            <Link to="">ÖZƏL DİZAYN FORMALAR</Link>
-            <Link to="">KOMANDA ÜÇÜN</Link>
-            <div>
-              <p>GÜNLÜK GEYİM</p>
-              <i className="ri-arrow-down-s-line"></i>
-              <div className="dropdown">
-                <Link to="">
-                  <p>T-SHIRT</p>
-                </Link>
-                <Link to="">
-                  <p>SWEATSHIRT</p>
-                </Link>
-                <Link to="">
-                  <p>HOODIE</p>
-                </Link>
-              </div>
-            </div>
-          </nav>
-        </div> */}
       </div>
       <CartSidebar
         setActivate={setCartListIsActive}
@@ -103,6 +104,8 @@ function Header() {
       <BurgerMenu
         setOpenBurgerMenu={setOpenBurgerMenu}
         openBurgerMenu={openBurgerMenu}
+        setNightModeActive={setNightModeActive}
+        nightModeActive={nightModeActive}
       />
       <SearchBar setIsOpen={setIsOpen} isOpen={isOpen} />
     </header>
