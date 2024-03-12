@@ -104,7 +104,6 @@
         flex-direction: column;
         align-items: center;
         .cart__total-top {
-          border-bottom: 1px solid $Light-gray;
           width: 90%;
           display: flex;
           justify-content: space-between;
@@ -132,6 +131,7 @@
         .cart__total-bottom:hover {
           background-color: $Black;
           color: $White;
+          opacity: 0.7;
         }
       }
     }
