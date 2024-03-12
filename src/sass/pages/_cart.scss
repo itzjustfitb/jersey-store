@@ -1,15 +1,15 @@
 #cart {
   z-index: 11;
   width: 100%;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   background-color: $Gray;
   .cart__container {
     display: flex;
     gap: 20px;
-    margin: 20px 0;
+    padding: 20px 0;
     width: 90%;
-    height: fit-content;
     .cart__left {
       border-radius: 5px;
       width: 70%;
@@ -47,6 +47,9 @@
           color: $White;
           transition: 0.4s;
           text-decoration: none;
+          &:hover {
+            opacity: 0.7;
+          }
           p {
             color: $White;
             font-size: 16px;
