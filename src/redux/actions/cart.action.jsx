@@ -15,6 +15,7 @@ export function removeFromCartAction(payload) {
 export function emptyTheCartAction(payload) {
   return {
     type: "EMPTY_THE_CART",
+
     payload,
   };
 }
