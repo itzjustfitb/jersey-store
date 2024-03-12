@@ -40,7 +40,13 @@ function SearchBar({ isOpen, setIsOpen }) {
             type="text"
             placeholder="Məhsulları axtarın"
           />
-          <i onClick={() => setIsOpen(false)} className="ri-close-line"></i>
+          <i
+            onClick={() => {
+              setIsOpen(false);
+              document.body.style.position = "static";
+            }}
+            className="ri-close-line"
+          ></i>
         </div>
         <div className="searchbar__bottom">
           {searchList.length ? (
