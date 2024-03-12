@@ -26,9 +26,13 @@
       display: flex;
       position: relative;
       > i {
+        background-color: red;
+        z-index: -1;
         font-size: 2rem;
         position: absolute;
-        top: 10px;
+        top: -30px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         right: 10px;
         cursor: pointer;
         transition: 0.4s;
@@ -45,8 +49,12 @@
         align-items: center;
         position: relative;
         img {
-          width: 90%;
-          height: fit-content;
+          border-radius: 10px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
         .quick__view-actions {
           bottom: 10px;
@@ -143,7 +151,6 @@
           }
           .quick__view-basket {
             height: 75px;
-            background-color: re;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -155,7 +162,11 @@
                 border: 1px solid $Light-gray-2;
                 cursor: pointer;
                 transition: 0.4s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 font-size: 1rem;
+                color: $Black;
                 background-color: #f9f9f9;
                 &:hover {
                   opacity: 0.6;
@@ -171,7 +182,8 @@
                 font-family: $Hanken-Grotesk;
                 box-sizing: border-box;
                 border: 1px solid $Light-gray-2;
-                background-color: #ffffff;
+                background-color: $White;
+                border-radius: 0;
                 width: 40px;
                 padding: 10px;
                 transition: 0.4s;
@@ -184,7 +196,7 @@
                 &:focus {
                   outline-color: transparent;
                   outline-width: 0px;
-                  border-color: black;
+                  border-color: $Black;
                 }
               }
             }
@@ -288,11 +300,16 @@
         > i {
           font-size: 2rem;
           position: absolute;
-          top: 10px;
           right: 10px;
           cursor: pointer;
           transition: 0.4s;
           color: $Black;
+          background-color: $Red;
+          z-index: -1;
+          font-size: 2rem;
+          top: -30px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
           &:hover {
             opacity: 0.6;
           }
@@ -305,8 +322,9 @@
           align-items: center;
           position: relative;
           img {
-            width: 90%;
-            height: fit-content;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
           .quick__view-actions {
             bottom: 10px;
@@ -518,7 +536,8 @@
 @media screen and (max-width: 650px) {
   .quick__view {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow-y: scroll;
     position: fixed;
     transition: 0.4s;
     opacity: 0;
@@ -531,6 +550,7 @@
     align-items: center;
     .quick__view-container {
       transition: 0.4s;
+      overflow: hidden;
       transform: scale(0.8);
       width: 80%;
       height: 85%;
@@ -539,6 +559,7 @@
       .quick__view-content {
         border-radius: 20px;
         width: 100%;
+        gap: 20px;
         height: 100%;
         background-color: $White;
         display: flex;
@@ -546,27 +567,34 @@
         align-items: center;
         position: relative;
         > i {
-          font-size: 2rem;
-          position: absolute;
-          top: 10px;
           right: 10px;
           cursor: pointer;
           transition: 0.4s;
           color: $Black;
+          background-color: $Red;
+          z-index: 1;
+          font-size: 1.5rem;
+          position: absolute;
+          top: 10px;
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px;
+          border-radius: 50%;
           &:hover {
             opacity: 0.6;
           }
         }
         .quick__view-left {
-          width: 80%;
+          width: 100%;
           height: 40%;
           display: flex;
           justify-content: center;
           align-items: center;
           position: relative;
           img {
-            object-fit: contain;
-            width: 90%;
+            object-fit: cover;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            width: 100%;
             height: 100%;
           }
           .quick__view-actions {
