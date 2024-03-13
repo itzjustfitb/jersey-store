@@ -94,6 +94,9 @@
             button {
               color: $Light-gray-2;
             }
+            a {
+              color: $Light-gray-2;
+            }
           }
         }
       }
@@ -185,6 +188,14 @@
               color: $Light-gray-2;
               border-color: transparent;
             }
+          }
+        }
+        .cart__empty {
+          p {
+            color: $Light-gray-2;
+          }
+          i {
+            color: $Light-gray-2;
           }
         }
       }
