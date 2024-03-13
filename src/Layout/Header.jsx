@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import siteLogo from "../assets/images/jersey-store-logo.png";
-import { useEffect, useState } from "react";
+import siteLogo from "../assets/images/jersey-store-logo.svg";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import CartSidebar from "../Components/CartSidebar";
 import SearchBar from "../Components/SearchBar";
