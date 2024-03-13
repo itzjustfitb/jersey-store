@@ -6229,7 +6229,7 @@ body {
 .burger__menu .burger__menu-container {
   width: 90%;
   display: grid;
-  grid-template-rows: 91px 1fr 140px;
+  grid-template-rows: 91px 1fr 1fr;
 }
 .burger__menu .burger__menu-container .burger__menu-top {
   display: flex;
@@ -6303,10 +6303,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
 }
 .burger__menu .burger__menu-container .burger__menu-footer img {
-  width: 120px;
+  height: 100px;
 }
 .burger__menu .burger__menu-container .burger__menu-footer p {
   font-weight: 700;
