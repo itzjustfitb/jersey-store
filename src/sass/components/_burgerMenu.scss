@@ -13,7 +13,7 @@
   .burger__menu-container {
     width: 90%;
     display: grid;
-    grid-template-rows: 91px 1fr 140px;
+    grid-template-rows: 91px 1fr 1fr;
     .burger__menu-top {
       display: flex;
       border-bottom: 1px solid $Black;
@@ -83,9 +83,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 5px;
       img {
-        width: 120px;
+        height: 100px;
       }
       p {
         font-weight: 700;
