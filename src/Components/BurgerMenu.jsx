@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
-import siteLogo from "../assets/images/jersey-store-logo.png";
+import { Link } from "react-router-dom";
+import siteLogo from "../assets/images/jersey-store-logo.svg";
 import NightModeBtn from "./NightModeBtn";
 
-function BurgerMenu({
-  setIsOpen,
-  openBurgerMenu,
-  setOpenBurgerMenu,
-  nightModeActive,
-  setNightModeActive,
-}) {
+function BurgerMenu({ setIsOpen, openBurgerMenu, setOpenBurgerMenu }) {
   const [check, setCheck] = useState("");
   const navigations = [
     {
