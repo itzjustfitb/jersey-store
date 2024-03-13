@@ -35,7 +35,7 @@ header .header__container .header__top .header__top-container {
   display: flex;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 60px;
+  height: 80px;
   align-items: center;
 }
 header .header__container .header__top .header__top-container .header__contact {
@@ -52,11 +52,10 @@ header .header__container .header__top .header__top-container .header__image {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
 header .header__container .header__top .header__top-container .header__image img {
   cursor: pointer;
-  width: 120px;
+  height: 60px;
 }
 header .header__container .header__top .header__top-container .header__nav {
   display: flex;
@@ -176,7 +175,7 @@ header .header__container .header__top .header__top-container .home__icon {
   }
   header .header__container .header__top .header__top-container .header__image img {
     cursor: pointer;
-    width: 120px;
+    width: 50px;
   }
   header .header__container .header__top .header__top-container .header__nav {
     display: flex;
@@ -379,7 +378,7 @@ header .header__container .header__top .header__top-container .home__icon {
   }
   header .header__container .header__top .header__top-container .header__image img {
     cursor: pointer;
-    width: 100px;
+    width: 50px;
   }
   header .header__container .header__top .header__top-container .header__nav {
     display: none;
@@ -6385,6 +6384,9 @@ body {
 .night__mode #root .product__section .product__container .product__right .product__detail-footer button {
   color: #949494;
 }
+.night__mode #root .product__section .product__container .product__right .product__detail-footer a {
+  color: #949494;
+}
 .night__mode #root footer {
   color: #949494;
 }
@@ -6447,6 +6449,12 @@ body {
   background-color: #1a1625;
   color: #949494;
   border-color: transparent;
+}
+.night__mode #root .cart__sidebar .cart__bottom .cart__empty p {
+  color: #949494;
+}
+.night__mode #root .cart__sidebar .cart__bottom .cart__empty i {
+  color: #949494;
 }
 .night__mode #root #wishlist .wishlist__container .wishlist__fill .wishlist__bottom .wishlist__product button {
   background-color: #2f2b3a;
