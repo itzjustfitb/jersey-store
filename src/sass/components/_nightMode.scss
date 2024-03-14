@@ -159,6 +159,39 @@
         }
       }
     }
+    .sizeguide__modal {
+      .sizeguide__container {
+        background-color: $Night-Mode-Secondary;
+        color: $Light-gray-2;
+        i {
+          color: $Night-Border;
+        }
+        .sizeguide__title {
+          h1,
+          p {
+            color: $Light-gray-2;
+          }
+        }
+        table {
+          thead {
+            tr {
+              background-color: $Night-Mode-Primary;
+            }
+          }
+          tbody {
+            tr {
+              border-color: $Night-Border;
+              &:hover {
+                background-color: #3b3648;
+              }
+              td:hover {
+                background-color: rgba(0, 0, 0, 0.26);
+              }
+            }
+          }
+        }
+      }
+    }
     .cart__sidebar {
       .cart__top {
         color: $Light-gray-2;
