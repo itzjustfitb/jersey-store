@@ -2752,10 +2752,10 @@ body {
     height: 60px;
   }
   .product__section .product__container .product__left .mySwiper2 {
-    width: 80%;
+    width: 100%;
   }
   .product__section .product__container .product__left .mySwiper {
-    width: 80%;
+    width: 100%;
   }
   .product__section .product__container .product__right {
     padding: 20px 0;
@@ -2955,7 +2955,16 @@ body {
     flex-direction: column;
     gap: 10px;
   }
+  .product__section .product__container .product__left .mySwiper2,
+  .product__section .product__container .product__left .swiper,
+  .product__section .product__container .product__left .swiper-wrapper,
+  .product__section .product__container .product__left .swiper-initialized .swiper-slide {
+    width: 100%;
+  }
   .product__section .product__container .product__left .swiper {
+    height: 200px;
+  }
+  .product__section .product__container .product__left .swiper .swiper-wrapper {
     height: 200px;
   }
   .product__section .product__container .product__left .swiper .swiper-button-next,
@@ -2963,14 +2972,12 @@ body {
     width: 30px;
     height: 30px;
   }
-  .product__section .product__container .product__left .swiper .swiper-wrapper {
-    height: 200px;
-  }
   .product__section .product__container .product__left .swiper__footer {
     width: 100%;
     height: 60px;
   }
   .product__section .product__container .product__left .swiper__footer .swiper {
+    width: 100%;
     height: 60px;
   }
   .product__section .product__container .product__left .swiper__footer .swiper .swiper-slide {
@@ -2978,12 +2985,6 @@ body {
   }
   .product__section .product__container .product__left .swiper__footer .swiper .swiper-wrapper {
     height: 60px;
-  }
-  .product__section .product__container .product__left .mySwiper2 {
-    width: 80%;
-  }
-  .product__section .product__container .product__left .mySwiper {
-    width: 80%;
   }
   .product__section .product__container .product__right {
     padding: 20px 0;
