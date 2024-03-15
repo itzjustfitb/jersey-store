@@ -63,7 +63,10 @@ function BurgerMenu({ setIsOpen, openBurgerMenu, setOpenBurgerMenu }) {
                 <li
                   className={check === navigate.content ? "active" : ""}
                   onClick={(e) => {
-                    // setOpenBurgerMenu(false);
+                    setOpenBurgerMenu(false);
+                    if (index === 5) {
+                      setOpenBurgerMenu(true);
+                    }
                     setCheck(e.target.textContent);
                   }}
                   key={index}
