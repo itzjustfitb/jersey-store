@@ -24,6 +24,26 @@
         }
       }
     }
+    .notfound {
+      .notfound__container {
+        .notfound__top {
+          h1 {
+            color: $Night-Border;
+          }
+          span {
+            color: $Light-gray-2;
+          }
+        }
+        .notfound__bottom {
+          a {
+            button {
+              background-color: $Night-Mode-Secondary;
+            }
+          }
+        }
+      }
+    }
+
     .burger__menu {
       background-color: $Night-Mode-Primary;
       .burger__menu-container {
