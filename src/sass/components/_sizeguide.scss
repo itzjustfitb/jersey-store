@@ -15,7 +15,9 @@
     transition: 0.4s;
     opacity: 0;
     width: 60%;
-    height: 60%;
+    transform: translate(-20px);
+    height: fit-content;
+    padding: 20px;
     background-color: $White;
     display: flex;
     flex-direction: column;
@@ -34,6 +36,8 @@
       flex-direction: column;
       align-items: center;
       gap: 20px;
+      width: 80%;
+      text-align: center;
       padding: 20px;
       color: $Secondary-color;
       h1 {
@@ -109,6 +113,7 @@
   visibility: visible;
   background-color: rgba(0, 0, 0, 0.674);
   .sizeguide__container {
+    transform: translate(0px);
     visibility: visible;
     opacity: 1;
   }
@@ -127,12 +132,13 @@
     justify-content: center;
     align-items: center;
     .sizeguide__container {
+      padding: 20px;
       position: absolute;
       visibility: hidden;
       transition: 0.4s;
       opacity: 0;
       width: 80%;
-      height: 60%;
+      height: fit-content;
       background-color: $White;
       display: flex;
       flex-direction: column;
@@ -148,7 +154,9 @@
       }
       .sizeguide__title {
         display: flex;
+        width: 80%;
         flex-direction: column;
+        text-align: center;
         align-items: center;
         gap: 20px;
         padding: 20px;
@@ -247,12 +255,13 @@
     justify-content: center;
     align-items: center;
     .sizeguide__container {
+      padding: 20px;
       position: absolute;
       visibility: hidden;
       transition: 0.4s;
       opacity: 0;
       width: 90%;
-      height: 70%;
+      height: fit-content;
       background-color: $White;
       display: flex;
       flex-direction: column;
@@ -267,7 +276,6 @@
         right: 20px;
       }
       .sizeguide__title {
-        margin-top: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -277,6 +285,7 @@
         text-align: center;
         h1 {
           font-size: 1.5rem;
+          width: 80%;
           font-weight: 700;
           line-height: 1.3;
         }
