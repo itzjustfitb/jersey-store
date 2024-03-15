@@ -63,7 +63,7 @@ function Compare() {
                     </button>
 
                     <div className="compare__card-content">
-                      <Link>
+                      <Link to="/products/:id">
                         <img src={item.thumbnail} alt={item.title} />
                       </Link>
                       <div className="compare__card-details">
