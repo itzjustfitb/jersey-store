@@ -1478,6 +1478,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  text-align: center;
 }
 #cart .cart__container .cart__left .cart__default img {
   width: 110px;
@@ -5951,6 +5952,7 @@ body {
 }
 
 .notfound {
+  padding: 50px 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -6015,6 +6017,144 @@ body {
   opacity: 0.6;
 }
 
+@media screen and (max-width: 1000px) {
+  .notfound {
+    padding: 50px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .notfound .notfound__container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 0px;
+  }
+  .notfound .notfound__container .notfound__top {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  .notfound .notfound__container .notfound__top h1 {
+    font-size: 20rem;
+    font-weight: 700;
+    text-align: center;
+    color: #e5e5e5;
+  }
+  .notfound .notfound__container .notfound__top span {
+    position: absolute;
+    font-size: 60px;
+    top: 60%;
+    left: 50%;
+    letter-spacing: 3px;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+  }
+  .notfound .notfound__container .notfound__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .notfound .notfound__container .notfound__bottom p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .notfound .notfound__container .notfound__bottom a {
+    text-decoration: none;
+  }
+  .notfound .notfound__container .notfound__bottom a button {
+    font-family: "Hanken Grotesk";
+    font-weight: 700;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    transition: 0.4s;
+  }
+  .notfound .notfound__container .notfound__bottom a button:hover {
+    opacity: 0.6;
+  }
+}
+@media screen and (max-width: 650px) {
+  .notfound {
+    padding: 50px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .notfound .notfound__container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 0px;
+  }
+  .notfound .notfound__container .notfound__top {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  .notfound .notfound__container .notfound__top h1 {
+    font-size: 10rem;
+    font-weight: 700;
+    text-align: center;
+    color: #e5e5e5;
+  }
+  .notfound .notfound__container .notfound__top span {
+    position: absolute;
+    font-size: 40px;
+    top: 60%;
+    left: 50%;
+    letter-spacing: 3px;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+  }
+  .notfound .notfound__container .notfound__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .notfound .notfound__container .notfound__bottom p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .notfound .notfound__container .notfound__bottom a {
+    text-decoration: none;
+  }
+  .notfound .notfound__container .notfound__bottom a button {
+    font-family: "Hanken Grotesk";
+    font-weight: 700;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    transition: 0.4s;
+  }
+  .notfound .notfound__container .notfound__bottom a button:hover {
+    opacity: 0.6;
+  }
+}
 .product {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -6340,6 +6480,15 @@ body {
 }
 .night__mode #root header .header__burger i {
   color: #949494;
+}
+.night__mode #root .notfound .notfound__container .notfound__top h1 {
+  color: #484848;
+}
+.night__mode #root .notfound .notfound__container .notfound__top span {
+  color: #949494;
+}
+.night__mode #root .notfound .notfound__container .notfound__bottom a button {
+  background-color: #2f2b3a;
 }
 .night__mode #root .burger__menu {
   background-color: #1a1625;
