@@ -530,8 +530,13 @@
     }
     .quick__view {
       .quick__view-container {
+        background-color: $Night-Mode-Primary;
         .quick__view-content {
           background-color: $Night-Mode-Primary;
+          > i {
+            color: $White;
+            background-color: $Red;
+          }
           .quick__view-left {
             .quick__view-actions {
               .quick__view-icon {
