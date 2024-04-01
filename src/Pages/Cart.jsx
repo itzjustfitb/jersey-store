@@ -9,6 +9,7 @@ import {
   removeFromCartAction,
 } from "../redux/actions/cart.action";
 import { toast } from "react-toastify";
+import Breadcrumbs from "../Components/Breadcrumbs";
 function Cart() {
   const cartList = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function Cart() {
   }, [currentPosts]);
   return (
     <main id="cart">
+      <Breadcrumbs />
       <div className="cart__container">
         <div className="cart__left">
           {currentPosts?.length ? (

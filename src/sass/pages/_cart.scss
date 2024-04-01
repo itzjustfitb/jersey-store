@@ -1,14 +1,17 @@
 #cart {
+  padding: 20px 0;
   z-index: 11;
   width: 100%;
   min-height: 400px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   background-color: $Gray;
+  gap: 20px;
   .cart__container {
     display: flex;
     gap: 20px;
-    padding: 20px 0;
     width: 90%;
     .cart__left {
       border-radius: 5px;
@@ -17,6 +20,8 @@
         display: flex;
         flex-direction: column;
         height: 327px;
+        border-radius: 5px;
+        background-color: $White;
         align-items: center;
         justify-content: center;
         gap: 15px;
@@ -544,6 +549,7 @@
     z-index: 11;
     width: 100%;
     display: flex;
+    gap: 0;
     justify-content: center;
     background-color: $Gray;
     .cart__container {

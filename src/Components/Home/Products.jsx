@@ -1,7 +1,6 @@
 import Product from "./Product";
 import { useEffect, useState } from "react";
 import { fetchJerseysFromFirestoreOrAPI } from "../../jerseyService";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function Products() {
   const [datas, setDatas] = useState([]);
