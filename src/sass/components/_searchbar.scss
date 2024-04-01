@@ -22,6 +22,7 @@
         outline-offset: 0;
         outline-color: transparent;
         outline-width: 0;
+        outline: none !important;
         text-align: center;
         font-family: $Hanken-Grotesk;
         font-weight: 500;
@@ -51,7 +52,6 @@
       padding: 20px 0;
       z-index: 10;
       width: 100%;
-      // overflow-y: scroll;
       .searchbar__cards {
         padding: 10px;
         height: 100%;

@@ -3263,6 +3263,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  text-align: center;
 }
 #wishlist .wishlist__container .wishlist__empty i {
   font-size: 180px;
@@ -4786,6 +4787,7 @@ body {
   outline-offset: 0;
   outline-color: transparent;
   outline-width: 0;
+  outline: none !important;
   text-align: center;
   font-family: "Hanken Grotesk";
   font-weight: 500;
