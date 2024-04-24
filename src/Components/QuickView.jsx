@@ -94,7 +94,7 @@ function QuickView() {
 
   const handleToCart = () => {
     let totalQuantity = 0;
-    totalQuantity = totalQuantity += count;
+    totalQuantity = totalQuantity += Number(count);
 
     try {
       dispatch(
@@ -178,13 +178,29 @@ function QuickView() {
                   <input
                     type="number"
                     value={count}
-                    onChange={(e) => setCount(Number(e.target.value))}
+                    onChange={(e) => {
+                      const inputValue = e.target.value.trim(); // Remove leading and trailing spaces
+                      if (inputValue === "0") {
+                        inputValue = "";
+                      }
+                      if (inputValue === "") {
+                        setCount("");
+                      } else {
+                        const parsedValue = parseInt(inputValue, 10);
+                        setCount(parsedValue.toString());
+                      }
+                    }}
                   />
                   <button onClick={() => setCount((prev) => prev + 1)}>
                     +
                   </button>
                 </div>
-                <button onClick={handleToCart} className="quick__view-add">
+                <button
+                  onClick={handleToCart}
+                  className={`quick__view-add  ${
+                    count === "" ? "disabled-btn" : ""
+                  }`}
+                >
                   SƏBƏTƏ AT
                 </button>
               </div>

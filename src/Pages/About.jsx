@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import Breadcrumbs from "../Components/Breadcrumbs";
 
-function About() {
+function About({ setCartListIsActive }) {
   return (
-    <main id="about">
+    <main id="about" onClick={() => setCartListIsActive(false)}>
       <div className="about__container">
         <Breadcrumbs />
         <h1>Haqqımızda</h1>

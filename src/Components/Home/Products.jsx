@@ -20,8 +20,8 @@ function Products() {
           </p>
         </div>
         <div className="products__bottom">
-          {datas?.map((item) => {
-            return <Product key={item.id} item={item} />;
+          {datas?.map((item, index) => {
+            return <Product key={item.id} index={index} item={item} />;
           })}
         </div>
         <Link to="/products">

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({ setCartListIsActive }) {
   return (
-    <footer>
+    <footer onClick={() => setCartListIsActive(false)}>
       <div className="footer__container">
         <div className="footer__top">
           <p>

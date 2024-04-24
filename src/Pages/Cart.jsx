@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 import Pagination from "../Components/Pagination";
 
 import {
+  addToCartAction,
   emptyTheCartAction,
   removeFromCartAction,
+  removeFromListAction,
 } from "../redux/actions/cart.action";
 import { toast } from "react-toastify";
 import Breadcrumbs from "../Components/Breadcrumbs";
-function Cart() {
+function Cart({ setCartListIsActive }) {
   const cartList = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
@@ -25,8 +27,27 @@ function Cart() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPosts]);
+  const count = 1;
+
+  const removeFromCartList = (id) => {
+    const filteredItem = cartList.find((item) => item.id === id);
+    dispatch(
+      removeFromListAction({
+        ...filteredItem,
+        quantity: count,
+      })
+    );
+    localStorage.setItem("cartlist", JSON.stringify(cartList));
+  };
+
+  const addToCartList = (id) => {
+    const filteredItem = cartList.find((item) => item.id === id);
+    dispatch(addToCartAction({ ...filteredItem, quantity: count }));
+    localStorage.setItem("cartlist", JSON.stringify(cartList));
+  };
+
   return (
-    <main id="cart">
+    <main id="cart" onClick={() => setCartListIsActive(false)}>
       <Breadcrumbs />
       <div className="cart__container">
         <div className="cart__left">
@@ -85,7 +106,17 @@ function Cart() {
                       </div>
                       <div className="cart__row-product-quantity">
                         <p className="cart__row-mobile-view">Ədəd</p>
-                        <p>{product.quantity}</p>
+                        <div className="cart__row-counter">
+                          <button
+                            onClick={() => removeFromCartList(product.id)}
+                          >
+                            -
+                          </button>
+                          <p>{product.quantity}</p>
+                          <button onClick={() => addToCartList(product.id)}>
+                            +
+                          </button>
+                        </div>
                       </div>
                       <div className="cart__row-product-total-price">
                         <p className="cart__row-mobile-view">Cəmi Məbləğ</p>

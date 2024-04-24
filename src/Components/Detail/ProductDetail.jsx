@@ -46,7 +46,7 @@ function ProductDetail() {
 
   const handleToCart = () => {
     let totalQuantity = 0;
-    totalQuantity = totalQuantity += count;
+    totalQuantity = totalQuantity += Number(count);
 
     try {
       dispatch(
@@ -174,13 +174,28 @@ function ProductDetail() {
               <input
                 type="number"
                 onChange={(e) => {
-                  setCount(Number(e.target.value));
+                  const inputValue = e.target.value.trim(); // Remove leading and trailing spaces
+                  if (inputValue === "0") {
+                    inputValue = "";
+                  }
+                  if (inputValue === "") {
+                    setCount("");
+                  } else {
+                    const parsedValue = parseInt(inputValue, 10);
+                    setCount(parsedValue.toString());
+                  }
                 }}
                 value={count}
               />
               <button onClick={() => setCount((count) => count + 1)}>+</button>
             </div>
-            <button onClick={handleToCart} className="product__detail-add">
+            <button
+              disabled={count === "" ? true : false}
+              onClick={handleToCart}
+              className={`product__detail-add ${
+                count === "" ? "disabled-btn" : ""
+              } `}
+            >
               <p>SƏBƏTƏ AT</p>
             </button>
           </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function NotFound() {
+function NotFound({ setCartListIsActive }) {
   return (
-    <main className="notfound">
+    <main className="notfound" onClick={() => setCartListIsActive(false)}>
       <div className="notfound__container">
         <div className="notfound__top">
           <h1>404</h1>

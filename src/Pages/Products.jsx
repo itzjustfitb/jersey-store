@@ -5,7 +5,7 @@ import Breadcrumbs from "../Components/Breadcrumbs";
 import Pagination from "../Components/Pagination";
 import { useLocation } from "react-router-dom";
 
-function Products() {
+function Products({ setCartListIsActive }) {
   const [datas, setDatas] = useState([]);
   const [defaultList, setDefaultList] = useState([]);
   const [showDropdown, setShowDropdown] = useState("");
@@ -130,7 +130,7 @@ function Products() {
   };
 
   return (
-    <main className="products__page">
+    <main className="products__page" onClick={() => setCartListIsActive(false)}>
       <div className="products__page-container">
         <div className="products__page-top">
           <div className="products__page-selection ">

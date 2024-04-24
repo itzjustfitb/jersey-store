@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { addToCompareListAction } from "../../redux/actions/compare.action";
 import { toast } from "react-toastify";
 
-function Product({ item }) {
+function Product({ item, index }) {
   const wishList = useSelector((state) => state.wishList);
   const compareList = useSelector((state) => state.compareList);
 
@@ -80,7 +80,7 @@ function Product({ item }) {
   };
 
   return (
-    <div className="product">
+    <div className="product" data-aos={"zoom-in"}>
       <div className="product__image">
         <img src={item.thumbnail} alt={`${item.title} image`} />
       </div>

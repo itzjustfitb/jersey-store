@@ -79,6 +79,32 @@
               h1 {
                 font-size: 12px;
               }
+              .cart__product-description-bottom {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .cart__counter {
+                  display: flex;
+                  gap: 5px;
+                  button {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    width: 25px;
+                    height: 25px;
+                    color: $Secondary-color;
+                    font-size: 1.1rem;
+                    background-color: $Light-gray;
+                    transition: 0.4s;
+                    &:hover {
+                      background-color: $Dark-Gray;
+                      color: $White;
+                    }
+                  }
+                }
+              }
             }
             .cart__remove {
               cursor: pointer;

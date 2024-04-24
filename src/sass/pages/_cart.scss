@@ -172,6 +172,7 @@
                 }
               }
             }
+
             .cart__row-product-price,
             .cart__row-product-quantity,
             .cart__row-product-total-price {
@@ -179,6 +180,27 @@
               display: flex;
               justify-content: center;
               gap: 5px;
+            }
+            .cart__row-product-quantity {
+              display: flex;
+              align-items: center;
+              button {
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                width: 25px;
+                height: 25px;
+                color: $Secondary-color;
+                font-size: 1.1rem;
+                background-color: $Light-gray;
+                transition: 0.4s;
+                &:hover {
+                  background-color: $Dark-Gray;
+                  color: $White;
+                }
+              }
             }
             .cart__row-product-total-price {
               font-weight: 900;

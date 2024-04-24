@@ -19,6 +19,23 @@ export function cartReducer(state = [], action) {
     case "EMPTY_THE_CART":
       state = [];
       return state;
+    case "REMOVE_FROM_LIST":
+      const removedItem = state.findIndex(
+        (product) => product.id === action.payload.id
+      );
+      if (removedItem !== -1) {
+        if (action.payload.quantity === 1) {
+          state[removedItem].quantity -= 1;
+        } else {
+          state[removedItem].quantity -= action.payload.quantity;
+        }
+      } else {
+        state.push(action.payload);
+      }
+      state[removedItem].quantity === 0
+        ? (state[removedItem].quantity = 1)
+        : state[removedItem].quantity;
+      return [...state];
     case "SET_TO_CART":
       return action.payload;
     default:

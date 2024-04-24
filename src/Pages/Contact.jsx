@@ -3,7 +3,7 @@ import Breadcrumbs from "../Components/Breadcrumbs";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-function Contact() {
+function Contact({ setCartListIsActive }) {
   const form = useRef();
   const [buttonContent, setButtonContent] = useState("Göndər");
   const [name, setName] = useState("");
@@ -34,7 +34,10 @@ function Contact() {
   };
 
   return (
-    <main className="contact__us-section">
+    <main
+      className="contact__us-section"
+      onClick={() => setCartListIsActive(false)}
+    >
       <div className="contact__us-container">
         <div className="contact__us-header">
           <Breadcrumbs />

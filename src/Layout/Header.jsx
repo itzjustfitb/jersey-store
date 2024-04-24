@@ -7,9 +7,8 @@ import SearchBar from "../Components/SearchBar";
 import BurgerMenu from "../Components/BurgerMenu";
 import NightModeBtn from "../Components/NightModeBtn";
 
-function Header() {
+function Header({ setCartListIsActive, cartListIsActive }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [cartListIsActive, setCartListIsActive] = useState(false);
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
   const [nightModeActive, setNightModeActive] = useState(false);
   const cartList = useSelector((state) => state.cartList);
@@ -24,7 +23,10 @@ function Header() {
   });
 
   return (
-    <header className={scrollInt >= 50 ? "shadow__header" : ""}>
+    <header
+      className={scrollInt >= 50 ? "shadow__header" : ""}
+      onClick={(e) => e.stopPropagation()}
+    >
       <div className="header__container">
         <div className="header__top">
           <div className="header__top-container">
@@ -61,7 +63,7 @@ function Header() {
                 <span className="count">{wishList.length}</span>
               </Link>
               <div
-                onClick={() => {
+                onClick={(e) => {
                   setCartListIsActive(!cartListIsActive);
                   setIsOpen(false);
                 }}

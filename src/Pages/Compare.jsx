@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import Breadcrumbs from "../Components/Breadcrumbs";
 import Pagination from "../Components/Pagination";
 
-function Compare() {
+function Compare({ setCartListIsActive }) {
   const compareList = useSelector((state) => state.compareList);
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,7 +30,7 @@ function Compare() {
   }
 
   return (
-    <main id="compare">
+    <main id="compare" onClick={() => setCartListIsActive(false)}>
       <div className="compare__container">
         {compareList.length ? (
           <div className="compare__fill">

@@ -6,7 +6,7 @@ import Breadcrumbs from "../Components/Breadcrumbs";
 import Pagination from "../Components/Pagination";
 import { useEffect, useState } from "react";
 
-function WishList() {
+function WishList({ setCartListIsActive }) {
   const wishList = useSelector((state) => state.wishList);
   let dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,7 +28,7 @@ function WishList() {
     toast.warning("Bəyəndiklərimdən silindi");
   }
   return (
-    <main id="wishlist">
+    <main id="wishlist" onClick={() => setCartListIsActive(false)}>
       <div className="wishlist__container">
         {wishList.length ? (
           <div className="wishlist__fill">

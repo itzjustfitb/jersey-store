@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCartAction } from "../redux/actions/cart.action";
+import {
+  addToCartAction,
+  removeFromCartAction,
+  removeFromListAction,
+} from "../redux/actions/cart.action";
 import { Link } from "react-router-dom";
 
 function CartSidebar({ activate, setActivate, totalPrice }) {
   const cartList = useSelector((state) => state.cartList);
   const dispatch = useDispatch();
+  let count = 1;
+
+  const removeFromCartList = (id) => {
+    const filteredItem = cartList.find((item) => item.id === id);
+    dispatch(
+      removeFromListAction({
+        ...filteredItem,
+        quantity: count,
+      })
+    );
+    localStorage.setItem("cartlist", JSON.stringify(cartList));
+  };
+
+  const addToCartList = (id) => {
+    const filteredItem = cartList.find((item) => item.id === id);
+    dispatch(addToCartAction({ ...filteredItem, quantity: count }));
+    localStorage.setItem("cartlist", JSON.stringify(cartList));
+  };
+
   return (
     <aside className={`cart__sidebar ${activate ? "show" : ""}`}>
       <div className="cart__top">
@@ -23,17 +46,35 @@ function CartSidebar({ activate, setActivate, totalPrice }) {
                 return (
                   <div key={item.id} className="cart__row">
                     <div className="cart__row-container">
-                      <Link to={`/product/${item.id}`}>
+                      <Link to={`/products/${item.id}`}>
                         <img src={item.thumbnail} alt={item.title} />
                       </Link>
                       <div className="cart__product-description">
                         <h1>{item.title}</h1>
-                        <p>
-                          <span className="count">{item.quantity}</span>{" "}
-                          <span>x</span>{" "}
-                          <span className="product__price">{item.price}</span>{" "}
-                          <span>AZN</span>
-                        </p>
+                        <div className="cart__product-description-bottom">
+                          <p>
+                            <span className="count">{item.quantity}</span>{" "}
+                            <span>x</span>{" "}
+                            <span className="product__price">{item.price}</span>{" "}
+                            <span>AZN</span>
+                          </p>
+                          <div className="cart__counter">
+                            <button
+                              onClick={() => {
+                                removeFromCartList(item.id);
+                              }}
+                            >
+                              -
+                            </button>
+                            <button
+                              onClick={() => {
+                                addToCartList(item.id);
+                              }}
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
                       </div>
                       <button
                         onClick={() => {

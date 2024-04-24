@@ -26,3 +26,10 @@ export function setToCartAction(payload) {
     payload,
   };
 }
+
+export function removeFromListAction(payload) {
+  return {
+    type: "REMOVE_FROM_LIST",
+    payload,
+  };
+}

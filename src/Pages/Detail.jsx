@@ -1,8 +1,8 @@
 import ProductDetail from "../Components/Detail/ProductDetail";
 
-function Detail() {
+function Detail({ setCartListIsActive }) {
   return (
-    <main id="product">
+    <main id="product" onClick={() => setCartListIsActive(false)}>
       <ProductDetail />
     </main>
   );
