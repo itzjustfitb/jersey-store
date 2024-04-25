@@ -28,7 +28,6 @@ import "aos/dist/aos.css";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [cartListIsActive, setCartListIsActive] = useState(false);
-
   const storedWishList = JSON.parse(localStorage.getItem("wishlist"));
   const storedCompareList = JSON.parse(localStorage.getItem("comparelist"));
   const storedCartList = JSON.parse(localStorage.getItem("cartlist"));

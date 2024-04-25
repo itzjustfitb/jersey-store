@@ -63,7 +63,7 @@ function Header({ setCartListIsActive, cartListIsActive }) {
                 <span className="count">{wishList.length}</span>
               </Link>
               <div
-                onClick={(e) => {
+                onClick={() => {
                   setCartListIsActive(!cartListIsActive);
                   setIsOpen(false);
                 }}
@@ -83,7 +83,7 @@ function Header({ setCartListIsActive, cartListIsActive }) {
               <i
                 onClick={() => {
                   setOpenBurgerMenu(true);
-                  document.body.style.position = "fixed";
+                  document.body.style.overflow = "hidden";
                 }}
                 className="ri-menu-5-line"
               ></i>

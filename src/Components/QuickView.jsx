@@ -179,7 +179,7 @@ function QuickView() {
                     type="number"
                     value={count}
                     onChange={(e) => {
-                      const inputValue = e.target.value.trim(); // Remove leading and trailing spaces
+                      let inputValue = e.target.value.trim();
                       if (inputValue === "0") {
                         inputValue = "";
                       }

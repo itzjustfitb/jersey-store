@@ -174,7 +174,7 @@ function ProductDetail() {
               <input
                 type="number"
                 onChange={(e) => {
-                  const inputValue = e.target.value.trim(); // Remove leading and trailing spaces
+                  let inputValue = e.target.value.trim(); // Remove leading and trailing spaces
                   if (inputValue === "0") {
                     inputValue = "";
                   }

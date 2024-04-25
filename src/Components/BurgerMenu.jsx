@@ -51,7 +51,7 @@ function BurgerMenu({ setIsOpen, openBurgerMenu, setOpenBurgerMenu }) {
           <i
             onClick={() => {
               setOpenBurgerMenu(false);
-              document.body.style.position = "static";
+              document.body.style.overflow = "initial";
             }}
             className="ri-close-line"
           ></i>
