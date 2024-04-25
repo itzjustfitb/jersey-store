@@ -43,7 +43,7 @@ function SearchBar({ isOpen, setIsOpen }) {
           <i
             onClick={() => {
               setIsOpen(false);
-              document.body.style.position = "static";
+              document.body.style.overflow = "initial";
             }}
             className="ri-close-line"
           ></i>

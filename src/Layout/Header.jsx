@@ -46,7 +46,11 @@ function Header({ setCartListIsActive, cartListIsActive }) {
                 <i
                   onClick={() => {
                     setIsOpen(!isOpen);
-                    document.body.style.position = "fixed";
+                    if (!isOpen) {
+                      document.body.style.overflow = "hidden";
+                    } else {
+                      document.body.style.overflow = "initial";
+                    }
                   }}
                   className="ri-search-eye-line"
                 ></i>
