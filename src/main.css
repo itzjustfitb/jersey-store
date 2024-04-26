@@ -5,10 +5,6 @@ body {
   background-color: #fff;
 }
 
-body {
-  margin-top: 80px;
-}
-
 header {
   position: fixed;
   z-index: 10;
@@ -819,11 +815,8 @@ table {
   border-spacing: 0;
 }
 
-body {
-  margin-top: 80px;
-}
-
 #home {
+  padding: 80px 0;
   width: 100%;
 }
 #home .home__hero {
@@ -6016,7 +6009,7 @@ body {
 }
 
 .notfound {
-  padding: 50px 0;
+  padding: 80px 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -6083,7 +6076,7 @@ body {
 
 @media screen and (max-width: 1000px) {
   .notfound {
-    padding: 50px 0;
+    min-height: 500px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -6749,6 +6742,9 @@ body {
 }
 .night__mode #root #cart {
   background-color: #1a1625;
+}
+.night__mode #root #cart .cart__container .cart__left .cart__default {
+  background-color: #2f2b3a;
 }
 .night__mode #root #cart .cart__container .cart__left .cart__default p:nth-child(2), .night__mode #root #cart .cart__container .cart__left .cart__default p:nth-child(3) {
   color: #949494;

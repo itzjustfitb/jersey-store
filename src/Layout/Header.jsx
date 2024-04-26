@@ -6,6 +6,7 @@ import CartSidebar from "../Components/CartSidebar";
 import SearchBar from "../Components/SearchBar";
 import BurgerMenu from "../Components/BurgerMenu";
 import NightModeBtn from "../Components/NightModeBtn";
+import { Turn as Hamburger } from "hamburger-react";
 
 function Header({ setCartListIsActive, cartListIsActive }) {
   const [isOpen, setIsOpen] = useState(false);

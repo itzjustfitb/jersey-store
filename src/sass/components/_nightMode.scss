@@ -351,6 +351,7 @@
       .cart__container {
         .cart__left {
           .cart__default {
+            background-color: $Night-Mode-Secondary;
             p {
               &:nth-child(2),
               &:nth-child(3) {
