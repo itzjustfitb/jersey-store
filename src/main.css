@@ -2553,7 +2553,8 @@ table {
   }
 }
 .product__section {
-  padding: 20px 0;
+  background-color: rebeccapurple;
+  padding: 80px 0;
   width: 100%;
   display: flex;
   justify-content: center;
