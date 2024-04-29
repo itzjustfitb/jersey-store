@@ -94,6 +94,12 @@ body {
   font-family: $Hanken-Grotesk;
   position: relative;
   line-height: 1;
+  padding-top: 80px;
+}
+@media screen and (max-width: 1000px) {
+  body {
+    padding-top: 60px;
+  }
 }
 ol,
 ul {
